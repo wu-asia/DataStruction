@@ -9,35 +9,34 @@ typedef struct Node
 {
 	ElemType data;
 	struct Node* next;
-}Node, * LinkList;
+}Node, *LinkList;
 
-//³õÊ¼»¯Á´±í
+//åˆå§‹åŒ–é“¾è¡¨
 void InitiList(LinkList* L);
-//Í·²åÔªËØ
+//å¤´æ’å…ƒç´ 
 int HeadInsElem(LinkList L, ElemType e);
-//Î²²åÔªËØ
+//å°¾æ’å…ƒç´ 
 int TailInsElem(LinkList L, ElemType e);
-//·ÃÎÊÁ´±í
+//è®¿é—®é“¾è¡¨
 void VisitList(LinkList L);
-//Í·É¾ÔªËØ
+//å¤´åˆ å…ƒç´ 
 int HeadDelElem(LinkList L, ElemType* e);
-//Î²É¾ÔªËØ
+//å°¾åˆ å…ƒç´ 
 int TailDelElem(LinkList L, ElemType* e);
-//ÔÚµ±Ç°Î»ÖÃÔªËØÇ°²åÈëÔªËØ
+//åœ¨å½“å‰ä½ç½®å…ƒç´ å‰æ’å…¥å…ƒç´ 
 int InsElemWithPosBehind(LinkList L, ElemType e, int pos);
-//ÔÚµ±Ç°Î»ÖÃÔªËØºó²åÈëÔªËØ
+//åœ¨å½“å‰ä½ç½®å…ƒç´ åæ’å…¥å…ƒç´ 
 int InsElemWithPosFront(LinkList L, ElemType e, int pos);
 //int DelElemWithPosBehind(LinkList L, ElemType* e, int pos);
-//É¾³ıµ±Ç°ÔªËØ
+//åˆ é™¤å½“å‰å…ƒç´ 
 int DelElemWithPos(LinkList L, ElemType* e, int pos);
-//°´ÕÕÎ»ÖÃ²éÕÒÔªËØ
+//æŒ‰ç…§ä½ç½®æŸ¥æ‰¾å…ƒç´ 
 ElemType FindElemWithPos(LinkList L, int pos);
-//°´ÕÕÖµ²éÕÒÔªËØ
+//æŒ‰ç…§å€¼æŸ¥æ‰¾å…ƒç´ 
 int FindElemWithValue(LinkList L, ElemType e);
-//ÅĞ¶ÏÁ´±íÊÇ·ñ¾Ö²¿ÓĞ»·
+//åˆ¤æ–­é“¾è¡¨æ˜¯å¦å±€éƒ¨æœ‰ç¯
 int CheckListWithCircle(LinkList L);
-//¶ÔÁ´±í½øĞĞÅÅĞò
-void SortLinkWithSelection(LinkList L);
+
 int main()
 {
 	LinkList l1;
@@ -57,55 +56,23 @@ int main()
 	VisitList(l1);
 	ElemType elem;
 	HeadDelElem(l1, &elem);
-	std::cout << "Í·É¾É¾³ıÔªËØÊÇ£º" << elem << std::endl;
+	std::cout << "å¤´åˆ åˆ é™¤å…ƒç´ æ˜¯ï¼š" << elem << std::endl;
 	VisitList(l1);
 	TailDelElem(l1, &elem);
-	std::cout << "Î²É¾É¾³ıµÄÔªËØÊÇ:" << elem << std::endl;
+	std::cout << "å°¾åˆ åˆ é™¤çš„å…ƒç´ æ˜¯:" << elem << std::endl;
 	VisitList(l1);
 	InsElemWithPosBehind(l1, 99, 2);
 	VisitList(l1);
 	InsElemWithPosFront(l1, 88, 2);
 	VisitList(l1);
 	/*DelElemWithPosBehind(l1, &elem, 4);
-	std::cout << "É¾³ıµÄÔªËØÊÇ£º" << elem << std::endl;
+	std::cout << "åˆ é™¤çš„å…ƒç´ æ˜¯ï¼š" << elem << std::endl;
 	VisitList(l1);*/
 	DelElemWithPos(l1, &elem, 5);
-	std::cout << "É¾³ıÎ»ÖÃÊÇ£º5, " << "É¾³ıµÄÔªËØÊÇ£º" << elem << std::endl;
+	std::cout << "åˆ é™¤ä½ç½®æ˜¯ï¼š5, " << "åˆ é™¤çš„å…ƒç´ æ˜¯ï¼š" << elem << std::endl;
 	VisitList(l1);
-	std::cout << "Î»ÖÃ2´¦µÄÔªËØÊÇ£º" << FindElemWithPos(l1, 2) << std::endl;
-	std::cout << "²éÕÒµÄÔªËØÊÇ99£¬ËüµÄÎ»ÖÃÊÇ:" << FindElemWithValue(l1, 99) << std::endl;
-	LinkList l2;
-	InitiList(&l2);
-	HeadInsElem(l2, 10);
-	HeadInsElem(l2, 99);
-	HeadInsElem(l2, 20);
-	VisitList(l2);
-	Node* p = l2;
-	while (p->next)
-	{
-		p = p->next;
-	}
-	p->next = l2->next;
-	//VisitList(l2);
-	if (CheckListWithCircle(l1))
-	{
-		printf("Á´±í¾Ö²¿ÓĞ»·\n");
-	}
-	else
-	{
-		printf("Á´±íÎŞ»·\n");
-	}
-	if (CheckListWithCircle(l2))
-	{
-		printf("Á´±í¾Ö²¿ÓĞ»·\n");
-	}
-	else
-	{
-		printf("Á´±íÎŞ»·\n");
-	}
-	VisitList(l1);
-	SortLinkWithSelection(l1);
-	VisitList(l1);
+	std::cout << "ä½ç½®2å¤„çš„å…ƒç´ æ˜¯ï¼š" << FindElemWithPos(l1, 2) << std::endl;
+	std::cout << "æŸ¥æ‰¾çš„å…ƒç´ æ˜¯99ï¼Œå®ƒçš„ä½ç½®æ˜¯:" << FindElemWithValue(l1, 99) << std::endl;
 	return 0;
 }
 
@@ -128,7 +95,7 @@ int HeadInsElem(LinkList L, ElemType e)
 
 int TailInsElem(LinkList L, ElemType e)
 {
-	Node* p = L->next;
+	Node * p = L->next;
 	while (p->next) p = p->next;
 	Node* s = (Node*)malloc(sizeof(Node));
 	if (!s) return ERROR;
@@ -178,7 +145,7 @@ int InsElemWithPosBehind(LinkList L, ElemType e, int pos)
 	}
 	if (!pre->next)
 	{
-		printf("²åÈëÎ»ÖÃ´íÎó\n");
+		printf("æ’å…¥ä½ç½®é”™è¯¯\n");
 		return ERROR;
 	}
 	Node* s = (Node*)malloc(sizeof(Node));
@@ -201,7 +168,7 @@ int InsElemWithPosFront(LinkList L, ElemType e, int pos)
 	}
 	if (!p)
 	{
-		printf("²åÈëÎ»ÖÃ´íÎó\n");
+		printf("æ’å…¥ä½ç½®é”™è¯¯\n");
 		return ERROR;
 	}
 	Node* s = (Node*)malloc(sizeof(Node));
@@ -222,7 +189,7 @@ int InsElemWithPosFront(LinkList L, ElemType e, int pos)
 //	}
 //	if (!pre->next)
 //	{
-//		printf("É¾³ıÎ»ÖÃ´íÎó\n");
+//		printf("åˆ é™¤ä½ç½®é”™è¯¯\n");
 //		return ERROR;
 //	}
 //	*e = pre->next->data;
@@ -245,7 +212,7 @@ int DelElemWithPos(LinkList L, ElemType* e, int pos)
 	}
 	if (!p)
 	{
-		printf("²åÈëÎ»ÖÃ´íÎó\n");
+		printf("æ’å…¥ä½ç½®é”™è¯¯\n");
 		return ERROR;
 	}
 	*e = p->data;
@@ -259,7 +226,7 @@ ElemType FindElemWithPos(LinkList L, int pos)
 {
 	int cnt = pos - 1;
 	Node* p = L->next;
-	while (cnt != 0 && p != NULL)
+	while (cnt != 0 && p!= NULL)
 	{
 		p = p->next;
 		cnt--;
@@ -283,43 +250,6 @@ int FindElemWithValue(LinkList L, ElemType e)
 
 int CheckListWithCircle(LinkList L)
 {
-	//ÀûÓÃ¿ìÂıÖ¸ÕëÀ´½â¾öÊÇ·ñÓĞ»·
-	if (!L->next || !L) return 0;
-	Node* slow = L;
-	Node* quick = L;
-	while (quick && quick->next)
-	{
-		slow = slow->next;
-		quick = quick->next->next;
-		if (slow == quick)
-		{
-			return 1;
-		}
-	}
-	return 0;
-}
+	//åˆ©ç”¨å¿«æ…¢æŒ‡é’ˆæ¥è§£å†³æ˜¯å¦æœ‰ç¯
 
-void SortLinkWithSelection(LinkList L)
-{
-	//Ê¹ÓÃÖ±½Ó²åÈëÅÅĞò£¬¶ÔÁ´±í½øĞĞÅÅĞò
-	if (!L->next || !L) return;
-	for (Node* p = L->next; p; p = p->next)
-	{
-		Node* min = p;
-		for (Node* q = p->next; q; q = q->next)
-		{
-			if (min->data > q->data)
-			{
-				min = q;
-			}
-		}
-		ElemType tmp = p->data;
-		p->data = min->data;
-		min->data = tmp;
-	}
 }
-
-//int ReverseLink(LinkList L)
-//{
-//
-//}
