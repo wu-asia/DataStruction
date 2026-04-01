@@ -38,6 +38,10 @@ int FindElemWithValue(LinkList L, ElemType e);
 int CheckListWithCircle(LinkList L);
 //对链表进行排序
 void SortLinkWithSelection(LinkList L);
+//逆置链表
+int ReverseLink(LinkList L);
+//找出链表中的倒数第几个元素
+Node* FindTheLastCountElem(LinkList L, int i);
 int main()
 {
 	LinkList l1;
@@ -106,6 +110,10 @@ int main()
 	VisitList(l1);
 	SortLinkWithSelection(l1);
 	VisitList(l1);
+	ReverseLink(l1);
+	VisitList(l1);
+	Node* tmp = FindTheLastCountElem(l1, 3);
+	std::cout << tmp->data << std::endl;
 	return 0;
 }
 
@@ -319,7 +327,34 @@ void SortLinkWithSelection(LinkList L)
 	}
 }
 
-//int ReverseLink(LinkList L)
-//{
-//
-//}
+int ReverseLink(LinkList L)
+{
+	if (L->next == NULL || L->next->next == NULL)
+		return 0;
+	Node* p = L->next->next;
+	L->next->next = NULL;
+	for (; p;)
+	{
+		Node* tmp = p->next;
+		p->next = L->next;
+		L->next = p;
+		p = tmp;
+	}
+}
+
+Node* FindTheLastCountElem(LinkList L, int i)
+{
+	Node* p = L->next;
+	Node* pre = L->next;
+	int cnt = 0;
+	while (p)
+	{
+		if (cnt >= i)
+		{
+			pre = pre->next;
+		}
+		p = p->next;
+		cnt++;
+	}
+	return pre;
+}
