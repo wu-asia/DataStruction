@@ -118,7 +118,7 @@ int main()
 			break;
 		}
 	}
-	
+
 	VisitList(&l1);
 	InsElement(&l1, 1000, 1);
 	VisitList(&l1);
@@ -127,7 +127,7 @@ int main()
 	VisitList(&l1);
 	SortList(&l1);
 	VisitList(&l1);
-	
+
 	SortList(&l2);
 	MergeList(&l1, &l2);
 	VisitList(&l2);
