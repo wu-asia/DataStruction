@@ -1,0 +1,7 @@
+﻿  censoring.cpp
+  corsoningS.cpp
+D:\develop\Sources\DataStruction\data-struction\DataCode\power_string\power_string\corsoningS.cpp(4,19): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+D:\develop\Sources\DataStruction\data-struction\DataCode\power_string\power_string\corsoningS.cpp(11,8): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+D:\develop\Sources\DataStruction\data-struction\DataCode\power_string\power_string\corsoningS.cpp(12,8): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  Generating Code...
+  power_string.vcxproj -> D:\develop\Sources\DataStruction\data-struction\DataCode\power_string\x64\Debug\power_string.exe

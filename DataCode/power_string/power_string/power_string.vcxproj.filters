@@ -15,13 +15,22 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="LinkList.cpp">
+    <ClCompile Include="power_string.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="insert_sort.cpp">
+    <ClCompile Include="str.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Ndimension_vector_改良版.cpp">
+    <ClCompile Include="hdu2087.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Seek_Name_fame.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="censoring.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="corsoningS.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

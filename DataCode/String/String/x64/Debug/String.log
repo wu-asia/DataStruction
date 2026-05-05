@@ -1,0 +1,3 @@
+﻿  SeqStr.c
+D:\develop\Sources\DataStruction\data-struction\DataCode\String\String\SeqStr.c(166,1): warning C4716: 'kmp': must return a value
+  String.vcxproj -> D:\develop\Sources\DataStruction\data-struction\DataCode\String\x64\Debug\String.exe

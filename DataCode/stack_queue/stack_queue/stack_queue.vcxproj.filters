@@ -15,14 +15,31 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="LinkList.cpp">
+    <ClCompile Include="stack.c">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="insert_sort.cpp">
+    <ClCompile Include="queue.c">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="Ndimension_vector_改良版.cpp">
+    <ClCompile Include="main.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="main2.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="main3.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="main4.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stack.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="queue.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

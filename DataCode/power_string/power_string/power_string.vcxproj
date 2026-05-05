@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{7e9ce566-68a5-413f-b9df-d9f29e1ceaa8}</ProjectGuid>
-    <RootNamespace>linklist</RootNamespace>
+    <ProjectGuid>{809c965c-8a2b-4e32-bb34-d4d2692ba2fd}</ProjectGuid>
+    <RootNamespace>powerstring</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -100,7 +100,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
     <Link>
@@ -123,9 +123,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="insert_sort.cpp" />
-    <ClCompile Include="LinkList.cpp" />
-    <ClCompile Include="Ndimension_vector_改良版.cpp" />
+    <ClCompile Include="censoring.cpp" />
+    <ClCompile Include="corsoningS.cpp" />
+    <ClCompile Include="hdu2087.cpp" />
+    <ClCompile Include="power_string.cpp" />
+    <ClCompile Include="Seek_Name_fame.cpp" />
+    <ClCompile Include="str.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
