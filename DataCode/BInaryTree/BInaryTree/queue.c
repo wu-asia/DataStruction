@@ -34,6 +34,7 @@ int IsFullQueue(SeqQueue* Q)
 	if ((Q->rear + 1) % QueueSize == Q->front) return 1;
 	else return 0;
 }
+
 int GetHead(SeqQueue* Q, QElemType* e)
 {
 	if (IsEmptyQueue(Q)) return FALSE;

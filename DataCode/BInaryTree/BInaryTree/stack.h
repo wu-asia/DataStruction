@@ -5,8 +5,11 @@
 
 //#define StackSize 10010
 //typedef int ElemType;
-#define StackSize 10010
-typedef char ElemType;
+
+typedef struct BiTNode * BiTree;
+
+#define StackSize 25
+typedef BiTree ElemType;
 #define TRUE 1
 #define FALSE 0
 typedef struct

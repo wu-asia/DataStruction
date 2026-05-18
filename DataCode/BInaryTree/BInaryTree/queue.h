@@ -1,10 +1,13 @@
 ﻿#pragma once
 
+
 #include<stdio.h>
 
 #include<stdlib.h>
-typedef int QElemType;
-#define QueueSize 10010
+typedef struct BiTNode * BiTree;
+
+typedef BiTree QElemType;
+#define QueueSize 25
 #define TRUE 1
 #define FALSE 0
 

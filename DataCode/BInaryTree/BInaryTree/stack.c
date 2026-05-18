@@ -20,7 +20,7 @@ int IsStackFull(SeqStack* s)
 
 int Push(SeqStack* s, ElemType x)
 {
-	if (s->top + 1 >= StackSize) 
+	if (s->top + 1 >= StackSize)
 		return FALSE;
 	s->elem[++s->top] = x;
 	return TRUE;
