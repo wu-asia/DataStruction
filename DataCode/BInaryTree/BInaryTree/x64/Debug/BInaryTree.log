@@ -1,5 +1,1 @@
-﻿  BinaryTree.c
-D:\develop\Sources\DataStruction\data-struction\DataCode\BInaryTree\BInaryTree\BinaryTree.c(144,17): warning C4033: 'NodeTwo' must return a value
-D:\develop\Sources\DataStruction\data-struction\DataCode\BInaryTree\BInaryTree\BinaryTree.c(60,1): warning C4715: 'Count': not all control paths return a value
-D:\develop\Sources\DataStruction\data-struction\DataCode\BInaryTree\BInaryTree\BinaryTree.c(149,1): warning C4716: 'NodeTwo': must return a value
-  BInaryTree.vcxproj -> D:\develop\Sources\DataStruction\data-struction\DataCode\BInaryTree\x64\Debug\BInaryTree.exe
+﻿  BInaryTree.vcxproj -> D:\develop\Sources\DataStruction\data-struction\DataCode\BInaryTree\x64\Debug\BInaryTree.exe
