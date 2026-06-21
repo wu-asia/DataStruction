@@ -6,3 +6,46 @@
 // 然后从第 4 张开始，以 4 为基数，是 4 的倍数的牌翻一次，直到最后一张牌；
 // ……直到以 52 为基数的牌翻过，这时正面向上的牌有哪些？
 // 请设计算法编写程序输出最终正面向上的纸牌的编号。
+
+#include<stdio.h>
+
+#define N 60
+int st[N] = { 0 };
+int CardGame()
+{
+	for (int i = 2; i <= 52; i++)
+	{
+		for (int j = 2; j * j <= i; j++)
+		{
+			if (i % j == 0)
+			{
+				if (i / j == j)
+					st[j]++;
+				else
+				{
+					st[j]++;
+					st[i / j]++;
+				}
+			}
+		}
+	}
+	int ret = 0;
+	printf("%d ", 1);
+	for (int i = 2; i <= 52; i++)
+	{
+		if (st[i] % 2 == 0)
+		{
+			printf("%d ", i);
+			ret++;
+		}
+	}
+	printf("\n");
+	return ret;
+}
+
+int main()
+{
+	int ret = CardGame();
+	printf("%d", ret);
+	return 0;
+}

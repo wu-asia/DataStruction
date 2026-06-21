@@ -9,6 +9,13 @@ typedef struct node
 
 list create(int n)
 {
+	if (n == 1)
+	{
+		node* head = (node*)malloc(sizeof(node));
+		head->data = 1;
+		head->next = head;
+		return head;
+	}
 	node* head = NULL;
 	node* tail = NULL;
 	head = (node*)malloc(sizeof(node));
