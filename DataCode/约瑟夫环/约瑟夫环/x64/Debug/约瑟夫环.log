@@ -1,4 +1,5 @@
 ﻿D:\develop\vs2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(538,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (约瑟夫环.vcxproj).  This can lead to incorrect clean and rebuild behavior.
   JosephusProblem.c
-D:\develop\Sources\DataStruction\data-struction\DataCode\约瑟夫环\约瑟夫环\JosephusProblem.c(44,1): warning C4715: 'josephus_circle': not all control paths return a value
+  JosephusProblem_list.c
+  Generating Code...
   约瑟夫环.vcxproj -> D:\develop\Sources\DataStruction\data-struction\DataCode\约瑟夫环\x64\Debug\Josephus_circle.exe
