@@ -322,7 +322,16 @@ void DestroyTree(BiTree T)
         free(T);
     }
 }
-
+void Menu()
+{
+    printf("1. 建立二叉树\n");
+    printf("2. 遍历二叉树\n");
+    printf("3. 二叉树的高度、宽度\n");
+    printf("4. 各类结点的个数\n");
+    printf("5. 根结点到指定结点的路径\n");
+    printf("0. 退出\n");
+    printf("请选择0-5：");
+}
 int main()
 {
     BiTree T = NULL;
@@ -337,6 +346,8 @@ int main()
 
         switch (choice)
         {
+
+        //建立二叉树
         case 1:
         {
             if (T)
@@ -354,6 +365,7 @@ int main()
             break;
         }
 
+        //遍历二叉树
         case 2:
         {
             if (!T)
@@ -362,22 +374,22 @@ int main()
                 break;
             }
 
-            printf("\n递归先序遍历:\n");
+            printf("递归先序遍历:\n");
             PreOrder(T);
 
-            printf("\n\n非递归先序遍历:\n");
+            printf("非递归先序遍历:\n");
             PreOrder_NR(T);
 
-            printf("\n\n递归中序遍历:\n");
+            printf("递归中序遍历:\n");
             InOrder(T);
 
-            printf("\n\n非递归中序遍历:\n");
+            printf("非递归中序遍历:\n");
             InOrder_NR(T);
 
-            printf("\n\n后序遍历:\n");
+            printf("后序遍历:\n");
             PostOrder(T);
 
-            printf("\n\n层序遍历:\n");
+            printf("层序遍历:\n");
             LevelOrder(T);
 
             printf("\n");
@@ -385,6 +397,7 @@ int main()
             break;
         }
 
+        //计算高度、宽度
         case 3:
         {
             if (!T)
@@ -400,6 +413,7 @@ int main()
             break;
         }
 
+        //统计节点个数、叶子节点、度为1，2的节点个数
         case 4:
         {
             if (!T)
@@ -413,11 +427,7 @@ int main()
             int degree1 = 0;
             int degree2 = 0;
 
-            CountNodes(T,
-                       &total,
-                       &leaf,
-                       &degree1,
-                       &degree2);
+            CountNodes(T, &total, &leaf, &degree1, &degree2);
 
             printf("总结点数=%d\n", total);
             printf("叶子结点=%d\n", leaf);
@@ -427,6 +437,7 @@ int main()
             break;
         }
 
+        //查找路径
         case 5:
         {
             if (!T)
@@ -449,8 +460,10 @@ int main()
             break;
         }
 
+        //退出
         case 0:
         {
+            //推出界面，销毁二叉树
             DestroyTree(T);
 
             printf("程序结束！\n");
