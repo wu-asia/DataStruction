@@ -325,53 +325,145 @@ void DestroyTree(BiTree T)
 
 int main()
 {
-    printf("请输入先序序列(#表示空结点):\n");
+    BiTree T = NULL;
 
-    BiTree T = CreateTree();
+    int choice;
 
-    printf("递归先序遍历:\n");
-    PreOrder(T);
+    while (1)
+    {
+        Menu();
 
-    printf("非递归先序遍历:\n");
-    PreOrder_NR(T);
+        scanf("%d", &choice);
 
-    printf("递归中序遍历:\n");
-    InOrder(T);
+        switch (choice)
+        {
+        case 1:
+        {
+            if (T)
+            {
+                DestroyTree(T);
+                T = NULL;
+            }
 
-    printf("非递归中序遍历:\n");
-    InOrder_NR(T);
+            printf("请输入先序序列(#表示空结点):\n");
 
-    printf("后序遍历:\n");
-    PostOrder(T);
+            T = CreateTree();
 
-    printf("层序遍历:\n");
-    LevelOrder(T);
+            printf("二叉树建立成功！\n");
 
-    printf("高度=%d\n", Height(T));
-    printf("宽度=%d\n", Width(T));
+            break;
+        }
 
-    int total = 0;
-    int leaf = 0;
-    int degree1 = 0;
-    int degree2 = 0;
+        case 2:
+        {
+            if (!T)
+            {
+                printf("请先建立二叉树！\n");
+                break;
+            }
 
-    CountNodes(T, &total, &leaf, &degree1, &degree2);
+            printf("\n递归先序遍历:\n");
+            PreOrder(T);
 
-    printf("总结点数=%d\n", total);
-    printf("叶子结点=%d\n", leaf);
-    printf("度为1结点=%d\n", degree1);
-    printf("度为2结点=%d\n", degree2);
+            printf("\n\n非递归先序遍历:\n");
+            PreOrder_NR(T);
 
-    char target;
-    printf("请输入要查找路径的结点:");
-    scanf(" %c", &target);
+            printf("\n\n递归中序遍历:\n");
+            InOrder(T);
 
-    char path[MAXSIZE];
+            printf("\n\n非递归中序遍历:\n");
+            InOrder_NR(T);
 
-    if (!FindPath(T, target, path, 0))
-        printf("未找到该结点!\n");
+            printf("\n\n后序遍历:\n");
+            PostOrder(T);
 
-    DestroyTree(T);
+            printf("\n\n层序遍历:\n");
+            LevelOrder(T);
+
+            printf("\n");
+
+            break;
+        }
+
+        case 3:
+        {
+            if (!T)
+            {
+                printf("请先建立二叉树！\n");
+                break;
+            }
+
+            printf("二叉树高度=%d\n", Height(T));
+
+            printf("二叉树宽度=%d\n", Width(T));
+
+            break;
+        }
+
+        case 4:
+        {
+            if (!T)
+            {
+                printf("请先建立二叉树！\n");
+                break;
+            }
+
+            int total = 0;
+            int leaf = 0;
+            int degree1 = 0;
+            int degree2 = 0;
+
+            CountNodes(T,
+                       &total,
+                       &leaf,
+                       &degree1,
+                       &degree2);
+
+            printf("总结点数=%d\n", total);
+            printf("叶子结点=%d\n", leaf);
+            printf("度为1结点=%d\n", degree1);
+            printf("度为2结点=%d\n", degree2);
+
+            break;
+        }
+
+        case 5:
+        {
+            if (!T)
+            {
+                printf("请先建立二叉树！\n");
+                break;
+            }
+
+            char target;
+
+            printf("请输入目标结点:");
+
+            scanf(" %c", &target);
+
+            char path[MAXSIZE];
+
+            if (!FindPath(T, target, path, 0))
+                printf("未找到该结点!\n");
+
+            break;
+        }
+
+        case 0:
+        {
+            DestroyTree(T);
+
+            printf("程序结束！\n");
+
+            return 0;
+        }
+
+        default:
+        {
+            printf("输入错误，请重新输入！\n");
+        }
+        }
+    }
 
     return 0;
 }
