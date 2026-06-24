@@ -2,8 +2,8 @@
 // 任务：设计合适的存储结构，完成一元多项式的相关运算。
 // 要求：（1）能够按照指数降序排列建立并输出多项式；（2）能够完成两个多项式的相加、
 // 相减，并将结果输出。
-#include <stdio.h>
-#include <stdlib.h>
+#include<stdio.h>
+#include<stdlib.h>
 
 typedef struct node
 {

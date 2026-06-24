@@ -169,9 +169,7 @@ void PrintCode(char chars[], char HC[][MAXSIZE], int n)
 
     for (int i = 1; i <= n; i++)
     {
-        printf("%c : %s\n",
-               chars[i - 1],
-               HC[i]);
+        printf("%c : %s\n", chars[i - 1], HC[i]);
     }
 }
 
@@ -218,52 +216,96 @@ void Decode(HTNode ht[], int root, char code[])
     printf("\n");
 }
 
+void Menu()
+{
+    // 打印菜单
+    printf("1. 统计字符的个数以及字符出现的次数\n");
+    printf("2. 建立并输出哈夫曼树\n");
+    printf("3. 设计并输出哈夫曼编码\n");
+    printf("4. 将文本转换成01编码\n");
+    printf("5. 将01编码翻译成文本\n");
+    printf("0. 退出\n");
+    printf("请选择0-5：");
+}
 int main()
 {
+    int choice = 0;
     char str[MAXSIZE];
-
     char chars[MAXSIZE];
     int freq[MAXSIZE];
-
     int count;
-
     HTNode ht[2 * MAXSIZE];
-
     char HC[MAXSIZE][MAXSIZE];
-
     char codeResult[1000];
-
-    printf("请输入字符串：");
-    scanf("%s", str);
-
-    CountChar(str,
-              chars,
-              freq,
-              &count);
-
-    printf("\n字符频率统计：\n\n");
-
-    for (int i = 0; i < count; i++)
+    // 标记是否已经初始化数据
+    int hasData = 0;
+    while (1)
     {
-        printf("%c : %d\n",
-               chars[i],
-               freq[i]);
+        Menu();
+        scanf("%d", &choice);
+
+        if (choice == 0)
+        {
+            printf("程序退出！\n");
+            break;
+        }
+
+        if (choice == 1)
+        {
+            // 1、输入字符串 + 统计频率
+            printf("请输入字符串：");
+            scanf("%s", str);
+            CountChar(str, chars, freq, &count);
+            hasData = 1;
+
+            printf("\n字符频率统计：\n\n");
+            for (int i = 0; i < count; i++)
+            {
+                printf("%c : %d\n", chars[i], freq[i]);
+            }
+        }
+        else
+        {
+            // 2~5必须先执行1录入数据
+            if (!hasData)
+            {
+                printf("错误：请先选择1录入字符串并统计字符！\n");
+                continue;
+            }
+            if (choice == 2)
+            {
+                // 2、建树并输出树表
+                CreateHuffmanTree(ht, chars, freq, count);
+                PrintTree(ht, 2 * count - 1);
+            }
+            else if (choice == 3)
+            {
+                // 3、生成并输出编码
+                CreateHuffmanTree(ht, chars, freq, count);
+                CreateCode(ht, HC, count);
+                PrintCode(chars, HC, count);
+            }
+            else if (choice == 4)
+            {
+                // 4、原文转为01串
+                CreateHuffmanTree(ht, chars, freq, count);
+                CreateCode(ht, HC, count);
+                Encode(str, chars, HC, count, codeResult);
+                printf("\n编码结果：\n%s\n", codeResult);
+            }
+            else if (choice == 5)
+            {
+                // 5、01串译码
+                CreateHuffmanTree(ht, chars, freq, count);
+                CreateCode(ht, HC, count);
+                Encode(str, chars, HC, count, codeResult);
+                Decode(ht, 2 * count - 1, codeResult);
+            }
+            else
+            {
+                printf("输入选项无效，请输入0~5！\n");
+            }
+        }
     }
-
-    CreateHuffmanTree(ht, chars, freq, count);
-
-    PrintTree(ht, 2 * count - 1);
-
-    CreateCode(ht, HC, count);
-
-    PrintCode(chars, HC, count);
-
-    Encode(str, chars, HC, count, codeResult);
-
-    printf("\n编码结果：\n");
-    printf("%s\n", codeResult);
-
-    Decode(ht, 2 * count - 1, codeResult);
-
     return 0;
 }

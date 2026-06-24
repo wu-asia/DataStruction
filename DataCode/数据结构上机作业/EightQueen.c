@@ -23,8 +23,9 @@ void dfs(int x)
     {
         for(int i = 1; i <= n; i++)
         {
-            printf("(%d, %d)\n", i, path[i]);
+            printf("(%d, %d)", i, path[i]);
         }
+        printf("\n");
         return;
     }
     for(int y = 1; y <= n; y++)
