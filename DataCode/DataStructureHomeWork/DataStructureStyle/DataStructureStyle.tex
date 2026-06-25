@@ -5,7 +5,7 @@
 \usepackage{listings}
 \usepackage{xcolor}
 \usepackage{float}
-
+\usepackage{subcaption}
 \usepackage{amsmath,amssymb}
 \usepackage{geometry}
 \geometry{a4paper,margin=2cm}
@@ -1851,5 +1851,1272 @@ A B C D E F
 
 \subsubsection{5.小结}
 本实验采用二叉链表链式存储结构构建二叉树，实现递归与非递归先、中序遍历，后序、层序遍历，完成树高度、宽度求解，叶子/度1/度2结点数量统计，以及根到目标结点路径检索全套功能。借助栈、队列辅助实现非递归遍历与层序遍历，充分运用递归思想处理二叉树天然分层递归结构，加深对二叉树存储、遍历、递归回溯算法的理解，熟练掌握链式二叉树基础操作与线性辅助容器（栈、队列）的综合运用。
+
+
+\subsection {2.哈夫曼编码}
+\subsubsection {任务}
+要求对输入的一串文本字符实现哈夫曼编码，再对哈夫曼编码生成的 0、1 串进行译码，输出原始文本字符串。
+功能要求：
+（1）统计文本字符串中不同字符的个数以及各字符在文本中出现的次数；
+（2）根据字符数量与对应频度建立并打印哈夫曼树；
+（3）生成并输出每个字符对应的哈夫曼前缀编码；
+（4）将原始文本转换为连续 01 二进制编码序列；
+（5）输入 01 编码串，基于哈夫曼树译码还原原始文本。
+界面要求：程序运行后，输出功能菜单并提示输入选项：
+统计字符的个数以及字符出现的次数
+建立并输出哈夫曼树
+设计并输出哈夫曼编码
+将文本转换成 01 编码
+将 01 编码翻译成文本
+退出
+请选择 0-5：
+\subsubsection{1. 需求分析}
+\paragraph{分析总结逻辑结构}
+字符频度使用一维线性数组存储；哈夫曼树采用静态结构体数组存储，属于顺序存储二叉树；各字符哈夫曼编码存放在二维字符数组；原始文本、二进制编码串使用一维字符数组线性存储。
+\paragraph{分析总结运算集合}
+字符频度统计、选取权值最小两个结点、哈夫曼树构造、叶子回溯生成前缀编码、明文批量编码、二进制编码逐位译码、菜单交互控制。
+\subsubsection{2. 概要设计}
+\paragraph{存储结构设计}
+静态哈夫曼结点结构体 HTNode：包含字符、权值、双亲下标、左孩子下标、右孩子下标；
+一维数组 chars 保存去重字符，freq 数组保存对应字符出现次数；
+二维字符数组 HC 存储每个叶子字符的 01 哈夫曼编码。
+\paragraph{算法设计思路}
+频度统计：遍历输入字符串，查重累加每个字符出现次数；
+构造哈夫曼树：循环选出两个无父结点的最小权值结点，合并生成新中间结点，更新父子关系；
+生成编码：从叶子结点向上回溯至根结点，左分支记 '0'、右分支记 '1'，逆序拼接得到标准编码；
+文本编码：遍历原文每个字符，匹配对应编码拼接成完整 01 串；
+译码：从根结点逐位读取 0/1 向下遍历树，到达叶子则输出字符并重置指针回到根，继续解析下一组编码。
+\subsubsection{3. 详细设计}
+\paragraph{源代码（带注释）}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{HaffmanCoding-2026-06-25-081417.png}
+    \caption{哈夫曼编码示意图}
+    \label{fig:Haffman-coding}
+\end{figure}
+
+代码：
+\begin{verbatim}
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+
+#define MAXSIZE 100
+
+typedef struct
+{
+    char ch;        // 字符
+    int weight;     // 权值(频率)
+    int parent;
+    int lchild;
+    int rchild;
+
+} HTNode;
+
+// 统计字符频率
+void CountChar(char str[], char chars[], int freq[], int *count)
+{
+    *count = 0;
+
+    for (int i = 0; str[i]; i++)
+    {
+        int found = -1;
+
+        for (int j = 0; j < *count; j++)
+        {
+            if (chars[j] == str[i])
+            {
+                found = j;
+                break;
+            }
+        }
+
+        if (found == -1)
+        {
+            chars[*count] = str[i];
+            freq[*count] = 1;
+            (*count)++;
+        }
+        else
+        {
+            freq[found]++;
+        }
+    }
+}
+
+// 选两个最小权值结点
+void Select(HTNode ht[], int end, int *s1, int *s2)
+{
+    *s1 = *s2 = 0;
+
+    for (int i = 1; i <= end; i++)
+    {
+        if (ht[i].parent != 0)
+            continue;
+
+        if (*s1 == 0 || ht[i].weight < ht[*s1].weight)
+            *s1 = i;
+    }
+
+    for (int i = 1; i <= end; i++)
+    {
+        if (ht[i].parent != 0 || i == *s1)
+            continue;
+
+        if (*s2 == 0 || ht[i].weight < ht[*s2].weight)
+            *s2 = i;
+    }
+
+    if (ht[*s1].weight > ht[*s2].weight)
+    {
+        int t = *s1;
+        *s1 = *s2;
+        *s2 = t;
+    }
+}
+
+// 建立哈夫曼树
+void CreateHuffmanTree(HTNode ht[], char chars[], int freq[], int n)
+{
+    int m = 2 * n - 1;
+
+    for (int i = 1; i <= m; i++)
+    {
+        ht[i].parent = 0;
+        ht[i].lchild = 0;
+        ht[i].rchild = 0;
+        ht[i].weight = 0;
+        ht[i].ch = '\0';
+    }
+
+    for (int i = 1; i <= n; i++)
+    {
+        ht[i].ch = chars[i - 1];
+        ht[i].weight = freq[i - 1];
+    }
+
+    for (int i = n + 1; i <= m; i++)
+    {
+        int s1, s2;
+
+        Select(ht, i - 1, &s1, &s2);
+
+        ht[s1].parent = i;
+        ht[s2].parent = i;
+
+        ht[i].lchild = s1;
+        ht[i].rchild = s2;
+
+        ht[i].weight = ht[s1].weight + ht[s2].weight;
+    }
+}
+
+// 输出哈夫曼树
+void PrintTree(HTNode ht[], int m)
+{
+    printf("\n哈夫曼树：\n\n");
+
+    printf("编号\t字符\t权值\t双亲\t左孩子\t右孩子\n");
+
+    for (int i = 1; i <= m; i++)
+    {
+        printf("%d\t", i);
+
+        if (ht[i].ch)
+            printf("%c\t", ht[i].ch);
+        else
+            printf("-\t");
+
+        printf("%d\t%d\t%d\t%d\n", ht[i].weight, ht[i].parent, ht[i].lchild, ht[i].rchild);
+    }
+}
+
+// 生成哈夫曼编码
+void CreateCode(HTNode ht[], char HC[][MAXSIZE], int n)
+{
+    char code[MAXSIZE];
+
+    for (int i = 1; i <= n; i++)
+    {
+        int start = MAXSIZE - 1;
+
+        code[start] = '\0';
+
+        int c = i;
+        int p = ht[c].parent;
+
+        while (p)
+        {
+            if (ht[p].lchild == c)
+                code[--start] = '0';
+            else
+                code[--start] = '1';
+
+            c = p;
+            p = ht[c].parent;
+        }
+
+        strcpy(HC[i], &code[start]);
+    }
+}
+
+// 输出编码
+void PrintCode(char chars[], char HC[][MAXSIZE], int n)
+{
+    printf("\n哈夫曼编码：\n\n");
+
+    for (int i = 1; i <= n; i++)
+    {
+        printf("%c : %s\n", chars[i - 1], HC[i]);
+    }
+}
+
+// 编码
+void Encode(char str[], char chars[], char HC[][MAXSIZE], int n, char result[])
+{
+    result[0] = '\0';
+
+    for (int i = 0; str[i]; i++)
+    {
+        for (int j = 1; j <= n; j++)
+        {
+            if (str[i] == chars[j - 1])
+            {
+                strcat(result, HC[j]);
+                break;
+            }
+        }
+    }
+}
+
+// 译码
+void Decode(HTNode ht[], int root, char code[])
+{
+    printf("\n译码结果：\n");
+
+    int p = root;
+
+    for (int i = 0; code[i]; i++)
+    {
+        if (code[i] == '0')
+            p = ht[p].lchild;
+        else
+            p = ht[p].rchild;
+
+        if (ht[p].lchild == 0 &&
+            ht[p].rchild == 0)
+        {
+            printf("%c", ht[p].ch);
+            p = root;
+        }
+    }
+
+    printf("\n");
+}
+
+void Menu()
+{
+    // 打印菜单
+    printf("1. 统计字符的个数以及字符出现的次数\n");
+    printf("2. 建立并输出哈夫曼树\n");
+    printf("3. 设计并输出哈夫曼编码\n");
+    printf("4. 将文本转换成01编码\n");
+    printf("5. 将01编码翻译成文本\n");
+    printf("0. 退出\n");
+    printf("请选择0-5：");
+}
+int main()
+{
+    int choice = 0;
+    char str[MAXSIZE];
+    char chars[MAXSIZE];
+    int freq[MAXSIZE];
+    int count;
+    HTNode ht[2 * MAXSIZE];
+    char HC[MAXSIZE][MAXSIZE];
+    char codeResult[1000];
+    // 标记是否已经初始化数据
+    int hasData = 0;
+    while (1)
+    {
+        Menu();
+        scanf("%d", &choice);
+
+        if (choice == 0)
+        {
+            printf("程序退出！\n");
+            break;
+        }
+
+        if (choice == 1)
+        {
+            // 1、输入字符串 + 统计频率
+            printf("请输入字符串：");
+            scanf("%s", str);
+            CountChar(str, chars, freq, &count);
+            hasData = 1;
+
+            printf("\n字符频率统计：\n\n");
+            for (int i = 0; i < count; i++)
+            {
+                printf("%c : %d\n", chars[i], freq[i]);
+            }
+        }
+        else
+        {
+            // 2~5必须先执行1录入数据
+            if (!hasData)
+            {
+                printf("错误：请先选择1录入字符串并统计字符！\n");
+                continue;
+            }
+            if (choice == 2)
+            {
+                // 2、建树并输出树表
+                CreateHuffmanTree(ht, chars, freq, count);
+                PrintTree(ht, 2 * count - 1);
+            }
+            else if (choice == 3)
+            {
+                // 3、生成并输出编码
+                CreateHuffmanTree(ht, chars, freq, count);
+                CreateCode(ht, HC, count);
+                PrintCode(chars, HC, count);
+            }
+            else if (choice == 4)
+            {
+                // 4、原文转为01串
+                CreateHuffmanTree(ht, chars, freq, count);
+                CreateCode(ht, HC, count);
+                Encode(str, chars, HC, count, codeResult);
+                printf("\n编码结果：\n%s\n", codeResult);
+            }
+            else if (choice == 5)
+            {
+                // 5、01串译码
+                CreateHuffmanTree(ht, chars, freq, count);
+                CreateCode(ht, HC, count);
+                Encode(str, chars, HC, count, codeResult);
+                Decode(ht, 2 * count - 1, codeResult);
+            }
+            else
+            {
+                printf("输入选项无效，请输入0~5！\n");
+            }
+        }
+    }
+    return 0;
+}
+
+\end{verbatim}
+\subsubsection{4. 调试分析}
+\paragraph{测试输入与完整运行输出}
+\begin{verbatim}
+统计字符的个数以及字符出现的次数
+建立并输出哈夫曼树
+设计并输出哈夫曼编码
+将文本转换成 01 编码
+将 01 编码翻译成文本
+退出
+请选择 0-5：1
+请输入字符串：abacabda
+字符频率统计：
+a : 4
+b : 2
+c : 1
+d : 1
+统计字符的个数以及字符出现的次数
+建立并输出哈夫曼树
+设计并输出哈夫曼编码
+将文本转换成 01 编码
+将 01 编码翻译成文本
+退出
+请选择 0-5：2
+哈夫曼树：
+编号 字符 权值 双亲 左孩子 右孩子
+1 a 4 7 0 0
+2 b 2 6 0 0
+3 c 1 5 0 0
+4 d 1 5 0 0
+5 - 2 6 3 4
+6 - 4 7 2 5
+7 - 8 0 1 6
+统计字符的个数以及字符出现的次数
+建立并输出哈夫曼树
+设计并输出哈夫曼编码
+将文本转换成 01 编码
+将 01 编码翻译成文本
+退出
+请选择 0-5：3
+哈夫曼编码：
+a : 0
+b : 10
+c : 110
+d : 111
+统计字符的个数以及字符出现的次数
+建立并输出哈夫曼树
+设计并输出哈夫曼编码
+将文本转换成 01 编码
+将 01 编码翻译成文本
+退出
+请选择 0-5：4
+编码结果：
+01001100101110
+统计字符的个数以及字符出现的次数
+建立并输出哈夫曼树
+设计并输出哈夫曼编码
+将文本转换成 01 编码
+将 01 编码翻译成文本
+退出
+请选择 0-5：5
+译码结果：
+abacabda
+统计字符的个数以及字符出现的次数
+建立并输出哈夫曼树
+设计并输出哈夫曼编码
+将文本转换成 01 编码
+将 01 编码翻译成文本
+退出
+请选择 0-5：0
+程序退出！
+\end{verbatim}
+\paragraph{调试过程遇到的问题与解决}
+\begin{enumerate}
+\item 未统计字符直接执行编码 / 译码功能：增加全局标记变量 hasData 拦截非法操作，提示先执行字符统计功能；
+\item Select 函数选出的两个最小结点顺序颠倒：比较权值后交换 s1、s2，保证左子树权值更小；
+\item 生成哈夫曼编码字符顺序颠倒：从叶子向上遍历至根结点，倒序存入临时数组，截取有效起始位置复制得到正确编码；
+\item 译码识别单个字符后无法连续解析下一个字符：每次遍历到叶子结点输出字符后，将遍历指针重置回根结点；
+\item 多次重复执行建树功能数据覆盖：重复调用 CreateHuffmanTree 会完整重置树数组，无逻辑错误，不影响运行结果；
+\item 仅支持无空格文本输入
+\end{enumerate}
+\subsubsection{5. 小结}
+本实验实现了哈夫曼编码完整流程，掌握贪心算法构造最优二叉树、前缀编码生成及译码方法，理解了数据压缩基本原理，提升了树结构应用能力。
+
+
+\subsection {3.并查集}
+\subsubsection {任务}
+用树形结构来表示集合，树的每个结点代表一个集合元素。实现查找（判定）元素所 属集合的运算、实现集合的并运算。 功能要求： （1）建立并输出集合的存储结构； （2）设计并实现查找（判定）元素所属集合的运算； （3）设计并实现集合的并运算。
+界面要求：程序运行后，给出菜单项的内容和输入提示： 1. 2. 3. 0. 建立集合 查找（判定）元素所属集合 集合的并运算 退出 请选择0-3：
+
+\subsubsection{1. 需求分析}
+\paragraph{分析总结逻辑结构}
+采用树形逻辑结构存储集合，每个节点代表集合元素，根节点为集合代表元。
+\paragraph{分析总结运算集合}
+实现集合初始化构建、元素根节点查找、两个集合合并三大基础运算，搭配菜单交互使用。
+\subsubsection{2. 概要设计}
+\paragraph{存储结构设计}
+采用一维数组存储父节点，下标为元素，数组值为父节点，实现树形静态存储。
+find 函数带路径压缩优化查找，unite 函数按根合并集合，模块化设计各功能子程序。
+\paragraph{算法设计思路}
+\subsubsection{3. 详细设计}
+\paragraph{源代码（带注释）}
+\begin{figure}[H]
+    \centering
+
+    % ===== 上面两个小图 =====
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{FindSet-2026-06-24-032329.png}
+        \caption{并查集1}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{FindSet-2026-06-24-032414.png}
+        \caption{并查集2}
+    \end{subfigure}
+
+    \vspace{0.5cm}
+
+    % ===== 下面大图 =====
+    \begin{subfigure}{0.9\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{FindSet-2026-06-24-032414.png}
+        \caption{合并后的并查集}
+    \end{subfigure}
+
+    \caption{并查集示意图}
+\end{figure}
+代码：
+\begin{verbatim}
+#include <stdio.h>
+#define N 10010
+int father[N];
+// 初始化集合
+void init(int n)
+{
+    for (int i = 1; i <= n; i++)
+        father[i] = i;
+}
+
+// 查找（路径压缩）
+int find(int x)
+{
+    if (father[x] == x)
+        return x;
+    return father[x] = find(father[x]);
+}
+
+// 合并集合
+void unite(int x, int y)
+{
+    int fx = find(x);
+    int fy = find(y);
+
+    if (fx != fy)
+        father[fx] = fy;
+}
+
+// 输出当前集合结构（按根分类简单展示）
+void printSets(int n)
+{
+    printf("\n当前集合结构：\n");
+
+    for (int i = 1; i <= n; i++)
+        printf("%d -> %d\n", i, find(i));
+}
+
+// 查询元素所属集合
+void query(int x)
+{
+    printf("元素 %d 所属集合代表元：%d\n", x, find(x));
+}
+
+int main()
+{
+    int n = 0;
+    int choice;
+
+    while (1)
+    {
+        printf("\n====== 并查集菜单 ======\n");
+        printf("1. 建立集合\n");
+        printf("2. 查找（判定）元素所属集合\n");
+        printf("3. 集合的并运算\n");
+        printf("4. 输出集合结构\n");
+        printf("0. 退出\n");
+        printf("请选择 0-4：");
+        scanf("%d", &choice);
+
+        if (choice == 0)
+            break;
+
+        if (choice == 1)
+        {
+            printf("输入元素个数 n：");
+            scanf("%d", &n);
+            init(n);
+            printf("集合建立完成！\n");
+        }
+        else if (choice == 2)
+        {
+            int x;
+            printf("输入元素 x：");
+            scanf("%d", &x);
+            query(x);
+        }
+        else if (choice == 3)
+        {
+            int x, y;
+            printf("输入要合并的两个元素 x y：");
+            scanf("%d %d", &x, &y);
+            unite(x, y);
+            printf("合并完成！\n");
+        }
+        else if (choice == 4)
+        {
+            printSets(n);
+        }
+        else
+        {
+            printf("无效选择！\n");
+        }
+    }
+
+    return 0;
+}
+\end{verbatim}
+\subsubsection{4. 调试分析}
+\paragraph{测试输入与完整运行输出}
+
+\begin{verbatim}
+====== 并查集菜单 ======
+1. 建立集合
+2. 查找（判定）元素所属集合
+3. 集合的并运算
+4. 输出集合结构
+0. 退出
+输入元素个数 n: 5
+集合建立完成！
+
+====== 并查集菜单 ======
+1. 建立集合
+2. 查找（判定）元素所属集合
+3. 集合的并运算
+4. 输出集合结构
+0. 退出
+请选择 0-4: 3
+输入要合并的两个元素 x y: 1 2
+合并完成！
+
+====== 并查集菜单 ======
+1. 建立集合
+2. 查找（判定）元素所属集合
+3. 集合的并运算
+4. 输出集合结构
+0. 退出
+请选择 0-4: 3
+输入要合并的两个元素 x y: 2 3
+合并完成！
+\end{verbatim}
+
+\subsubsection{5. 小结}
+本实验实现并查集的查找、合并与路径压缩操作，可高效处理元素连通性判定，理解集合分治思想，优化查询效率。
+
+\section{模块三}
+
+
+\subsection {1.最小代价生成树}
+\subsubsection {任务}
+建立图并求图的最小代价生成树。 功能要求： （1）建立图的存储结构（邻接矩阵或邻接表），能够输入图的顶点、边，以及边上的权 值的信息，存储到相应存储结构中，并输出图的相关信息。 （2）利用Prim算法或Kruskal算法求图的最小代价生成树。
+\subsubsection{1. 需求分析}
+\paragraph{分析总结逻辑结构}
+逻辑结构采用邻接矩阵存储无向带权图，顶点与边为二维线性结构。
+\paragraph{分析总结运算集合}
+运算包含图构建、矩阵输出、Prim 与 Kruskal 生成最小生成树，辅以边排序、并查集判连通。
+\subsubsection{2. 概要设计}
+\paragraph{存储结构设计}
+存储用邻接矩阵存图，Edge 结构体存边，数组实现并查集。
+\paragraph{算法设计思路}
+Prim 借助 lowcost 数组选最短邻边；Kruskal 快排边，配合并查集规避环路生成生成树。
+\subsubsection{3. 详细设计}
+\paragraph{源代码（带注释）}
+
+\begin{figure}[H]
+    \centering
+
+    % ===== 上面大图 =====
+    \begin{subfigure}{0.9\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{BinaryTree-2026-06-24-105026.png}
+        \caption{图}
+    \end{subfigure}
+
+    \vspace{0.5cm}
+
+    % ===== 下面两个小图 =====
+    \begin{subfigure}{0.35\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{MinimumSpanningTree-2026-06-24-105302.png}
+        \caption{prime}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.35\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{MinimumSpanningTree-2026-06-24-105302.png}
+        \caption{kruskal}
+    \end{subfigure}
+
+    \caption{最小生成树}
+\end{figure}
+
+代码：
+\begin{verbatim}
+#include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
+#define MAXV 100
+#define INF 32767
+
+// 图结构
+
+//邻接矩阵(prim算法)
+typedef struct
+{
+    int vexnum;
+    int arcnum;
+    int arcs[MAXV][MAXV];
+} MGraph;
+
+// 边结构(Kruskal算法)
+
+typedef struct
+{
+    int begin;
+    int end;
+    int weight;
+} Edge;
+
+// 并查集
+
+int parent[MAXV];
+
+int Find(int x)
+{
+    if(parent[x] == x)
+        return parent[x];
+    else
+        return parent[x] = Find(x);
+}
+
+void Union(int x, int y)
+{
+    int fx = Find(x);
+    int fy = Find(y);
+
+    if (fx != fy)
+        parent[fx] = fy;
+}
+
+// 建图
+
+void CreateGraph(MGraph *G)
+{
+    int i, j;
+    int u, v, w;
+
+    printf("输入顶点数和边数：");
+    scanf("%d%d", &G->vexnum, &G->arcnum);
+
+    for (i = 0; i < G->vexnum; i++)
+    {
+        for (j = 0; j < G->vexnum; j++)
+        {
+            if (i == j)
+                G->arcs[i][j] = 0;
+            else
+                G->arcs[i][j] = INF;
+        }
+    }
+
+    printf("输入边(起点 终点 权值)：\n");
+
+    for (i = 0; i < G->arcnum; i++)
+    {
+        scanf("%d%d%d", &u, &v, &w);
+
+        G->arcs[u][v] = w;
+        G->arcs[v][u] = w;
+    }
+}
+
+// 输出邻接矩阵
+
+void PrintGraph(MGraph G)
+{
+    int i, j;
+
+    printf("\n邻接矩阵：\n");
+
+    for (i = 0; i < G.vexnum; i++)
+    {
+        for (j = 0; j < G.vexnum; j++)
+        {
+            //其中的N表示的是无穷大
+            if (G.arcs[i][j] == INF)
+                printf("N ");
+            else
+                printf("%d ", G.arcs[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+// Prim算法
+
+void Prim(MGraph G, int start)
+{
+    int lowcost[MAXV];
+    int closest[MAXV];
+
+    int i, j;
+    int min;
+    int k;
+
+    int sum = 0;
+
+    for (i = 0; i < G.vexnum; i++)
+    {
+        lowcost[i] = G.arcs[start][i];
+        closest[i] = start;
+    }
+
+    lowcost[start] = 0;
+
+    printf("\nPrim最小生成树：\n");
+
+    for (i = 1; i < G.vexnum; i++)
+    {
+        min = INF;
+        k = -1;
+
+        for (j = 0; j < G.vexnum; j++)
+        {
+            if (lowcost[j] != 0 && lowcost[j] < min)
+            {
+                min = lowcost[j];
+                k = j;
+            }
+        }
+
+        printf("%d -- %d  权值=%d\n", closest[k], k, min);
+
+        sum += min;
+
+        lowcost[k] = 0;
+
+        for (j = 0; j < G.vexnum; j++)
+        {
+            if (lowcost[j] != 0 && G.arcs[k][j] < lowcost[j])
+            {
+                lowcost[j] = G.arcs[k][j];
+                closest[j] = k;
+            }
+        }
+    }
+
+    printf("最小生成树总权值=%d\n", sum);
+}
+
+// 边排序
+
+int get_random_index(int left, int right)
+{
+    return rand() % (right - left + 1) + left;
+}
+
+void swap(Edge *a, Edge *b)
+{
+    Edge temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+void SortEdges(Edge edges[], int left, int right)
+{
+    if (left >= right)
+        return;
+
+    int index = get_random_index(left, right);
+
+    int key = edges[index].weight;
+
+    int l = left - 1;
+    int i = left;
+    int r = right + 1;
+
+    while (i < r)
+    {
+        if (edges[i].weight < key)
+        {
+            swap(&edges[++l], &edges[i++]);
+        }
+        else if (edges[i].weight == key)
+        {
+            i++;
+        }
+        else
+        {
+            swap(&edges[--r], &edges[i]);
+        }
+    }
+
+    SortEdges(edges, left, l);
+    SortEdges(edges, r, right);
+}
+
+// Kruskal算法
+
+void Kruskal(MGraph G)
+{
+    Edge edges[MAXV * MAXV];
+
+    int edgeCount = 0;
+
+    int i, j;
+
+    // 提取边
+    for (i = 0; i < G.vexnum; i++)
+    {
+        for (j = i + 1; j < G.vexnum; j++)
+        {
+            if (G.arcs[i][j] != INF && G.arcs[i][j] != 0)
+            {
+                edges[edgeCount].begin = i;
+                edges[edgeCount].end = j;
+                edges[edgeCount].weight = G.arcs[i][j];
+
+                edgeCount++;
+            }
+        }
+    }
+
+    SortEdges(edges, 0, edgeCount - 1);
+
+    for (i = 0; i < G.vexnum; i++)
+        parent[i] = i;
+
+    int sum = 0;
+    int cnt = 0;
+
+    printf("\nKruskal最小生成树：\n");
+
+    for (i = 0; i < edgeCount; i++)
+    {
+        int u = edges[i].begin;
+        int v = edges[i].end;
+        int w = edges[i].weight;
+
+        if (Find(u) != Find(v))
+        {
+            Union(u, v);
+
+            printf("%d -- %d  权值=%d\n",u, v, w);
+
+            sum += w;
+            cnt++;
+
+            if (cnt == G.vexnum - 1)
+                break;
+        }
+    }
+
+    printf("最小生成树总权值=%d\n", sum);
+}
+
+int main()
+{
+    srand(time(NULL));
+    MGraph G;
+
+    CreateGraph(&G);
+
+    PrintGraph(G);
+
+    Prim(G, 0);
+
+    Kruskal(G);
+
+    return 0;
+}
+
+\end{verbatim}
+\subsubsection{4. 调试分析}
+\paragraph{测试输入与完整运行输出}
+\begin{verbatim}
+输入顶点数和边数：6 10
+输入边(起点 终点 权值)：
+0 1 6
+0 3 5
+0 2 1
+1 2 5
+1 4 3
+2 3 5
+2 4 6
+2 5 4
+3 5 2
+4 5 6
+
+邻接矩阵：
+0 6 1 5 N N 
+6 0 5 N 3 N 
+1 5 0 5 6 4 
+5 N 5 0 N 2 
+N 3 6 N 0 6 
+N N 4 2 6 0 
+
+Prim最小生成树：
+0 -- 2  权值=1
+2 -- 5  权值=4
+5 -- 3  权值=2
+2 -- 1  权值=5
+1 -- 4  权值=3
+最小生成树总权值=15
+
+Kruskal最小生成树：
+0 -- 2  权值=1
+3 -- 5  权值=2
+1 -- 4  权值=3
+2 -- 5  权值=4
+\end{verbatim}
+
+
+\subsubsection{5. 小结}
+本实验实现两种最小生成树算法，掌握邻接矩阵建图，理解 Prim 贪心找点、Kruskal 贪心选边思路，熟练运用并查集解决环路判断问题。
+
+\subsection {2.拓扑排序及关键路径}
+\subsubsection {任务}
+建立图并实现图的拓扑排序和关键路径。 功能要求： （1）建立图的存储结构（邻接矩阵或邻接表），能够输入图的顶点和边以及边上的权值 等信息，存储到相应存储结构中，并输出图的结构。 （2）对图进行拓扑排序并输出结果。 （3）在（2）的基础上求出图的关键路径并输出关键路径以及源点到汇点的最长路径长度。
+\subsubsection{1. 需求分析}
+\paragraph{分析总结逻辑结构}
+本实验采用邻接表存储带权有向图，实现图结构建立与输出。
+\paragraph{分析总结运算集合}
+\subsubsection{2. 概要设计}
+主要运算包括拓扑排序判环、顶点发生时间计算、筛选关键活动并求解工程关键路径与总工期。
+\paragraph{存储结构设计}
+采用邻接表存储有向图，记录顶点入度。利用栈实现拓扑排序，正向遍历求顶点最早时间，反向遍历求最迟时间，通过时间差值筛选关键路径。
+\paragraph{算法设计思路}
+\subsubsection{3. 详细设计}
+\paragraph{源代码（带注释）}
+代码：
+\begin{verbatim}
+#include<stdio.h>
+#include<stdlib.h>
+#define MAXV 100
+
+// 边结点结构体
+typedef struct EdgeNode
+{
+    int adjvex;       // 邻接顶点下标
+    int weight;       // 边的权值
+    struct EdgeNode *nextedge;
+} EdgeNode;
+
+// 顶点结构体
+typedef struct VertexNode
+{
+    int data;
+    EdgeNode *firstedge;
+} VertexNode, AdjList[MAXV];
+
+// 邻接表存储的图
+typedef struct
+{
+    AdjList vertex;
+    int n, e; // n:顶点总数  e:边总数
+} GraphAdjList;
+
+int inDegree[MAXV];    // 记录每个顶点入度
+int topoSeq[MAXV];     // 存储拓扑排序序列
+int ve[MAXV], vl[MAXV];// ve顶点最早发生时间 vl顶点最迟发生时间
+
+// 创建带权有向图邻接表
+void CreateGraph(GraphAdjList *G)
+{
+    int i, u, v, w;
+    EdgeNode *p;
+    printf("请输入顶点数、边数：");
+    scanf("%d%d", &G->n, &G->e);
+
+    // 初始化顶点数组与入度
+    for (i = 0; i < G->n; i++)
+    {
+        G->vertex[i].data = i;
+        G->vertex[i].firstedge = NULL;
+        inDegree[i] = 0;
+    }
+
+    // 逐条输入有向边 u -> v，权值w
+    for (i = 0; i < G->e; i++)
+    {
+        printf("输入第%d条边 起点u 终点v 权值w：", i + 1);
+        scanf("%d%d%d", &u, &v, &w);
+        p = (EdgeNode *)malloc(sizeof(EdgeNode));
+        p->adjvex = v;
+        p->weight = w;
+        p->nextedge = G->vertex[u].firstedge;
+        G->vertex[u].firstedge = p;
+        inDegree[v]++;
+    }
+}
+
+// 打印邻接表结构
+void PrintGraph(GraphAdjList *G)
+{
+    int i;
+    EdgeNode *p;
+    printf("\n图邻接表\n");
+    for (i = 0; i < G->n; i++)
+    {
+        printf("顶点%d：", G->vertex[i].data);
+        p = G->vertex[i].firstedge;
+        while (p != NULL)
+        {
+            printf("(邻接: %d, 权: %d) ", p->adjvex, p->weight);
+            p = p->nextedge;
+        }
+        printf("\n");
+    }
+}
+
+// 拓扑排序，返回有效顶点个数（有环则小于总顶点数）
+int TopologicalSort(GraphAdjList *G)
+{
+    int stack[MAXV], top = -1;
+    int i, cnt = 0, cur;
+    EdgeNode *p;
+
+    // 入度为0的顶点入栈
+    for (i = 0; i < G->n; i++)
+        if (inDegree[i] == 0)
+            stack[++top] = i;
+
+    while (top != -1)
+    {
+        cur = stack[top--];
+        topoSeq[cnt++] = cur;
+        p = G->vertex[cur].firstedge;
+        while (p != NULL)
+        {
+            int v = p->adjvex;
+            inDegree[v]--;
+            if (inDegree[v] == 0)
+                stack[++top] = v;
+            p = p->nextedge;
+        }
+    }
+    return cnt;
+}
+
+// 计算各顶点最早发生时间 ve
+void CalcVE(GraphAdjList *G, int cntTopo)
+{
+    int i, u, v;
+    EdgeNode *p;
+    for (i = 0; i < G->n; i++)
+        ve[i] = 0;
+    // 按拓扑正序遍历
+    for (i = 0; i < cntTopo; i++)
+    {
+        u = topoSeq[i];
+        p = G->vertex[u].firstedge;
+        while (p != NULL)
+        {
+            v = p->adjvex;
+            if (ve[v] < ve[u] + p->weight)
+                ve[v] = ve[u] + p->weight;
+            p = p->nextedge;
+        }
+    }
+}
+
+// 计算各顶点最迟发生时间 vl
+void CalcVL(GraphAdjList *G, int cntTopo)
+{
+    int i, u, v;
+    EdgeNode *p;
+
+    //int T = ve[topoSeq[cntTopo - 1]];
+    int T = 0;
+    for (int i = 0; i < G->n; i++)
+    {
+        if (ve[i] > T)
+            T = ve[i];
+    }
+    for (i = 0; i < G->n; i++)
+        vl[i] = T;
+
+    for (i = cntTopo - 1; i >= 0; i--)
+    {
+        u = topoSeq[i];
+        p = G->vertex[u].firstedge;
+
+        while (p != NULL)
+        {
+            v = p->adjvex;
+            if (vl[u] > vl[v] - p->weight)
+                vl[u] = vl[v] - p->weight;
+
+            p = p->nextedge;
+        }
+    }
+}
+
+//输出关键活动、关键路径、总工期
+
+int path[MAXV];
+int pathLen = 0;
+
+
+void PrintKeyPath(GraphAdjList *G)
+{
+    printf("\n关键活动（关键边）：\n");
+
+    for (int u = 0; u < G->n; u++)
+    {
+        EdgeNode *p = G->vertex[u].firstedge;
+
+        while (p != NULL)
+        {
+            int v = p->adjvex;
+
+            // 关键边条件（核心）
+            if (ve[u] + p->weight == ve[v])
+            {
+                printf("%d -> %d\n", u, v);
+            }
+
+            p = p->nextedge;
+        }
+    }
+
+    printf("工程总工期：%d\n", ve[topoSeq[G->n - 1]]);
+}
+
+int main()
+{
+    GraphAdjList G;
+    int topoCount, i;
+    CreateGraph(&G);
+    PrintGraph(&G);
+
+    // 执行拓扑排序
+    topoCount = TopologicalSort(&G);
+    if (topoCount < G.n)
+    {
+        printf("\n图存在环路，无法求解拓扑排序与关键路径！\n");
+        return 0;
+    }
+
+    // 输出拓扑序列
+    printf("\n拓扑排序序列\n");
+    for (i = 0; i < topoCount; i++)
+        printf("%d ", topoSeq[i]);
+    printf("\n");
+
+    // 计算ve、vl并输出关键路径
+    CalcVE(&G, topoCount);
+    CalcVL(&G, topoCount);
+    PrintKeyPath(&G);
+
+    return 0;
+}
+\end{verbatim}
+\subsubsection{4. 调试分析}
+\paragraph{测试输入与完整运行输出}
+\begin{verbatim}
+请输入顶点数、边数：6 8
+输入第1条边 起点u 终点v 权值w：0 1 3
+输入第2条边 起点u 终点v 权值w：0 2 2
+输入第3条边 起点u 终点v 权值w：1 3 2
+输入第4条边 起点u 终点v 权值w：1 4 3
+输入第5条边 起点u 终点v 权值w：2 3 4
+输入第6条边 起点u 终点v 权值w：2 5 3
+输入第7条边 起点u 终点v 权值w：3 5 2
+输入第8条边 起点u 终点v 权值w：4 5 1
+
+图邻接表
+顶点0：(邻接: 2, 权: 2) (邻接: 1, 权: 3) 
+顶点1：(邻接: 4, 权: 3) (邻接: 3, 权: 2) 
+顶点2：(邻接: 5, 权: 3) (邻接: 3, 权: 4) 
+顶点3：(邻接: 5, 权: 2) 
+顶点4：(邻接: 5, 权: 1) 
+顶点5：
+
+拓扑排序序列
+0 1 4 2 3 5 
+
+关键活动（关键边）：
+0 -> 2
+0 -> 1
+1 -> 4
+2 -> 3
+3 -> 5
+工程总工期：8
+
+\end{verbatim}
+
+\subsubsection{5. 小结}
+本实验实现有向图拓扑排序与关键路径算法，能够判断有向图是否存在环，熟练掌握 ve、vl 求解方法，理解 AOE 网关键活动决定工程最短工期的原理。
 
 \end{document}
