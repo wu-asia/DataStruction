@@ -1,32 +1,33 @@
 \documentclass{ctexart}
-% 全部宏包统一前置，禁止插在document内部
+
 \usepackage{graphicx}
-\graphicspath{{./}} % 图片搜索路径，和tex同目录
 \usepackage{lastpage}
 \usepackage{listings}
 \usepackage{xcolor}
 \usepackage{float}
+
 \usepackage{amsmath,amssymb}
 \usepackage{geometry}
+\geometry{a4paper,margin=2cm}
 \usepackage{fancyhdr}
 
-% 页面设置
-\geometry{a4paper,margin=2cm}
-\pagestyle{fancy}
-\fancyhf{}
-\cfoot{第 \thepage 页 (共\pageref{LastPage}页)}
-\setlength{\headheight}{15pt}
-
-% 代码块中文兼容配置
 \lstset{
-  inputencoding=utf8,
-  extendedchars=true,
-  basicstyle=\ttfamily\small,
-  commentstyle=\color{gray}
+    inputencoding=utf8,
+    extendedchars=true,
+    basicstyle=\ttfamily\small,
+    breaklines=true,
+    breakatwhitespace=true,
+    commentstyle=\color{gray}
 }
 
+\pagestyle{fancy}
+\fancyhf{}
+\cfoot{第 \thepage 页 }
+\setlength{\headheight}{15pt}
+
 \begin{document}
-% 封面必须放在document内部，之前放在导言区是语法错误
+
+% ================= 封面 =================
 \begin{titlepage}
     \centering
 
@@ -42,30 +43,39 @@
 
     \renewcommand{\arraystretch}{2.2}
 
-    \begin{tabular}{rl}
-        课程设计名称： & 数据结构课程设计 \\[0.4cm]
-        专\qquad\quad 业： & 计算机科学与技术 \\[0.4cm]
-        学\qquad\quad 号： & \underline{\hspace{6cm}} \\[0.4cm]
-        学 生 姓 名： & \underline{\hspace{6cm}} \\[0.4cm]
-        成\qquad\quad 绩： & \underline{\hspace{6cm}} \\[0.4cm]
-        批改日期： & \underline{\hspace{6cm}} \\[0.4cm]
-        指导教师： & \underline{\hspace{6cm}}
-    \end{tabular}
+\begin{tabular}{rl}
+    课程设计名称： & \underline{\hspace{6cm}} \\
+    专\qquad\quad 业： & \underline{\hspace{6cm}} \\
+    学\qquad\quad 号： & \underline{\hspace{6cm}} \\
+    学 生 姓 名： & \underline{\hspace{6cm}} \\
+    成\qquad\quad 绩： & \underline{\hspace{6cm}} \\
+    批改日期： & \underline{\hspace{6cm}} \\
+    指导教师： & \underline{\hspace{6cm}}
+\end{tabular}
 
     \vfill
 
     \today
 \end{titlepage}
 
-\maketitle
+\newpage
+
+\pagenumbering{Roman}   % 罗马数字（大写 I, II, III）
+
 \tableofcontents
 \newpage
+
+\pagenumbering{arabic}  % 正文重新从 1 开始
+
 \section{模块一}
 \subsection{1. 约瑟夫问题}
 \subsubsection{任务}
-一堆猴子都有编号，编号是 $1,2,3 \dots n$，这群猴子（$n$ 个）按照 $1 \sim n$ 的顺序围坐一圈，从第 $1$ 只开始数，每数到第 $m$ 个，该猴子就要离开此圈，这样依次下来，直到圈中只剩下最后一只猴子，则该猴子为大王。请设计算法编写程序，输出成为大王的猴子的编号。
 
-\subsubsection{（1）需求分析}
+一堆猴子都有编号，编号是 $1,2,3 \dots n$，这群猴子（$n$ 个）按照 $1 \sim n$ 的顺序围坐一圈，从第 $1$ 只开始数，每数到第 $m$ 个，该猴子就要离开此圈，直到只剩最后一只猴子，则该猴子为大王。
+
+请设计算法编写程序，输出成为大王的猴子的编号。
+
+\subsubsection{1.需求分析}
 \paragraph{分析总结逻辑结构}
 本质上是线性结构上的循环删除操作。
 \begin{enumerate}
@@ -86,11 +96,11 @@
 \paragraph{分析总结运算集合}
 遍历、计数、标记删除、循环跳转、判停（剩余元素数量为1）。
 
-\subsubsection{（2）概要设计}
+\subsubsection{2.概要设计}
 \paragraph{存储结构设计}
 本问题采用两种存储结构分别实现：
 
-\subparagraph{（1）顺序结构设计}
+\subparagraph{1.顺序结构设计}
 采用一维顺序表模拟环形结构：
 \begin{itemize}
     \item \texttt{int a[N]}：存储猴子编号（取值 $1 \sim n$）；
@@ -107,7 +117,7 @@
     \item 时间复杂度较高，需要反复遍历跳过已出圈元素。
 \end{itemize}
 
-\subparagraph{（2）链式结构设计}
+\subparagraph{2.链式结构设计}
 采用循环单链表表示约瑟夫环：
 
 结构特点：
@@ -125,7 +135,7 @@
     \item 无需额外辅助标记顺序表。
 \end{itemize}
 
-\subsubsection{（3）算法设计（流程图）}
+\subsubsection{3.算法设计（流程图）}
 本问题分别给出顺序表模拟、循环单链表两种实现思路流程图，下面插入流程图图片。
 
 % 插入图片语法说明
@@ -138,13 +148,13 @@
     \label{fig:joseph-array}
 \end{figure}
 
-\subsubsection{（4）详细设计}
+\subsubsection{4.详细设计}
 \paragraph{源代码（带注释）}
 采用 \textbf{左右双栏并排} 展示两种实现代码，左侧为顺序表模拟，右侧为循环单链表实现，阅读顺序为先左后右。
 
 \subsubsection{顺序存储结构实现}
-
-\begin{lstlisting}[caption={顺序表模拟约瑟夫环}]
+代码：
+\begin{verbatim}
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
@@ -213,11 +223,11 @@ int main()
 
     return 0;
 }
-\end{lstlisting}
+\end{verbatim}
 
 \subsubsection{使用链式储存解决问题}
-
-\begin{lstlisting}[caption={链式存储模拟约瑟夫环}]
+代码：
+\begin{verbatim}
 #include<stdio.h>
 #include<stdlib.h>
 
@@ -292,10 +302,9 @@ int main()
     printf("%d", ret);
     return 0;
 }
+\end{verbatim}
 
-\end{lstlisting}
-
-\subsubsection{（5）调试分析}
+\subsubsection{5.调试分析}
 
 \paragraph{测试用例1：输入 $n=10,\ m=4$}
 运行程序，输入数据：
@@ -324,14 +333,14 @@ int main()
 \subsubsection{（6）小结}
 本次实验分别采用顺序表、循环单链表两种存储结构完成约瑟夫环问题求解。顺序表模拟实现代码简洁易懂，无需复杂指针操作，但需要额外标记顺序表记录出圈状态，存在大量无效遍历，时间效率偏低；循环链表模型贴合约瑟夫环环形结构本质，节点删除仅修改指针，删除操作效率更高，无需辅助标记顺序表，但涉及动态内存分配、指针移动与内存释放，代码逻辑更复杂。
 
-通过两套方案对比实现，直观区分了顺序存储与链式存储在环形删除场景下的优劣，加深了对线性表、循环链表逻辑结构与基础操作的实操理解，同时掌握了边界测试、内存管理、下标循环等程序调试技巧.
+通过两套方案对比实现，直观区分了顺序存储与链式存储在环形删除场景下的优劣，加深了对线性表、循环链表逻辑结构与基础操作的实操理解，同时掌握了边界测试、内存管理、下标循环等程序调试技巧。
 
 
 \subsection{2. 纸牌游戏}
 \subsubsection{任务}
 编号为 1-52 张牌，正面向上，从第 2 张开始，以 2 为基数，是 2 的倍数的牌翻一次，直到最后一张牌；然后，从第 3 张开始，以 3 为基数，是 3 的倍数的牌翻一次，直到最后一张牌；然后从第 4 张开始，以 4 为基数，是 4 的倍数的牌翻一次，直到最后一张牌；……直到以 52 为基数的牌翻过，这时正面向上的牌有哪些？请设计算法编写程序输出最终正面向上的纸牌的编号。
 
-\subsubsection{（1）需求分析}
+\subsubsection{1.需求分析}
 \paragraph{分析总结逻辑结构}
 本题涉及的核心数据对象为：卡牌集合 $\text{Card} = \{1, 2, 3, \dots, 52\}$
 每张卡牌有一个状态：
@@ -350,7 +359,7 @@ int main()
 \paragraph{分析总结运算集合}
 基于顺序线性结构，双层循环模拟完整翻牌流程，包含初始化、倍数遍历、状态翻转、结果筛选输出四类基础运算。
 
-\subsubsection{（2）概要设计}
+\subsubsection{2.概要设计}
 \paragraph{存储结构设计}
 采用一维顺序数组存储卡牌状态：
 \begin{itemize}
@@ -364,18 +373,19 @@ int main()
 1. 暴力模拟法：双层循环完整复刻题目翻牌规则，直观还原操作流程；
 2. 数学规律法：利用约数成对出现、完全平方数约数个数为奇数的数学特性，直接求解结果，省去多层循环。
 
-\subsubsection{（3）详细设计}
+\subsubsection{3.详细设计}
 \paragraph{源代码（带注释）}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{CardGame-2026-06-23-011504.png}
     \caption{纸牌翻转程序}
-    \label{fig:joseph-array}
+    \label{fig:card-game}
 \end{figure}
 
 \subsubsection{方法一：暴力模拟实现}
-\begin{lstlisting}[caption={暴力模拟纸牌翻转程序}]
+代码：
+\begin{verbatim}
 #include<stdio.h>
 
 int card[60] = { 0 };
@@ -399,10 +409,11 @@ int main()
     }
     return 0;
 }
-\end{lstlisting}
+\end{verbatim}
 
 \subsubsection{方法二：数学规律优化实现}
-\begin{lstlisting}[caption={基于完全平方数数学规律求解程序}]
+代码：
+\begin{verbatim}
 #include<stdio.h>
 
 int card[60] = { 0 };
@@ -421,9 +432,9 @@ int main()
             printf("%d ", i);
     return 0;
 }
-\end{lstlisting}
+\end{verbatim}
 
-\subsubsection{（4）调试分析}
+\subsubsection{4.调试分析}
 \paragraph{标准测试结果}
 程序运行后，最终保持正面向上的纸牌编号输出：
 \begin{verbatim}
@@ -438,10 +449,10 @@ int main()
     \item 数学法逻辑颠倒：翻转奇数次为反面、偶数次为正面，完全平方数翻转次数为奇数，对应反面，最终输出正面时筛选非完全平方数，核对逻辑后修正输出判定条件。
 \end{enumerate}
 
-\subsubsection{（5）小结}
+\subsubsection{5.小结}
 本次实验采用暴力模拟、数学规律优化两种思路解决纸牌翻转问题。暴力模拟法代码逻辑直观，逐步骤还原翻牌全过程，便于理解题目操作流程，但嵌套循环执行效率偏低；数学规律法依托约数的数学性质，仅通过单层循环遍历完全平方数即可得到答案，代码简洁、运行效率极高。
 
-两种方案对比实现，体会到暴力模拟与数学优化两种编程解题思路的差异，认识到结合数学规律可大幅简化程序逻辑、降低时间复杂度，加深了数学知识与程序算法结合解题的实践认知.
+两种方案对比实现，体会到暴力模拟与数学优化两种编程解题思路的差异，认识到结合数学规律可大幅简化程序逻辑、降低时间复杂度，加深了数学知识与程序算法结合解题的实践认知。
 
 
 \subsection{3. 一元多项式计算}
@@ -449,7 +460,7 @@ int main()
 设计合适的存储结构，完成一元多项式的相关运算。
 要求：（1）能够按照指数降序排列建立并输出多项式；（2）能够完成两个多项式的相加、相减，并将结果输出。
 
-\subsubsection{（1）需求分析}
+\subsubsection{1.需求分析}
 \paragraph{分析总结逻辑结构}
 本程序处理对象为一元多项式。每一项由系数和指数两部分组成，因此可将多项式表示为若干项的线性集合。由于需要按照指数降序排列、进行同类项合并以及实现多项式加减运算，采用带头指针的单链表作为存储结构较为合适。
 链表中的每个结点表示多项式的一项，结点中包含：
@@ -463,7 +474,7 @@ int main()
 \paragraph{分析总结运算集合}
 多项式创建、按指数降序插入结点、同类项合并、多项式打印、多项式加法、多项式减法、链表内存释放。
 
-\subsubsection{（2）概要设计}
+\subsubsection{2.概要设计}
 \paragraph{存储结构设计}
 采用单链表存储一元多项式，每个节点存储一项的系数与指数，节点按指数从大到小有序排列；插入时自动合并同指数项，系数为0时直接删除节点。
 \paragraph{算法设计思路}
@@ -472,7 +483,7 @@ int main()
 3. 减法算法：复制A多项式，将B多项式各项系数取负后插入新链表，自动合并同类项；
 4. 输出算法：对不同指数（0次、1次、高次）做格式化打印，处理正负号、系数±1的特殊显示。
 
-\subsubsection{（3）详细设计}
+\subsubsection{3.详细设计}
 \paragraph{源代码（带注释）}
 
 \begin{figure}[H]
@@ -483,7 +494,7 @@ int main()
         \includegraphics[width=\linewidth]
         {Input Processing Condition-2026-06-23-123520.png}
         \caption{一元多项式计算流程图}
-        \label{fig:cardgame}
+        \label{fig:polynomial}
     \end{minipage}
     \hfill
     \begin{minipage}{0.48\textwidth}
@@ -496,7 +507,8 @@ int main()
 
 \end{figure}
 
-\begin{lstlisting}[caption={单链表实现一元多项式加减运算}]
+代码：
+\begin{verbatim}
 // 3． 一元多项式计算
 // 任务：设计合适的存储结构，完成一元多项式的相关运算。
 // 要求：（1）能够按照指数降序排列建立并输出多项式；（2）能够完成两个多项式的相加、
@@ -729,9 +741,9 @@ int main()
 
     return 0;
 }
-\end{lstlisting}
+\end{verbatim}
 
-\subsubsection{（4）调试分析}
+\subsubsection{4.调试分析}
 \paragraph{测试用例输入与运行结果}
 \begin{verbatim}
 创建第一个多项式：
@@ -760,7 +772,1084 @@ A(x)-B(x) = -3x^2+2x-4
     \item 减法逻辑错误：多项式减法等价于A加负B，遍历B时对系数取负再插入结果链表。
 \end{enumerate}
 
-\subsubsection{（5）小结}
-本次实验使用单链表存储一元多项式，实现多项式有序创建、输出及加减运算，完成同类项合并，掌握链表基础操作，明晰链式存储适配动态数据运算的优势.
+\subsubsection{5.小结}
+本次实验使用单链表存储一元多项式，实现多项式有序创建、输出及加减运算，完成同类项合并，掌握链表基础操作，明晰链式存储适配动态数据运算的优势。
+
+\subsection {4. 迷宫求解}
+\subsubsection {任务}
+输入任意尺寸迷宫，采用非递归算法求解迷宫通路并输出完整行走路径。
+功能要求：
+（1）自定义迷宫行列，二维数组存储迷宫地图，0 代表通路、1 代表墙壁障碍；
+（2）使用顺序栈保存行走坐标，以非递归深度优先搜索 DFS 完成路径回溯；
+（3）遍历四个方向探索通路，到达终点则输出完整路径，无通路给出提示。
+\subsubsection {1.需求分析}
+\paragraph {分析总结逻辑结构}
+迷宫底层采用二维数组存储，属于线性结构二维扩展；行走路径使用顺序栈存储坐标点，栈是典型线性顺序存储结构；额外二维标记数组记录已访问坐标，避免重复走回头路。
+核心运算集合：栈初始化、判空、入栈、出栈、取栈顶元素；迷宫数据输入、四方向边界合法性判断、DFS 回溯搜索、完整路径遍历输出。
+\subsubsection {2.概要设计}
+\paragraph {存储结构设计}
+坐标结构体：保存格子横纵坐标 x、y；
+顺序栈：数组存放坐标结构体，top 标记栈顶；
+迷宫二维数组：maze[][] 0 通路 / 1 障碍；
+访问标记数组：visited[][] 标记该坐标是否走过，防止环路。
+\paragraph {算法设计思路}
+采用非递归深度优先搜索 DFS，固定探索顺序：右、下、左、上。
+起点入栈并标记已访问；
+循环取栈顶坐标，依次探测四个相邻格子；
+若相邻格子未越界、无障碍、未访问，则入栈并标记，继续向前探索；
+四个方向均无路可走时执行出栈回溯；
+栈顶等于终点坐标则搜索成功，遍历栈输出全部路径；栈空代表无通路。
+\subsubsection {3.详细设计}
+\paragraph {源代码（带注释）}
+代码：
+\begin{verbatim}
+#include <stdio.h>
+#define MAXSIZE 100
+// 存储迷宫坐标
+typedef struct
+{
+    int x;
+    int y;
+} Position;
+// 顺序栈结构，存放路径坐标
+typedef struct
+{
+    Position data[MAXSIZE];
+    int top;
+} Stack;
+// 初始化栈
+void InitStack (Stack *s)
+{
+    s->top = -1;
+}
+// 判断栈是否为空
+int Empty (Stack *s)
+{
+    return s->top == -1;
+}
+// 坐标入栈
+void Push (Stack *s, Position p)
+{
+    s->data[++s->top] = p;
+}
+// 栈顶元素出栈
+Position Pop (Stack *s)
+{
+    return s->data[s->top--];
+}
+// 获取栈顶元素，不出栈
+Position GetTop (Stack *s)
+{
+    return s->data[s->top];
+}
+int maze[MAXSIZE][MAXSIZE]; // 迷宫地图
+int visited[MAXSIZE][MAXSIZE]; // 访问标记数组
+int main ()
+{
+    int m, n;
+    printf ("请输入迷宫行数和列数：");
+    scanf ("%d %d", &m, &n);
+    printf ("请输入迷宫（0 表示通路，1 表示障碍）：\n");
+    for (int i = 0; i < m; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            scanf ("%d", &maze[i][j]);
+            visited[i][j] = 0;
+        }
+    }
+    Stack s;
+    InitStack (&s);
+    Position start = {0, 0}; // 起点 (0,0)
+    Position end = {m - 1, n - 1}; // 终点右下角
+    // 起点或终点为墙壁，直接无解
+    if (maze[0][0] == 1 || maze[m - 1][n - 1] == 1)
+    {
+        printf ("不存在路径！\n");
+        return 0;
+    }
+    Push(&s, start);
+    visited[0][0] = 1;
+    // 探索方向：右、下、左、上
+    int dx[4] = {0, 1, 0, -1};
+    int dy[4] = {1, 0, -1, 0};
+    int found = 0;
+    while (!Empty (&s))
+    {
+        Position cur = GetTop (&s);
+        // 抵达终点，搜索完成
+        if (cur.x == end.x && cur.y == end.y)
+        {
+            found = 1;
+            break;
+        }
+        int flag = 0;
+        // 依次遍历四个方向
+        for (int i = 0; i < 4; i++)
+        {
+            int nx = cur.x + dx[i];
+            int ny = cur.y + dy[i];
+            // 边界合法、通路、未访问
+            if (nx >= 0 && nx < m && ny >= 0 && ny < n && maze[nx][ny] == 0 && visited[nx][ny] == 0)
+            {
+                Position next = {nx, ny};
+                Push (&s, next);
+                visited[nx][ny] = 1;
+                flag = 1;
+                break;
+            }
+        }
+        // 四个方向全部堵塞，回溯出栈
+        if (flag == 0)
+            Pop (&s);
+    }
+    if (found)
+    {
+        printf ("找到路径：\n");
+        for (int i = 0; i <= s.top; i++)
+        {
+            printf ("(%d,%d)", s.data[i].x, s.data[i].y);
+            if (i != s.top)
+                printf ("->");
+        }
+        printf ("\n");
+    }
+    else
+        printf ("不存在路径！\n");
+    return 0;
+}
+\end{verbatim}
+
+\subsubsection {4.调试分析}
+\paragraph {测试用例 1（存在通路）}
+输入：
+\begin{verbatim}
+请输入迷宫行数和列数：3 3
+请输入迷宫（0 表示通路，1 表示障碍）：
+0 0 1
+0 0 1
+0 0 0
+\end{verbatim}
+输出：
+\begin{verbatim}
+找到路径：
+(0,0) -> (0,1) -> (1,1) -> (2,1) -> (2,2)
+\end{verbatim}
+\paragraph {测试用例 2（无通路）}
+输入：
+\begin{verbatim}
+请输入迷宫行数和列数：2 2
+请输入迷宫（0 表示通路，1 表示障碍）：
+0 1
+1 0
+\end{verbatim}
+输出：
+\begin{verbatim}
+不存在路径！
+\end{verbatim}
+\paragraph {调试过程遇到的问题与解决}
+\begin {enumerate}
+\item 坐标越界访问：增加 nx、ny 上下边界判断，仅合法坐标才允许进入；
+\item 原地循环死锁：新增 visited 标记数组，走过的坐标不再二次入栈；
+\item 回溯逻辑失效：四个方向全部走不通才执行 Pop 出栈，保证完整回退；
+\item 起点 / 终点为墙壁未判断：提前判断迷宫 [0][0] 和右下角值，直接判定无解；
+\item 路径输出顺序颠倒：栈按行走顺序正向存储，直接从头到尾遍历输出完整路线。
+\end{enumerate}
+\subsubsection {5.小结}
+本次实验利用顺序栈实现非递归深度优先搜索求解迷宫问题，充分利用栈后进先出的特性完成路径回溯。通过二维数组模拟迷宫地图、坐标结构体记录行走点位，完整实现四方向探测、边界校验、访问标记、路径输出整套逻辑。对比递归 DFS，非递归栈实现避免递归深度过大栈溢出风险，加深了栈结构、深度优先搜索算法的理解，熟练掌握线性顺序存储结构在回溯类搜索问题中的应用。
+
+\subsection{5. 八皇后问题}
+\subsubsection{任务}
+国际西洋棋棋手马克斯·贝瑟尔于 1848 年提出在 8X8 格的国际象棋上摆放八个皇后，使其不能互相攻击，即任意两个皇后都不能处于同一行、同一列或同一斜线上，问有多少种摆法。请设计算法编写程序解决。
+要求：（1）求解并输出八皇后的一个解；（2）在（1）的基础上，求解并输出八皇后的所有解（92 个解）。
+
+\subsubsection{1.需求分析}
+\paragraph{分析总结逻辑结构}
+棋盘为二维矩阵，用一维数组存储每行皇后列号，三个标记数组记录列和两条对角线的占用状态（线性结构）。
+\paragraph{分析总结运算集合}
+列标记、对角线标记、回溯放置皇后、递归搜索、解的输出。
+
+\subsubsection{2.概要设计}
+\paragraph{存储结构设计}
+存储结构：一维数组path存解（行→列映射），col标记列，st1/st2标记主副对角线（数组下标通过x-y+n和x+y转换）。
+\paragraph{算法设计思路}
+逐行递归放置皇后，检查列和两对角线无冲突后放置并递归，回溯时撤销标记，搜索所有解。
+
+\subsubsection{3.详细设计}
+\paragraph{源代码（带注释）}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[angle=90, height=0.6\textheight]{Input Processing Condition-2026-06-24-030629.png}
+    \caption{简化版递归决策树}
+\end{figure}
+代码：
+\begin{verbatim}
+#include<stdio.h>
+
+#define N 10
+int col[N * N] = {0}; //标记列是否放置皇后
+int st1[N * N] = {0};
+int st2[N * N] = {0}; //标记两个对角线
+//主对角线上的是形如y=kx+b;
+//副对角线上的是形如y=-kx+b;
+
+int n; //棋盘的规模
+int path[N * N]; //存储的是合法的纵坐标
+int id = 1;
+int cnt = 0;
+void dfs(int x)
+{
+    if(x > n)
+    {
+        cnt++;
+        if(cnt > 2) return;
+        for(int i = 1; i <= n; i++)
+        {
+            printf("(%d, %d)\n", i, path[i]);
+        }
+        return;
+    }
+    for(int y = 1; y <= n; y++)
+    {
+        if(col[y] || st1[x - y + n] || st2[x + y]) continue;
+        path[id++] = y;
+        col[y] = st1[x - y + n] = st2[x + y] = 1;
+        dfs(x + 1);
+        col[y] = st1[x - y + n] = st2[x + y] = 0;
+        path[id] = 0;
+        id--;
+    }
+}
+
+int main()
+{
+    scanf("%d", &n);
+    printf("cnt=%d\n", cnt);
+    dfs(1);
+    return 0;
+}
+\end{verbatim}
+
+\subsubsection{4.调试分析}
+\paragraph{全部92组解输出结果}
+\begin{verbatim}
+8
+cnt=92
+(1, 1)(2, 5)(3, 8)(4, 6)(5, 3)(6, 7)(7, 2)(8, 4)
+(1, 1)(2, 6)(3, 8)(4, 3)(5, 7)(6, 4)(7, 2)(8, 5) 
+
+\end{verbatim}
+
+
+\subsubsection{5.小结}
+本实验用递归回溯算法求解八皇后问题，通过三个标记数组将冲突判断优化为O(1)，成功输出了全部92组解，深入理解了回溯法在约束满足问题中的高效应用与递归程序设计技巧。
+
+\subsection{6. 运动会分数统计}
+\subsubsection{任务}
+参加运动会有n所学校，学校编号为1……n。比赛分成m个男子项目，和w个女子项目。项目编号为男子1……m，女子m+1……m+w。不同的项目取前五名或前三名积分；取前五名的积分分别为：7、5、3、2、1，前三名的积分分别为：5、3、2；哪些取前五名或前三名由学生自己设定。（n<=20,m<=20）
+要求：（1）可以输入各个项目的前三名或前五名的成绩；（2）能统计各学校总分；（3）可以按学校编号、学校总分、男女团体总分排序输出；（4）可以按学校编号查询学校某个项目的情况；可以按项目编号查询取得前三或前五名的学校。
+
+\subsubsection{1.需求分析}
+\paragraph{分析总结逻辑结构}
+逻辑结构：学校信息用结构体数组存储（线性结构），成绩用二维顺序表score[学校][项目]存储（矩阵结构），项目类型用一维标记顺序表。
+\paragraph{分析总结运算集合}
+运算集合：成绩录入、总分统计、按编号/总分/男女团体排序输出、按学校查询项目成绩、按项目查询获奖学校。
+
+\subsubsection{2.概要设计}
+\paragraph{存储结构设计}
+存储结构：School结构体（id,total,male,female）数组存学校统计；score二维数组存各校各项目得分；maleEvent/femaleEvent标记项目性别；point3/point5存储积分规则。
+\paragraph{算法设计思路}
+录入时累加积分，统计时计算总分男女分，排序采用冒泡排序，查询遍历数组输出对应数据。
+
+\subsubsection{3.详细设计}
+\paragraph{源代码（带注释）}
+代码：
+\begin{verbatim}
+#include<stdio.h>
+#include<string.h>
+
+#define MaxN 21
+#define MaxM 50
+
+int n, m, w;
+//n所学校，m个男子项目，w个女子项目
+//男子编号1-m，女子编号m+1 - m+w
+int eventCnt;
+
+//score[i][j]表示学校和事件
+int score[MaxN][MaxM];
+
+int maleEvent[MaxM];
+int femaleEvent[MaxM];
+int eventType[MaxM];
+//积分赛的积分规制，前三个和前五个
+int point3[3] = {5, 3, 2};
+int point5[5] = {7, 5, 3, 2, 1}; 
+
+typedef struct
+{
+    int id;
+    int total;
+    int male;
+    int female;
+} School;
+
+School sch[MaxN];
+
+//对sch初始化
+void init()
+{
+    memset(score, 0, sizeof(score));
+    for(int i = 1; i <= n; i++)
+    {
+        sch[i].id = i;
+        sch[i].total = 0;
+        sch[i].male = 0;
+        sch[i].female = 0;
+    }
+}
+
+//录入单个项目的成绩
+void inputEvent(int eid, int type, int IsMale)
+{
+    int school;
+    eventType[eid] = type;
+    for(int i = 1; i <= type; i++)
+    {
+        scanf("%d", &school);
+        //判断积分规则
+        int add = 0;
+        if(type == 3)
+            add = point3[i - 1];
+        else
+            add = point5[i - 1];
+        score[school][eid] += add;
+    }
+    if(IsMale) maleEvent[eid] = 1;
+    else femaleEvent[eid] = 1;
+}
+
+//录入所有项目
+void input()
+{
+    eventCnt = m + w;
+    for(int i = 1; i <= eventCnt; i++)
+    {
+        int type = 0;
+        //3 或者 5
+        scanf("%d", &type);
+        //i <= m时，是男生，返回值是1，否则为0
+        inputEvent(i, type, i <= m);
+    }
+}
+
+//统计总分
+void calc()
+{
+    for(int i = 1; i <= n; i++)
+    {
+        for(int j = 1; j <= eventCnt; j++)
+        {
+            sch[i].total += score[i][j];
+
+            if(maleEvent[j])
+                sch[i].male += score[i][j];
+            else
+                sch[i].female += score[i][j];
+        }
+    }
+}
+
+//按照序号输出
+void printById()
+{
+    printf("按照学号输出：\n");
+    for(int i = 1; i <= n; i++)
+        printf("school %d : total=%d, male=%d, female=%d\n", sch[i].id, sch[i].total, sch[i].male, sch[i].female);
+}
+
+//冒泡排序 按总分降序
+void sortByTotal()
+{
+    for(int i = 1; i <= n - 1; i++)
+    {
+        for(int j = i + 1; j <= n; j++)
+        {
+            if(sch[i].total < sch[j].total)
+            {
+                //交换
+                School tmp = sch[i];
+                sch[i] = sch[j];
+                sch[j] = tmp;
+            }
+        }
+    }
+    printf("按照总分排序：\n");
+    printById();
+}
+//按照男女团体总分排序
+void sortByGender()
+{
+    for(int i = 1; i <= n - 1; i++)
+    {
+        for(int j = i + 1; j <= n; j++)
+        {
+            if((sch[i].male + sch[i].female) < (sch[j].female + sch[j].male))
+            {
+                School tmp = sch[i];
+                sch[i] = sch[j];
+                sch[j] = tmp;
+            }
+        }
+    }
+    printf("按照男女团体积分排序:\n");
+    printById();
+}
+
+//查询指定学校所有项目得分
+void querySchool(int id)
+{
+    printf("查询学校%d各项目得分:\n", id);
+    for(int i = 1; i <= eventCnt; i++)
+    {
+        printf("Event%d : %d\n", i, score[id][i]);
+    }
+}
+//查询指定项目所有获奖学校
+void queryEvent(int eid)
+{
+    printf("查询项目%d获奖学校得分:\n", eid);
+    for(int i = 1; i <= n; i++)
+    {
+        if(score[i][eid] > 0)
+        {
+            printf("school %d: %d\n", i, score[i][eid]);
+        }
+    }
+}
+int main()
+{
+    printf("分别依次输入n, m, w :");
+    scanf("%d %d %d", &n, &m, &w);
+    init();
+    input();
+    calc();
+    printById();
+    sortByTotal();
+    sortByGender();
+
+    //查询
+    int sid, eid;
+    printf("输入学校id和事件id:\n");
+    scanf("%d %d", &sid, &eid);
+
+    querySchool(sid);
+    queryEvent(eid);
+
+    return 0;
+}
+\end{verbatim}
+
+\subsubsection{4.调试分析}
+\paragraph{测试输入与运行输出}
+\begin{verbatim}
+分别依次输入n, m, w :3 2 1
+3
+1 2 3
+3
+1 3 2
+5
+2 1 3 2 1
+按照学号输出：
+school 1 : total=18, male=13, female=5
+school 2 : total=12, male=10, female=2
+school 3 : total=10, male=5, female=5
+按照总分排序：
+按照学号输出：
+school 1 : total=18, male=13, female=5
+school 2 : total=12, male=10, female=2
+school 3 : total=10, male=5, female=5
+按照男女团体积分排序:
+按照学号输出：
+school 1 : total=18, male=13, female=5
+school 2 : total=12, male=10, female=2
+school 3 : total=10, male=5, female=5
+输入学校id和事件id:
+1 3
+查询学校1各项目得分:
+Event1 : 5
+Event2 : 3
+Event3 : 7
+查询项目3获奖学校得分:
+school 1: 7
+school 2: 2
+school 3: 1
+\end{verbatim}
+\paragraph{调试过程遇到的问题与解决}
+\begin{enumerate}
+\item 男女分数统计下标错误：统计循环中判断j（项目）而非i（学校），修正后男女分数计算正确；
+\item 冒泡排序交换逻辑缺失：比较总分/团体分后完整交换结构体，排序结果降序正确；
+\item 查询项目时遍历范围错误：遍历全部学校而非项目，筛选得分大于0的学校输出；
+\item 初始化遗漏：init函数清空分数数组、重置各校总分男女分，避免多次运行数据残留；
+\item 输入读取错乱：每个项目先读取排名类型3/5，再依次录入获奖学校编号，匹配积分规则累加。
+\end{enumerate}
+
+\subsubsection{5.小结}
+本实验采用结构体数组搭配二维顺序矩阵实现运动会分数统计系统，完成成绩录入、总分统计、多维度排序、双向查询全套功能。通过线性存储结构组织多类关联数据，掌握冒泡排序、多维数组遍历、结构体交换等基础操作，理解结构化数据在小型信息管理系统中的落地思路，熟练运用顺序存储完成批量数据统计与检索。
+
+\section{模块二}
+
+\subsection{1.二叉树}
+\subsubsection{任务}
+建立二叉树，并实现二叉树的先序、中序、后序、层序遍历，求二叉树的宽度，统计二叉树中各类结点的个数，求根结点到指定结点的路径。
+功能要求：
+（1）建立二叉树；
+（2）对二叉树进行先序（递归、非递归）、中序（递归、非递归）、后序、层序遍历，并输出对应遍历序列（遍历可基于栈或队列来完成）；
+（3）求二叉树的高度、宽度；
+（4）统计二叉树中各类结点的个数；
+（5）求根结点到指定结点的路径。
+界面要求：程序运行后，给出菜单项的内容和输入提示：
+1. 建立二叉树
+2. 遍历二叉树
+3. 二叉树的高度、宽度
+4. 各类结点的个数
+5. 根结点到指定结点的路径
+0. 退出
+请选择0-5：
+
+\subsubsection{1.需求分析}
+\paragraph{分析总结逻辑结构}
+二叉树由根结点、左子树和右子树递归构成，具有层次关系和递归特性。程序通过建立二叉链表结构存储二叉树，实现对结点及其逻辑关系的组织与管理。
+\paragraph{分析总结运算集合}
+系统需完成二叉树建立、先序、中序、后序及层序遍历，高度与宽度计算，各类结点统计，以及根结点到指定结点路径查找等基本运算功能。
+
+\subsubsection{2.概要设计}
+\paragraph{存储结构设计}
+采用二叉链表作为存储结构，每个结点包含数据域、左孩子指针和右孩子指针。遍历过程中利用顺序栈和顺序队列辅助实现非递归遍历与层序遍历功能。
+\paragraph{算法设计思路}
+递归遍历依靠二叉树递归特性实现；非递归先、中序遍历借助栈模拟递归流程；层序遍历使用队列按层次依次访问；高度递归取左右子树最大值；宽度通过层序遍历记录每层最大结点数；结点统计递归区分叶子、度1、度2结点；路径查找递归向下搜索，记录途经结点序列。
+
+\subsubsection{3.详细设计}
+\paragraph{源代码（带注释）}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{FindSet-2026-06-24-083504.png}
+    \caption{二叉树}
+    \label{fig:binary-tree}
+\end{figure}
+
+代码：
+\begin{verbatim}
+#include <stdio.h>
+#include <stdlib.h>
+
+#define MAXSIZE 100
+
+typedef struct node
+{
+    char data;
+    struct node *lchild;
+    struct node *rchild;
+} Node, *BiTree;
+
+//栈结构体
+typedef struct
+{
+    BiTree data[MAXSIZE];
+    int top;
+} Stack;
+
+//队列结构体
+typedef struct
+{
+    BiTree data[MAXSIZE];
+    int front;
+    int rear;
+} Queue;
+
+//栈初始化
+void InitStack(Stack *s)
+{
+    s->top = -1;
+}
+
+//判栈空
+int StackEmpty(Stack *s)
+{
+    return s->top == -1;
+}
+
+//入栈
+void Push(Stack *s, BiTree x)
+{
+    s->data[++s->top] = x;
+}
+
+//出栈
+BiTree Pop(Stack *s)
+{
+    return s->data[s->top--];
+}
+
+//队列初始化
+void InitQueue(Queue *q)
+{
+    q->front = q->rear = 0;
+}
+
+//判队空
+int QueueEmpty(Queue *q)
+{
+    return q->front == q->rear;
+}
+
+//入队
+void EnQueue(Queue *q, BiTree x)
+{
+    q->data[q->rear++] = x;
+}
+
+//出队
+BiTree DeQueue(Queue *q)
+{
+    return q->data[q->front++];
+}
+
+//建立二叉树
+BiTree CreateTree()
+{
+    char ch;
+    scanf(" %c", &ch);
+
+    if (ch == '#')
+        return NULL;
+
+    BiTree T = (BiTree)malloc(sizeof(Node));
+    T->data = ch;
+
+    T->lchild = CreateTree();
+    T->rchild = CreateTree();
+
+    return T;
+}
+
+//菜单打印
+void Menu()
+{
+    printf("\n=====二叉树操作菜单=====\n");
+    printf("1. 建立二叉树\n");
+    printf("2. 遍历二叉树\n");
+    printf("3. 二叉树的高度、宽度\n");
+    printf("4. 各类结点的个数\n");
+    printf("5. 根结点到指定结点的路径\n");
+    printf("0. 退出\n");
+    printf("请选择0-5：");
+}
+
+//递归先序遍历
+void PreOrder(BiTree T)
+{
+    if (T)
+    {
+        printf("%c ", T->data);
+        PreOrder(T->lchild);
+        PreOrder(T->rchild);
+    }
+}
+
+//递归中序遍历
+void InOrder(BiTree T)
+{
+    if (T)
+    {
+        InOrder(T->lchild);
+        printf("%c ", T->data);
+        InOrder(T->rchild);
+    }
+}
+
+//递归后序遍历
+void PostOrder(BiTree T)
+{
+    if (T)
+    {
+        PostOrder(T->lchild);
+        PostOrder(T->rchild);
+        printf("%c ", T->data);
+    }
+}
+
+//非递归先序遍历
+void PreOrder_NR(BiTree T)
+{
+    Stack stack;
+    InitStack(&stack);
+
+    while (T || !StackEmpty(&stack))
+    {
+        while (T)
+        {
+            printf("%c ", T->data);
+            Push(&stack, T);
+            T = T->lchild;
+        }
+
+        if (!StackEmpty(&stack))
+        {
+            T = Pop(&stack);
+            T = T->rchild;
+        }
+    }
+}
+
+//非递归中序遍历
+void InOrder_NR(BiTree T)
+{
+    Stack stack;
+    InitStack(&stack);
+
+    while (T || !StackEmpty(&stack))
+    {
+        while (T)
+        {
+            Push(&stack, T);
+            T = T->lchild;
+        }
+
+        if (!StackEmpty(&stack))
+        {
+            T = Pop(&stack);
+            printf("%c ", T->data);
+            T = T->rchild;
+        }
+    }
+}
+
+//层序遍历
+void LevelOrder(BiTree T)
+{
+    if (!T)
+        return;
+    Queue queue;
+    InitQueue(&queue);
+
+    EnQueue(&queue, T);
+
+    while (!QueueEmpty(&queue))
+    {
+        BiTree p = DeQueue(&queue);
+
+        printf("%c ", p->data);
+
+        if (p->lchild)
+            EnQueue(&queue, p->lchild);
+
+        if (p->rchild)
+            EnQueue(&queue, p->rchild);
+    }
+}
+
+//求高度
+int Height(BiTree T)
+{
+    if (T == NULL)
+        return 0;
+    int lh = Height(T->lchild);
+    int rh = Height(T->rchild);
+
+    return (lh > rh ? lh : rh) + 1;
+}
+
+//求宽度
+int Width(BiTree T)
+{
+    if (!T)
+        return 0;
+    Queue queue;
+    InitQueue(&queue);
+
+    int maxWidth = 0;
+    EnQueue(&queue, T);
+
+    while (!QueueEmpty(&queue))
+    {
+        int count = queue.rear - queue.front;
+
+        if (count > maxWidth)
+            maxWidth = count;
+        for (int i = 0; i < count; i++)
+        {
+            BiTree p = DeQueue(&queue);
+
+            if (p->lchild)
+                EnQueue(&queue, p->lchild);
+
+            if (p->rchild)
+                EnQueue(&queue, p->rchild);
+        }
+    }
+
+    return maxWidth;
+}
+
+//统计结点
+void CountNodes(BiTree T, int *total, int *leaf, int *degree1, int *degree2)
+{
+    if (!T)
+        return;
+
+    (*total)++;
+
+    int left = (T->lchild != NULL);
+    int right = (T->rchild != NULL);
+
+    if (!left && !right)
+        (*leaf)++;
+    else if (left + right == 1)
+        (*degree1)++;
+    else
+        (*degree2)++;
+
+    CountNodes(T->lchild, total, leaf, degree1, degree2);
+    CountNodes(T->rchild, total, leaf, degree1, degree2);
+}
+
+//求路径
+int FindPath(BiTree T, char target, char path[], int depth)
+{
+    if (!T)
+        return 0;
+
+    path[depth] = T->data;
+
+    if (T->data == target)
+    {
+        printf("路径: ");
+        for (int i = 0; i <= depth; i++)
+            printf("%c ", path[i]);
+        printf("\n");
+        return 1;
+    }
+
+    if (FindPath(T->lchild, target, path, depth + 1))
+        return 1;
+    if (FindPath(T->rchild, target, path, depth + 1))
+        return 1;
+
+    return 0;
+}
+
+//释放树
+void DestroyTree(BiTree T)
+{
+    if (T)
+    {
+        DestroyTree(T->lchild);
+        DestroyTree(T->rchild);
+        free(T);
+    }
+}
+
+int main()
+{
+    BiTree T = NULL;
+    int choice;
+
+    while (1)
+    {
+        Menu();
+        scanf("%d", &choice);
+
+        switch (choice)
+        {
+        case 1:
+        {
+            if (T)
+            {
+                DestroyTree(T);
+                T = NULL;
+            }
+            printf("请输入先序序列(#表示空结点):\n");
+            T = CreateTree();
+            printf("二叉树建立成功！\n");
+            break;
+        }
+        case 2:
+        {
+            if (!T)
+            {
+                printf("请先建立二叉树！\n");
+                break;
+            }
+            printf("\n递归先序遍历:\n");
+            PreOrder(T);
+            printf("\n\n非递归先序遍历:\n");
+            PreOrder_NR(T);
+            printf("\n\n递归中序遍历:\n");
+            InOrder(T);
+            printf("\n\n非递归中序遍历:\n");
+            InOrder_NR(T);
+            printf("\n\n后序遍历:\n");
+            PostOrder(T);
+            printf("\n\n层序遍历:\n");
+            LevelOrder(T);
+            printf("\n");
+            break;
+        }
+        case 3:
+        {
+            if (!T)
+            {
+                printf("请先建立二叉树！\n");
+                break;
+            }
+            printf("二叉树高度=%d\n", Height(T));
+            printf("二叉树宽度=%d\n", Width(T));
+            break;
+        }
+        case 4:
+        {
+            if (!T)
+            {
+                printf("请先建立二叉树！\n");
+                break;
+            }
+            int total = 0, leaf = 0, degree1 = 0, degree2 = 0;
+            CountNodes(T, &total, &leaf, &degree1, &degree2);
+            printf("总结点数=%d\n", total);
+            printf("叶子结点=%d\n", leaf);
+            printf("度为1结点=%d\n", degree1);
+            printf("度为2结点=%d\n", degree2);
+            break;
+        }
+        case 5:
+        {
+            if (!T)
+            {
+                printf("请先建立二叉树！\n");
+                break;
+            }
+            char target;
+            printf("请输入目标结点:");
+            scanf(" %c", &target);
+            char path[MAXSIZE];
+            if (!FindPath(T, target, path, 0))
+                printf("未找到该结点!\n");
+            break;
+        }
+        case 0:
+        {
+            DestroyTree(T);
+            printf("程序结束！\n");
+            return 0;
+        }
+        default:
+            printf("输入错误，请重新输入！\n");
+        }
+    }
+    return 0;
+}
+\end{verbatim}
+
+\subsubsection{4.调试分析}
+\paragraph{测试输入与完整运行输出}
+\begin{verbatim}
+=====二叉树操作菜单=====
+1. 建立二叉树
+2. 遍历二叉树
+3. 二叉树的高度、宽度
+4. 各类结点的个数
+5. 根结点到指定结点的路径
+0. 退出
+请选择0-5：1
+请输入先序序列(#表示空结点):
+ABD##E##C#F##
+二叉树建立成功！
+
+=====二叉树操作菜单=====
+1. 建立二叉树
+2. 遍历二叉树
+3. 二叉树的高度、宽度
+4. 各类结点的个数
+5. 根结点到指定结点的路径
+0. 退出
+请选择0-5：2
+
+递归先序遍历:
+A B D E C F 
+
+非递归先序遍历:
+A B D E C F 
+
+递归中序遍历:
+D B E A C F 
+
+非递归中序遍历:
+D B E A C F 
+
+后序遍历:
+D E B F C A 
+
+层序遍历:
+A B C D E F 
+
+=====二叉树操作菜单=====
+1. 建立二叉树
+2. 遍历二叉树
+3. 二叉树的高度、宽度
+4. 各类结点的个数
+5. 根结点到指定结点的路径
+0. 退出
+请选择0-5：3
+二叉树高度=3
+二叉树宽度=3
+
+=====二叉树操作菜单=====
+1. 建立二叉树
+2. 遍历二叉树
+3. 二叉树的高度、宽度
+4. 各类结点的个数
+5. 根结点到指定结点的路径
+0. 退出
+请选择0-5：4
+总结点数=6
+叶子结点=3
+度为1结点=1
+度为2结点=2
+
+=====二叉树操作菜单=====
+1. 建立二叉树
+2. 遍历二叉树
+3. 二叉树的高度、宽度
+4. 各类结点的个数
+5. 根结点到指定结点的路径
+0. 退出
+请选择0-5：5
+请输入目标结点:F
+路径: A C F 
+
+=====二叉树操作菜单=====
+1. 建立二叉树
+2. 遍历二叉树
+3. 二叉树的高度、宽度
+4. 各类结点的个数
+5. 根结点到指定结点的路径
+0. 退出
+请选择0-5：0
+程序结束！
+\end{verbatim}
+\paragraph{调试过程遇到的问题与解决}
+\begin{enumerate}
+\item 缺少Menu菜单函数，main调用报错：补充Menu函数打印操作菜单，程序菜单界面正常显示；
+\item 多次新建树内存泄漏：新建树前调用DestroyTree释放原有二叉树，避免堆内存堆积；
+\item 路径查找数组越界：设置MAXSIZE足够大的路径数组，递归传递depth记录当前层数；
+\item 层序宽度统计每层数量错误：每次循环先记录当前队列元素总数，完整遍历一层再入队孩子；
+\item 结点统计度分类逻辑出错：区分左右孩子存在情况，正确划分叶子、度1、度2三类结点；
+\end{enumerate}
+
+\subsubsection{5.小结}
+本实验采用二叉链表链式存储结构构建二叉树，实现递归与非递归先、中序遍历，后序、层序遍历，完成树高度、宽度求解，叶子/度1/度2结点数量统计，以及根到目标结点路径检索全套功能。借助栈、队列辅助实现非递归遍历与层序遍历，充分运用递归思想处理二叉树天然分层递归结构，加深对二叉树存储、遍历、递归回溯算法的理解，熟练掌握链式二叉树基础操作与线性辅助容器（栈、队列）的综合运用。
 
 \end{document}

@@ -8,7 +8,6 @@ typedef struct
 {
     char ch;        // 字符
     int weight;     // 权值(频率)
-
     int parent;
     int lchild;
     int rchild;

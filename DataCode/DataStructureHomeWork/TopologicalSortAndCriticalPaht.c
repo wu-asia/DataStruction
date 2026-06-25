@@ -134,8 +134,13 @@ void CalcVL(GraphAdjList *G, int cntTopo)
     int i, u, v;
     EdgeNode *p;
 
-    int T = ve[topoSeq[cntTopo - 1]];
-
+    //int T = ve[topoSeq[cntTopo - 1]];
+    int T = 0;
+    for (int i = 0; i < G->n; i++)
+    {
+        if (ve[i] > T)
+            T = ve[i];
+    }
     for (i = 0; i < G->n; i++)
         vl[i] = T;
 
@@ -157,18 +162,26 @@ void CalcVL(GraphAdjList *G, int cntTopo)
 
 
 //输出关键活动、关键路径、总工期
+
+int path[MAXV];
+int pathLen = 0;
+
+
+
 void PrintKeyPath(GraphAdjList *G)
 {
-    printf("\n关键活动：\n");
+    printf("\n关键活动（关键边）：\n");
 
     for (int u = 0; u < G->n; u++)
     {
         EdgeNode *p = G->vertex[u].firstedge;
+
         while (p != NULL)
         {
             int v = p->adjvex;
 
-            if (ve[u] == vl[v] - p->weight)
+            // 关键边条件（核心）
+            if (ve[u] + p->weight == ve[v])
             {
                 printf("%d -> %d\n", u, v);
             }
@@ -177,11 +190,7 @@ void PrintKeyPath(GraphAdjList *G)
         }
     }
 
-    int T = 0;
-    for (int i = 0; i < G->n; i++)
-        if (ve[i] > T) T = ve[i];
-
-    printf("工程总工期：%d\n", T);
+    printf("工程总工期：%d\n", ve[topoSeq[G->n - 1]]);
 }
 
 int main()

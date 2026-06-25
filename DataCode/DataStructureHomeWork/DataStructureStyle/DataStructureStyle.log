@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.6.25)  25 JUN 2026 10:31
+This is XeTeX, Version 3.141592653-2.6-0.999998 (TeX Live 2026) (preloaded format=xelatex 2026.6.25)  25 JUN 2026 17:34
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex
+**d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle
 (d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex
 LaTeX2e <2026-06-01>
 L3 programming layer <2026-06-18>
@@ -11,9 +11,11 @@ L3 programming layer <2026-06-18>
 File: ctexbackend.cfg 2022/07/14 v2.5.10 Backend configuration file (CTEX)
 ) (d:/texlive/2026/texmf-dist/tex/latex/l3kernel/expl3.sty
 Package: expl3 2026-06-18 L3 programming layer (loader) 
- (d:/texlive/2026/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
-File: l3backend-pdftex.def 2026-02-18 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count276
+ (d:/texlive/2026/texmf-dist/tex/latex/l3backend/l3backend-xetex.def
+File: l3backend-xetex.def 2026-02-18 L3 backend support: XeTeX
+\g__graphics_track_int=\count273
+\g__pdfannot_backend_int=\count274
+\g__pdfannot_backend_link_int=\count275
 ))
 Document Class: ctexart 2022/07/14 v2.5.10 Chinese adapter for class article (CTEX)
 (d:/texlive/2026/texmf-dist/tex/latex/ctex/ctexhook.sty
@@ -153,151 +155,133 @@ LaTeX Encoding Info:    Redeclaring text symbol \texteuro (encoding TS1) on inpu
 LaTeX Encoding Info:    Redeclaring text symbol \texttimes (encoding TS1) on input line 193.
 LaTeX Encoding Info:    Redeclaring text symbol \textdiv (encoding TS1) on input line 194.
 ))
-\l__ctex_tmp_int=\count277
+\l__ctex_tmp_int=\count276
 \l__ctex_tmp_box=\box53
 \l__ctex_tmp_dim=\dimen150
-\g__ctex_section_depth_int=\count278
-\g__ctex_font_size_int=\count279
+\g__ctex_section_depth_int=\count277
+\g__ctex_font_size_int=\count278
  (d:/texlive/2026/texmf-dist/tex/latex/ctex/config/ctexopts.cfg
 File: ctexopts.cfg 2022/07/14 v2.5.10 Option configuration file (CTEX)
-)
-
-Class ctexart Warning: UTF8 will be used as the default encoding.
-
-(d:/texlive/2026/texmf-dist/tex/latex/base/article.cls
+) (d:/texlive/2026/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
 (d:/texlive/2026/texmf-dist/tex/latex/base/size10.clo
 File: size10.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
 )
-\c@part=\count280
-\c@section=\count281
-\c@subsection=\count282
-\c@subsubsection=\count283
-\c@paragraph=\count284
-\c@subparagraph=\count285
-\c@figure=\count286
-\c@table=\count287
+\c@part=\count279
+\c@section=\count280
+\c@subsection=\count281
+\c@subsubsection=\count282
+\c@paragraph=\count283
+\c@subparagraph=\count284
+\c@figure=\count285
+\c@table=\count286
 \abovecaptionskip=\skip49
 \belowcaptionskip=\skip50
 \bibindent=\dimen151
-) (d:/texlive/2026/texmf-dist/tex/latex/ctex/engine/ctex-engine-pdftex.def
-File: ctex-engine-pdftex.def 2022/07/14 v2.5.10 (pdf)LaTeX adapter (CTEX)
- (d:/texlive/2026/texmf-dist/tex/latex/cjk/texinput/CJKutf8.sty
-Package: CJKutf8 2021/10/16 4.8.5
- (d:/texlive/2026/texmf-dist/tex/generic/iftex/ifpdf.sty
-Package: ifpdf 2019/10/25 v3.4 ifpdf legacy package. Use iftex instead.
- (d:/texlive/2026/texmf-dist/tex/generic/iftex/iftex.sty
-Package: iftex 2024/12/12 v1.0g TeX engine tests
-)) (d:/texlive/2026/texmf-dist/tex/latex/base/inputenc.sty
-Package: inputenc 2024/02/08 v1.3d Input encoding file
-\inpenc@prehook=\toks17
-\inpenc@posthook=\toks18
-) (d:/texlive/2026/texmf-dist/tex/latex/cjk/texinput/CJK.sty
-Package: CJK 2021/10/16 4.8.5
- (d:/texlive/2026/texmf-dist/tex/latex/cjk/texinput/mule/MULEenc.sty
-Package: MULEenc 2021/10/16 4.8.5
-) (d:/texlive/2026/texmf-dist/tex/latex/cjk/texinput/CJK.enc
-File: CJK.enc 2021/10/16 4.8.5
-Now handling font encoding C00 ...
-... no UTF-8 mapping file for font encoding C00
-Now handling font encoding C05 ...
-... no UTF-8 mapping file for font encoding C05
-Now handling font encoding C09 ...
-... no UTF-8 mapping file for font encoding C09
-Now handling font encoding C10 ...
-... no UTF-8 mapping file for font encoding C10
-Now handling font encoding C20 ...
-... no UTF-8 mapping file for font encoding C20
-Now handling font encoding C19 ...
-... no UTF-8 mapping file for font encoding C19
-Now handling font encoding C40 ...
-... no UTF-8 mapping file for font encoding C40
-Now handling font encoding C42 ...
-... no UTF-8 mapping file for font encoding C42
-Now handling font encoding C43 ...
-... no UTF-8 mapping file for font encoding C43
-Now handling font encoding C50 ...
-... no UTF-8 mapping file for font encoding C50
-Now handling font encoding C52 ...
-... no UTF-8 mapping file for font encoding C52
-Now handling font encoding C49 ...
-... no UTF-8 mapping file for font encoding C49
-Now handling font encoding C60 ...
-... no UTF-8 mapping file for font encoding C60
-Now handling font encoding C61 ...
-... no UTF-8 mapping file for font encoding C61
-Now handling font encoding C63 ...
-... no UTF-8 mapping file for font encoding C63
-Now handling font encoding C64 ...
-... no UTF-8 mapping file for font encoding C64
-Now handling font encoding C65 ...
-... no UTF-8 mapping file for font encoding C65
-Now handling font encoding C70 ...
-... no UTF-8 mapping file for font encoding C70
-Now handling font encoding C31 ...
-... no UTF-8 mapping file for font encoding C31
-Now handling font encoding C32 ...
-... no UTF-8 mapping file for font encoding C32
-Now handling font encoding C33 ...
-... no UTF-8 mapping file for font encoding C33
-Now handling font encoding C34 ...
-... no UTF-8 mapping file for font encoding C34
-Now handling font encoding C35 ...
-... no UTF-8 mapping file for font encoding C35
-Now handling font encoding C36 ...
-... no UTF-8 mapping file for font encoding C36
-Now handling font encoding C37 ...
-... no UTF-8 mapping file for font encoding C37
-Now handling font encoding C80 ...
-... no UTF-8 mapping file for font encoding C80
-Now handling font encoding C81 ...
-... no UTF-8 mapping file for font encoding C81
-Now handling font encoding C01 ...
-... no UTF-8 mapping file for font encoding C01
-Now handling font encoding C11 ...
-... no UTF-8 mapping file for font encoding C11
-Now handling font encoding C21 ...
-... no UTF-8 mapping file for font encoding C21
-Now handling font encoding C41 ...
-... no UTF-8 mapping file for font encoding C41
-Now handling font encoding C62 ...
-... no UTF-8 mapping file for font encoding C62
+) (d:/texlive/2026/texmf-dist/tex/latex/ctex/engine/ctex-engine-xetex.def
+File: ctex-engine-xetex.def 2022/07/14 v2.5.10 XeLaTeX adapter (CTEX)
+ (d:/texlive/2026/texmf-dist/tex/xelatex/xecjk/xeCJK.sty
+Package: xeCJK 2022/08/05 v3.9.1 Typesetting CJK scripts with XeLaTeX
+ (d:/texlive/2026/texmf-dist/tex/latex/l3packages/xtemplate/xtemplate.sty
+Package: xtemplate 2025-10-09 L3 Experimental prototype document functions
 )
-\CJK@indent=\box54
-) (d:/texlive/2026/texmf-dist/tex/latex/base/fontenc.sty
+\l__xeCJK_tmp_int=\count287
+\l__xeCJK_tmp_box=\box54
+\l__xeCJK_tmp_dim=\dimen152
+\l__xeCJK_tmp_skip=\skip51
+\g__xeCJK_space_factor_int=\count288
+\l__xeCJK_begin_int=\count289
+\l__xeCJK_end_int=\count290
+\c__xeCJK_CJK_class_int=\XeTeXcharclass1
+\c__xeCJK_FullLeft_class_int=\XeTeXcharclass2
+\c__xeCJK_FullRight_class_int=\XeTeXcharclass3
+\c__xeCJK_HalfLeft_class_int=\XeTeXcharclass4
+\c__xeCJK_HalfRight_class_int=\XeTeXcharclass5
+\c__xeCJK_NormalSpace_class_int=\XeTeXcharclass6
+\c__xeCJK_CM_class_int=\XeTeXcharclass7
+\c__xeCJK_HangulJamo_class_int=\XeTeXcharclass8
+\l__xeCJK_last_skip=\skip52
+\c__xeCJK_none_node=\count291
+\g__xeCJK_node_int=\count292
+\c__xeCJK_CJK_node_dim=\dimen153
+\c__xeCJK_CJK-space_node_dim=\dimen154
+\c__xeCJK_default_node_dim=\dimen155
+\c__xeCJK_CJK-widow_node_dim=\dimen156
+\c__xeCJK_normalspace_node_dim=\dimen157
+\c__xeCJK_default-space_node_skip=\skip53
+\l__xeCJK_ccglue_skip=\skip54
+\l__xeCJK_ecglue_skip=\skip55
+\l__xeCJK_punct_kern_skip=\skip56
+\l__xeCJK_indent_box=\box55
+\l__xeCJK_last_penalty_int=\count293
+\l__xeCJK_last_bound_dim=\dimen158
+\l__xeCJK_last_kern_dim=\dimen159
+\l__xeCJK_widow_penalty_int=\count294
+
+LaTeX template Info: Declaring template type 'xeCJK/punctuation' taking 0
+(template)           argument(s) on line 2396.
+
+\l__xeCJK_fixed_punct_width_dim=\dimen160
+\l__xeCJK_mixed_punct_width_dim=\dimen161
+\l__xeCJK_middle_punct_width_dim=\dimen162
+\l__xeCJK_fixed_margin_width_dim=\dimen163
+\l__xeCJK_mixed_margin_width_dim=\dimen164
+\l__xeCJK_middle_margin_width_dim=\dimen165
+\l__xeCJK_bound_punct_width_dim=\dimen166
+\l__xeCJK_bound_margin_width_dim=\dimen167
+\l__xeCJK_margin_minimum_dim=\dimen168
+\l__xeCJK_kerning_total_width_dim=\dimen169
+\l__xeCJK_same_align_margin_dim=\dimen170
+\l__xeCJK_different_align_margin_dim=\dimen171
+\l__xeCJK_kerning_margin_width_dim=\dimen172
+\l__xeCJK_kerning_margin_minimum_dim=\dimen173
+\l__xeCJK_bound_dim=\dimen174
+\l__xeCJK_reverse_bound_dim=\dimen175
+\l__xeCJK_margin_dim=\dimen176
+\l__xeCJK_minimum_bound_dim=\dimen177
+\l__xeCJK_kerning_margin_dim=\dimen178
+\g__xeCJK_family_int=\count295
+\l__xeCJK_fam_int=\count296
+\g__xeCJK_fam_allocation_int=\count297
+\l__xeCJK_verb_case_int=\count298
+\l__xeCJK_verb_exspace_skip=\skip57
+ (d:/texlive/2026/texmf-dist/tex/latex/fontspec/fontspec.sty (d:/texlive/2026/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+Package: xparse 2025-10-09 L3 Experimental document command parser
+)
+Package: fontspec 2025/09/29 v2.9g Font selection for XeLaTeX and LuaLaTeX
+ (d:/texlive/2026/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty
+Package: fontspec-xetex 2025/09/29 v2.9g Font selection for XeLaTeX and LuaLaTeX
+\l__fontspec_script_int=\count299
+\l__fontspec_language_int=\count300
+\l__fontspec_strnum_int=\count301
+\l__fontspec_tmp_int=\count302
+\l__fontspec_tmpa_int=\count303
+\l__fontspec_tmpb_int=\count304
+\l__fontspec_tmpc_int=\count305
+\l__fontspec_em_int=\count306
+\l__fontspec_emdef_int=\count307
+\l__fontspec_strong_int=\count308
+\l__fontspec_strongdef_int=\count309
+\l__fontspec_tmpa_dim=\dimen179
+\l__fontspec_tmpb_dim=\dimen180
+\l__fontspec_tmpc_dim=\dimen181
+ (d:/texlive/2026/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
-)) (d:/texlive/2026/texmf-dist/tex/latex/cjkpunct/CJKpunct.sty
-Package: CJKpunct 2016/05/14 4.8.4
-\CJKpunct@cnta=\count288
-\CJKpunct@cntb=\count289
-\CJKpunct@cntc=\count290
-\CJKpunct@cntd=\count291
-\CJKpunct@cnte=\count292
-   defining Unicode char U+2018 (decimal 8216)
-   defining Unicode char U+2019 (decimal 8217)
-   defining Unicode char U+201C (decimal 8220)
-   defining Unicode char U+201D (decimal 8221)
-   defining Unicode char U+2014 (decimal 8212)
-   defining Unicode char U+2026 (decimal 8230)
- (d:/texlive/2026/texmf-dist/tex/latex/cjkpunct/CJKpunct.spa)) (d:/texlive/2026/texmf-dist/tex/latex/cjk/texinput/CJKspace.sty
-Package: CJKspace 2021/10/16 3.8.0
-) (d:/texlive/2026/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.bdg
-File: UTF8.bdg 2021/10/16 4.8.5
-) (d:/texlive/2026/texmf-dist/tex/latex/ctex/ctexspa.def
-File: ctexspa.def 2022/07/14 v2.5.10 Space info for CJKpunct (CTEX)
+) (d:/texlive/2026/texmf-dist/tex/latex/fontspec/fontspec.cfg))) (d:/texlive/2026/texmf-dist/tex/xelatex/xecjk/xeCJK.cfg
+File: xeCJK.cfg 2022/08/05 v3.9.1 Configuration file for xeCJK package
+))
+\ccwd=\dimen182
+\l__ctex_ccglue_skip=\skip58
 )
-\ccwd=\dimen152
-\l__ctex_ccglue_skip=\skip51
-)
-\l__ctex_ziju_dim=\dimen153
+\l__ctex_ziju_dim=\dimen183
  (d:/texlive/2026/texmf-dist/tex/latex/zhnumber/zhnumber.sty
 Package: zhnumber 2022/07/14 v3.0 Typesetting numbers with Chinese glyphs
-\l__zhnum_scale_int=\count293
-\l__zhnum_tmp_int=\count294
+\l__zhnum_scale_int=\count310
+\l__zhnum_tmp_int=\count311
  (d:/texlive/2026/texmf-dist/tex/latex/zhnumber/zhnumber-utf8.cfg
 File: zhnumber-utf8.cfg 2022/07/14 v3.0 Chinese numerals with UTF8 encoding
 ))
-\l__ctex_heading_skip=\skip52
+\l__ctex_heading_skip=\skip59
  (d:/texlive/2026/texmf-dist/tex/latex/ctex/scheme/ctex-scheme-chinese-article.def
 File: ctex-scheme-chinese-article.def 2022/07/14 v2.5.10 Chinese scheme for article (CTEX)
  (d:/texlive/2026/texmf-dist/tex/latex/ctex/config/ctex-name-utf8.cfg
@@ -306,13 +290,44 @@ File: ctex-name-utf8.cfg 2022/07/14 v2.5.10 Caption with encoding UTF-8 (CTEX)
 File: ctex-c5size.clo 2022/07/14 v2.5.10 c5size option (CTEX)
 ) (d:/texlive/2026/texmf-dist/tex/latex/ctex/fontset/ctex-fontset-windows.def
 File: ctex-fontset-windows.def 2022/07/14 v2.5.10 Windows fonts definition (CTEX)
+
+Package fontspec Info: 
+(fontspec)             Could not resolve font "KaiTi/B" (it probably doesn't
+(fontspec)             exist).
+
+
+Package fontspec Info: 
+(fontspec)             Could not resolve font "SimHei/I" (it probably doesn't
+(fontspec)             exist).
+
+
+Package fontspec Info: 
+(fontspec)             Could not resolve font "SimSun/BI" (it probably doesn't
+(fontspec)             exist).
+
+
+Package fontspec Info: 
+(fontspec)             Font family 'SimSun(0)' created for font 'SimSun' with
+(fontspec)             options
+(fontspec)             [Script={CJK},BoldFont={SimHei},ItalicFont={KaiTi}].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->"SimSun/OT:script=hani;language=dflt;"
+(fontspec)             - 'bold' (b/n) with NFSS spec.:
+(fontspec)             <->"SimHei/OT:script=hani;language=dflt;"
+(fontspec)             - 'italic' (m/it) with NFSS spec.:
+(fontspec)             <->"KaiTi/OT:script=hani;language=dflt;"
+
 )) (d:/texlive/2026/texmf-dist/tex/latex/ctex/config/ctex.cfg
 File: ctex.cfg 2022/07/14 v2.5.10 Configuration file (CTEX)
 ) (d:/texlive/2026/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2026-05-17 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
  (d:/texlive/2026/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2026-05-17 v1.15 key=value parser (DPC)
-\KV@toks@=\toks19
+\KV@toks@=\toks17
 ) (d:/texlive/2026/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2026-05-17 v1.4h Standard LaTeX Graphics (DPC,SPQR)
  (d:/texlive/2026/texmf-dist/tex/latex/graphics/trig.sty
@@ -320,53 +335,56 @@ Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
 ) (d:/texlive/2026/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: pdftex.def on input line 106.
- (d:/texlive/2026/texmf-dist/tex/latex/graphics-def/pdftex.def
-File: pdftex.def 2025/09/29 v1.2d Graphics/color driver for pdftex
+Package graphics Info: Driver file: xetex.def on input line 106.
+ (d:/texlive/2026/texmf-dist/tex/latex/graphics-def/xetex.def
+File: xetex.def 2025/11/01 v5.0p Graphics/color driver for xetex
 ))
-\Gin@req@height=\dimen154
-\Gin@req@width=\dimen155
+\Gin@req@height=\dimen184
+\Gin@req@width=\dimen185
 ) (d:/texlive/2026/texmf-dist/tex/latex/lastpage/lastpage.sty
 Package: lastpage 2025/08/14 v2.1h lastpage: 2.09 or 2e? (HMM)
  (d:/texlive/2026/texmf-dist/tex/latex/lastpage/lastpage2e.sty
 Package: lastpage2e 2025/08/14 v2.1h Decide which 2e lastpage version to use (HMM)
  (d:/texlive/2026/texmf-dist/tex/latex/lastpage/lastpagemodern.sty
 Package: lastpagemodern 2025-08-14 v2.1h Refers to last page's name (HMM; JPG)
-\c@lastpagecount=\count295
+\c@lastpagecount=\count312
 ) 
 )) (d:/texlive/2026/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count296
-\lst@gtempboxa=\box55
-\lst@token=\toks20
-\lst@length=\count297
-\lst@currlwidth=\dimen156
-\lst@column=\count298
-\lst@pos=\count299
-\lst@lostspace=\dimen157
-\lst@width=\dimen158
-\lst@newlines=\count300
-\lst@lineno=\count301
-\lst@maxwidth=\dimen159
+\lst@mode=\count313
+\lst@gtempboxa=\box56
+\lst@token=\toks18
+\lst@length=\count314
+\lst@currlwidth=\dimen186
+\lst@column=\count315
+\lst@pos=\count316
+\lst@lostspace=\dimen187
+\lst@width=\dimen188
+\lst@newlines=\count317
+\lst@lineno=\count318
+\lst@maxwidth=\dimen189
  (d:/texlive/2026/texmf-dist/tex/latex/listings/lstpatch.sty
 File: lstpatch.sty 2025/11/14 1.11b (Carsten Heinz)
 ) (d:/texlive/2026/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2025/11/14 1.11b (Carsten Heinz)
-\c@lstnumber=\count302
-\lst@skipnumbers=\count303
-\lst@framebox=\box56
+\c@lstnumber=\count319
+\lst@skipnumbers=\count320
+\lst@framebox=\box57
 ) (d:/texlive/2026/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2025/11/14 1.11b listings configuration
 ))
 Package: listings 2025/11/14 1.11b (Carsten Heinz)
- (d:/texlive/2026/texmf-dist/tex/latex/xcolor/xcolor.sty
+ (d:/texlive/2026/texmf-dist/tex/xelatex/xecjk/xeCJK-listings.sty
+Package: xeCJK-listings 2022/08/05 v3.9.1 xeCJK patch file for listings
+\l__xeCJK_listings_max_char_int=\count321
+\l__xeCJK_listings_flag_int=\count322
+) (d:/texlive/2026/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
  (d:/texlive/2026/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
-Package xcolor Info: Driver file: pdftex.def on input line 274.
+Package xcolor Info: Driver file: xetex.def on input line 274.
  (d:/texlive/2026/texmf-dist/tex/latex/graphics/mathcolor.ltx)
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
-Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1353.
 Package xcolor Info: Model `RGB' extended on input line 1365.
 Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1367.
 Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1368.
@@ -376,73 +394,73 @@ Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
 ) (d:/texlive/2026/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count304
-\float@exts=\toks21
-\float@box=\box57
-\@float@everytoks=\toks22
-\@floatcapt=\box58
+\c@float@type=\count323
+\float@exts=\toks19
+\float@box=\box58
+\@float@everytoks=\toks20
+\@floatcapt=\box59
 ) (d:/texlive/2026/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2026/05/19 v2.18d AMS math features
-\@mathmargin=\skip53
+\@mathmargin=\skip60
 
 For additional information on amsmath, use the `?' option.
 (d:/texlive/2026/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2024/11/17 v2.01 AMS text
  (d:/texlive/2026/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
-\@emptytoks=\toks23
-\ex@=\dimen160
+\@emptytoks=\toks21
+\ex@=\dimen190
 )) (d:/texlive/2026/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen161
+\pmbraise@=\dimen191
 ) (d:/texlive/2026/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
-\inf@bad=\count305
+\inf@bad=\count324
 LaTeX Info: Redefining \frac on input line 233.
-\uproot@=\count306
-\leftroot@=\count307
+\uproot@=\count325
+\leftroot@=\count326
 LaTeX Info: Redefining \overline on input line 398.
 LaTeX Info: Redefining \colon on input line 409.
-\classnum@=\count308
-\DOTSCASE@=\count309
+\classnum@=\count327
+\DOTSCASE@=\count328
 LaTeX Info: Redefining \ldots on input line 495.
 LaTeX Info: Redefining \dots on input line 498.
 LaTeX Info: Redefining \cdots on input line 619.
-\Mathstrutbox@=\box59
-\strutbox@=\box60
+\Mathstrutbox@=\box60
+\strutbox@=\box61
 LaTeX Info: Redefining \big on input line 721.
 LaTeX Info: Redefining \Big on input line 722.
 LaTeX Info: Redefining \bigg on input line 723.
 LaTeX Info: Redefining \Bigg on input line 724.
-\big@size=\dimen162
+\big@size=\dimen192
 LaTeX Font Info:    Redeclaring font encoding OML on input line 742.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 743.
-\macc@depth=\count310
+\macc@depth=\count329
 LaTeX Info: Redefining \bmod on input line 904.
 LaTeX Info: Redefining \pmod on input line 909.
 LaTeX Info: Redefining \smash on input line 939.
 LaTeX Info: Redefining \relbar on input line 969.
 LaTeX Info: Redefining \Relbar on input line 970.
-\c@MaxMatrixCols=\count311
+\c@MaxMatrixCols=\count330
 \dotsspace@=\muskip17
-\c@parentequation=\count312
-\dspbrk@lvl=\count313
-\tag@help=\toks24
-\row@=\count314
-\column@=\count315
-\maxfields@=\count316
-\andhelp@=\toks25
-\eqnshift@=\dimen163
-\alignsep@=\dimen164
-\tagshift@=\dimen165
-\tagwidth@=\dimen166
-\totwidth@=\dimen167
-\lineht@=\dimen168
-\@envbody=\toks26
-\multlinegap=\skip54
-\multlinetaggap=\skip55
-\mathdisplay@stack=\toks27
+\c@parentequation=\count331
+\dspbrk@lvl=\count332
+\tag@help=\toks22
+\row@=\count333
+\column@=\count334
+\maxfields@=\count335
+\andhelp@=\toks23
+\eqnshift@=\dimen193
+\alignsep@=\dimen194
+\tagshift@=\dimen195
+\tagwidth@=\dimen196
+\totwidth@=\dimen197
+\lineht@=\dimen198
+\@envbody=\toks24
+\multlinegap=\skip61
+\multlinetaggap=\skip62
+\mathdisplay@stack=\toks25
 LaTeX Info: Redefining \[ on input line 2965.
 LaTeX Info: Redefining \] on input line 2966.
 ) (d:/texlive/2026/texmf-dist/tex/latex/amsfonts/amssymb.sty
@@ -458,42 +476,39 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 Package: geometry 2026/03/07 v6.0 Page Geometry
  (d:/texlive/2026/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
-)
-\Gm@cnth=\count317
-\Gm@cntv=\count318
-\c@Gm@tempcnt=\count319
-\Gm@bindingoffset=\dimen169
-\Gm@wd@mp=\dimen170
-\Gm@odd@mp=\dimen171
-\Gm@even@mp=\dimen172
-\Gm@layoutwidth=\dimen173
-\Gm@layoutheight=\dimen174
-\Gm@layouthoffset=\dimen175
-\Gm@layoutvoffset=\dimen176
-\Gm@dimlist=\toks28
+ (d:/texlive/2026/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2024/12/12 v1.0g TeX engine tests
+))
+\Gm@cnth=\count336
+\Gm@cntv=\count337
+\c@Gm@tempcnt=\count338
+\Gm@bindingoffset=\dimen199
+\Gm@wd@mp=\dimen256
+\Gm@odd@mp=\dimen257
+\Gm@even@mp=\dimen258
+\Gm@layoutwidth=\dimen259
+\Gm@layoutheight=\dimen260
+\Gm@layouthoffset=\dimen261
+\Gm@layoutvoffset=\dimen262
+\Gm@dimlist=\toks26
 ) (d:/texlive/2026/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
-\f@nch@headwidth=\skip56
-\f@nch@offset@elh=\skip57
-\f@nch@offset@erh=\skip58
-\f@nch@offset@olh=\skip59
-\f@nch@offset@orh=\skip60
-\f@nch@offset@elf=\skip61
-\f@nch@offset@erf=\skip62
-\f@nch@offset@olf=\skip63
-\f@nch@offset@orf=\skip64
-\f@nch@height=\skip65
-\f@nch@footalignment=\skip66
-\f@nch@widthL=\skip67
-\f@nch@widthC=\skip68
-\f@nch@widthR=\skip69
-\@temptokenb=\toks29
-) (d:/texlive/2026/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.enc
-File: UTF8.enc 2021/10/16 4.8.5
-) (d:/texlive/2026/texmf-dist/tex/latex/cjk/texinput/UTF8/UTF8.chr
-File: UTF8.chr 2021/10/16 4.8.5
-)
-No file DataStructureStyle.aux.
+\f@nch@headwidth=\skip63
+\f@nch@offset@elh=\skip64
+\f@nch@offset@erh=\skip65
+\f@nch@offset@olh=\skip66
+\f@nch@offset@orh=\skip67
+\f@nch@offset@elf=\skip68
+\f@nch@offset@erf=\skip69
+\f@nch@offset@olf=\skip70
+\f@nch@offset@orf=\skip71
+\f@nch@height=\skip72
+\f@nch@footalignment=\skip73
+\f@nch@widthL=\skip74
+\f@nch@widthC=\skip75
+\f@nch@widthR=\skip76
+\@temptokenb=\toks27
+) (./DataStructureStyle.aux)
 \openout1 = `DataStructureStyle.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
@@ -506,99 +521,75 @@ LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 28.
 LaTeX Font Info:    ... okay on input line 28.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 28.
 LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
 LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 28.
 LaTeX Font Info:    ... okay on input line 28.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 28.
 LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for C00/song/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for C05/song/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for C09/song/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for C10/song/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for C20/song/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for C19/song/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for C40/song/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for C42/song/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for C43/song/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for C50/song/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for C52/song/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for C49/song/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for C60/mj/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for C61/mj/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for C63/mj/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for C64/mj/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for C65/mj/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for C70/song/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for C31/song/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for C32/song/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for C33/song/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for C34/song/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for C35/song/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for C36/song/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for C37/song/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for C80/song/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for C81/song/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for C01/song/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for C11/song/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for C21/song/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for C41/song/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-LaTeX Font Info:    Checking defaults for C62/song/m/n on input line 28.
-LaTeX Font Info:    ... okay on input line 28.
-(d:/texlive/2026/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
-[Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count320
-\scratchdimen=\dimen177
-\scratchbox=\box61
-\nofMPsegments=\count321
-\nofMParguments=\count322
-\everyMPshowfont=\toks30
-\MPscratchCnt=\count323
-\MPscratchDim=\dimen178
-\MPnumerator=\count324
-\makeMPintoPDFobject=\count325
-\everyMPtoPDFconversion=\toks31
-) (d:/texlive/2026/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
-Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
- (d:/texlive/2026/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
-))
-\c@lstlisting=\count326
+
+Package fontspec Info: 
+(fontspec)             Adjusting the maths setup (use [no-math] to avoid
+(fontspec)             this).
+
+\symlegacymaths=\mathgroup6
+LaTeX Font Info:    Overwriting symbol font `legacymaths' in version `bold'
+(Font)                  OT1/cmr/m/n --> OT1/cmr/bx/n on input line 28.
+LaTeX Font Info:    Redeclaring math accent \acute on input line 28.
+LaTeX Font Info:    Redeclaring math accent \grave on input line 28.
+LaTeX Font Info:    Redeclaring math accent \ddot on input line 28.
+LaTeX Font Info:    Redeclaring math accent \tilde on input line 28.
+LaTeX Font Info:    Redeclaring math accent \bar on input line 28.
+LaTeX Font Info:    Redeclaring math accent \breve on input line 28.
+LaTeX Font Info:    Redeclaring math accent \check on input line 28.
+LaTeX Font Info:    Redeclaring math accent \hat on input line 28.
+LaTeX Font Info:    Redeclaring math accent \dot on input line 28.
+LaTeX Font Info:    Redeclaring math accent \mathring on input line 28.
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 28.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 28.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 28.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 28.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 28.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 28.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 28.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 28.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 28.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 28.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 28.
+LaTeX Font Info:    Redeclaring math symbol \mathdollar on input line 28.
+LaTeX Font Info:    Redeclaring symbol font `operators' on input line 28.
+LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
+(Font)              `operators' in the math version `normal' on input line 28.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> TU/lmr/m/n on input line 28.
+LaTeX Font Info:    Encoding `OT1' has changed to `TU' for symbol font
+(Font)              `operators' in the math version `bold' on input line 28.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> TU/lmr/m/n on input line 28.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  TU/lmr/m/n --> TU/lmr/m/n on input line 28.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> TU/lmr/m/it on input line 28.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> TU/lmr/b/n on input line 28.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 28.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 28.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  TU/lmr/m/n --> TU/lmr/b/n on input line 28.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> TU/lmr/b/it on input line 28.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> TU/lmss/b/n on input line 28.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/b/n on input line 28.
+\c@lstlisting=\count339
 
 *geometry* driver: auto-detecting
-*geometry* detected driver: pdftex
+*geometry* detected driver: xetex
 *geometry* verbose mode - [ preamble ] result:
-* driver: pdftex
+* driver: xetex
 * paper: a4paper
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
@@ -629,1586 +620,123 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Trying to load font information for C70+zhhei on input line 35.
-(d:/texlive/2026/texmf-dist/tex/latex/zhmetrics/c70zhhei.fd
-File: c70zhhei.fd 2009/09/23 4.8.2
-)
-Package CJKpunct Info: use punctuation spaces for family 'zhhei' with punctstyle (quanjiao) on input line 39.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 45.
- (d:/texlive/2026/texmf-dist/tex/latex/amsfonts/umsa.fd
+
+Package fontspec Info: 
+(fontspec)             Could not resolve font "SimHei/BI" (it probably doesn't
+(fontspec)             exist).
+
+
+Package fontspec Info: 
+(fontspec)             Could not resolve font "SimHei/B" (it probably doesn't
+(fontspec)             exist).
+
+
+Package fontspec Info: 
+(fontspec)             Could not resolve font "SimHei/I" (it probably doesn't
+(fontspec)             exist).
+
+
+Package fontspec Info: 
+(fontspec)             Font family 'SimHei(0)' created for font 'SimHei' with
+(fontspec)             options [Script={CJK}].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->"SimHei/OT:script=hani;language=dflt;"
+
+LaTeX Font Info:    Trying to load font information for U+msa on input line 46.
+(d:/texlive/2026/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 45.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 46.
  (d:/texlive/2026/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Trying to load font information for C70+rm on input line 46.
- (d:/texlive/2026/texmf-dist/tex/latex/ctex/fd/c70rm.fd
-File: c70rm.fd 2022/07/14 v2.5.10 Chinese font definition (CTEX)
-)
-Package CJKpunct Info: use punctuation spaces for family 'rm' with punctstyle (quanjiao) on input line 46.
- (d:/texlive/2026/texmf-dist/tex/generic/ctex/zhmap/ctex-zhmap-windows.tex
-File: ctex-zhmap-windows.tex 2022/07/14 v2.5.10 Windows font map loader for pdfTeX and DVIPDFMx (CTEX)
-{d:/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{UGBK.sfd}{Unicode.sfd}) [1
+) [1
 
-]
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:60: LaTeX Error: No \title given.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.60 \maketitle
-               
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: No \author given.
-
-No file DataStructureStyle.toc.
+] (./DataStructureStyle.toc [1])
 \tf@toc=\write3
 \openout3 = `DataStructureStyle.toc'.
 
-[1]
-
-LaTeX Warning: Reference `LastPage' on page 2 undefined on input line 115.
-
-[2{d:/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
-<JosephusProblem_list.png, id=169, 4430.5525pt x 8222.72pt>
-File: JosephusProblem_list.png Graphic file (type png)
-<use JosephusProblem_list.png>
-Package pdftex.def Info: JosephusProblem_list.png  used on input line 136.
-(pdftex.def)             Requested size: 386.95897pt x 718.05591pt.
-
-
-LaTeX Warning: Reference `LastPage' on page 3 undefined on input line 140.
-
-[3]
-Overfull \vbox (14.31546pt too high) has occurred while \output is active []
-
-
-
-LaTeX Warning: Reference `LastPage' on page 4 undefined on input line 140.
-
-[4 <./JosephusProblem_list.png>]
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:159: Improper alphabetic constant.
-<to be read again> 
-                   \lst@FillFixed@ 
-l.159     // 如果只有一个人
-                                  
-A one-character control sequence belongs after a ` mark.
-So I'm essentially inserting \0 here.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:159: Argument of \lst@FillFixed@ has an extra }.
-<inserted text> 
-                \par 
-l.159     // 如果只有一个人
-                                  
-I've run across a `}' that doesn't seem to match anything.
-For example, `\def\a#1{...}' and `\a}' would produce
-this error. If you simply proceed now, the `\par' that
-I've just inserted will cause me to report a runaway
-argument that might be the root of the problem. But if
-your `}' was spurious, just type `2' and it will go away.
-
-Runaway argument?
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:159: Paragraph ended before \lst@FillFixed@ was complete.
-<to be read again> 
-                   \par 
-l.159     // 如果只有一个人
-                                  
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:159: Improper alphabetic constant.
-<to be read again> 
-                   \lst@EC� 
-l.159     // 如果只有一个人
-                                  
-A one-character control sequence belongs after a ` mark.
-So I'm essentially inserting \0 here.
-
-Runaway argument?
-{48
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:159: Paragraph ended before \CJK@229 was complete.
-<to be read again> 
-                   \par 
-l.159     // 如果只有一个人
-                                  
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
-
-Missing character: There is no � in font cmtt9!
-Missing character: There is no � in font cmtt9!
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:159: Improper alphabetic constant.
-<to be read again> 
-                   \lst@EC� 
-l.159     // 如果只有一个人
-                                  
-A one-character control sequence belongs after a ` mark.
-So I'm essentially inserting \0 here.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:159: Improper alphabetic constant.
-<to be read again> 
-                   \lst@EC� 
-l.159     // 如果只有一个人
-                                  
-A one-character control sequence belongs after a ` mark.
-So I'm essentially inserting \0 here.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:159: Missing = inserted for \ifnum.
-<to be read again> 
-                   �
-l.159     // 如果只有一个人
-                                  
-I was expecting to see `<', `=', or `>'. Didn't.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:159: Missing number, treated as zero.
-<to be read again> 
-                   �
-l.159     // 如果只有一个人
-                                  
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:159: Missing = inserted for \ifnum.
-<to be read again> 
-                   �
-l.159     // 如果只有一个人
-                                  
-I was expecting to see `<', `=', or `>'. Didn't.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:159: Missing number, treated as zero.
-<to be read again> 
-                   �
-l.159     // 如果只有一个人
-                                  
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:159: Missing = inserted for \ifnum.
-<to be read again> 
-                   �
-l.159     // 如果只有一个人
-                                  
-I was expecting to see `<', `=', or `>'. Didn't.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:159: Missing number, treated as zero.
-<to be read again> 
-                   �
-l.159     // 如果只有一个人
-                                  
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:159: Missing = inserted for \ifnum.
-<to be read again> 
-                   �
-l.159     // 如果只有一个人
-                                  
-I was expecting to see `<', `=', or `>'. Didn't.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:159: Missing number, treated as zero.
-<to be read again> 
-                   �
-l.159     // 如果只有一个人
-                                  
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-Missing character: There is no � in font cmtt9!
-Missing character: There is no � in font cmtt9!
-Missing character: There is no � in font cmtt9!
-LaTeX Font Info:    Trying to load font information for C70+zhfs on input line 159.
-(d:/texlive/2026/texmf-dist/tex/latex/zhmetrics/c70zhfs.fd
-File: c70zhfs.fd 2009/09/23 4.8.2
-)
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:159: Bad character code (-80).
-<argument> \@tempcnta 
-                      
-l.159     // 如果只有一个人
-                                  
-A character number must be between 0 and 255.
-I changed this one to zero.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:159: Improper alphabetic constant.
-<to be read again> 
-                   \lst@EC� 
-l.159     // 如果只有一个人
-                                  
-A one-character control sequence belongs after a ` mark.
-So I'm essentially inserting \0 here.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:159: Improper alphabetic constant.
-<to be read again> 
-                   \lst@EC� 
-l.159     // 如果只有一个人
-                                  
-A one-character control sequence belongs after a ` mark.
-So I'm essentially inserting \0 here.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:159: Missing = inserted for \ifnum.
-<to be read again> 
-                   �
-l.159     // 如果只有一个人
-                                  
-I was expecting to see `<', `=', or `>'. Didn't.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:159: Missing number, treated as zero.
-<to be read again> 
-                   �
-l.159     // 如果只有一个人
-                                  
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:159: Missing = inserted for \ifnum.
-<to be read again> 
-                   �
-l.159     // 如果只有一个人
-                                  
-I was expecting to see `<', `=', or `>'. Didn't.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:159: Missing number, treated as zero.
-<to be read again> 
-                   �
-l.159     // 如果只有一个人
-                                  
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:159: Missing = inserted for \ifnum.
-<to be read again> 
-                   �
-l.159     // 如果只有一个人
-                                  
-I was expecting to see `<', `=', or `>'. Didn't.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:159: Missing number, treated as zero.
-<to be read again> 
-                   �
-l.159     // 如果只有一个人
-                                  
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:159: Missing = inserted for \ifnum.
-<to be read again> 
-                   �
-l.159     // 如果只有一个人
-                                  
-I was expecting to see `<', `=', or `>'. Didn't.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:159: Missing number, treated as zero.
-<to be read again> 
-                   �
-l.159     // 如果只有一个人
-                                  
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-Missing character: There is no � in font cmtt9!
-Missing character: There is no � in font cmtt9!
-Missing character: There is no � in font cmtt9!
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:159: Bad character code (-80).
-<argument> \@tempcnta 
-                      
-l.159     // 如果只有一个人
-                                  
-A character number must be between 0 and 255.
-I changed this one to zero.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:159: Improper alphabetic constant.
-<to be read again> 
-                   \lst@EC� 
-l.159     // 如果只有一个人
-                                  
-A one-character control sequence belongs after a ` mark.
-So I'm essentially inserting \0 here.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:159: Improper alphabetic constant.
-<to be read again> 
-                   \lst@EC� 
-l.159     // 如果只有一个人
-                                  
-A one-character control sequence belongs after a ` mark.
-So I'm essentially inserting \0 here.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:159: Missing = inserted for \ifnum.
-<to be read again> 
-                   �
-l.159     // 如果只有一个人
-                                  
-I was expecting to see `<', `=', or `>'. Didn't.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:159: Missing number, treated as zero.
-<to be read again> 
-                   �
-l.159     // 如果只有一个人
-                                  
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:159: Missing = inserted for \ifnum.
-<to be read again> 
-                   �
-l.159     // 如果只有一个人
-                                  
-I was expecting to see `<', `=', or `>'. Didn't.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:159: Missing number, treated as zero.
-<to be read again> 
-                   �
-l.159     // 如果只有一个人
-                                  
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:159: Missing = inserted for \ifnum.
-<to be read again> 
-                   �
-l.159     // 如果只有一个人
-                                  
-I was expecting to see `<', `=', or `>'. Didn't.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:159: Missing number, treated as zero.
-<to be read again> 
-                   �
-l.159     // 如果只有一个人
-                                  
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:159: Missing = inserted for \ifnum.
-<to be read again> 
-                   �
-l.159     // 如果只有一个人
-                                  
-I was expecting to see `<', `=', or `>'. Didn't.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:159: Missing number, treated as zero.
-<to be read again> 
-                   �
-l.159     // 如果只有一个人
-                                  
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-Missing character: There is no � in font cmtt9!
-Missing character: There is no � in font cmtt9!
-Missing character: There is no � in font cmtt9!
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:159: Bad character code (-80).
-<argument> \@tempcnta 
-                      
-l.159     // 如果只有一个人
-                                  
-A character number must be between 0 and 255.
-I changed this one to zero.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:159: Improper alphabetic constant.
-<to be read again> 
-                   \lst@EC� 
-l.159     // 如果只有一个人
-                                  
-A one-character control sequence belongs after a ` mark.
-So I'm essentially inserting \0 here.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:159: Improper alphabetic constant.
-<to be read again> 
-                   \lst@EC� 
-l.159     // 如果只有一个人
-                                  
-A one-character control sequence belongs after a ` mark.
-So I'm essentially inserting \0 here.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:159: Missing = inserted for \ifnum.
-<to be read again> 
-                   �
-l.159     // 如果只有一个人
-                                  
-I was expecting to see `<', `=', or `>'. Didn't.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:159: Missing number, treated as zero.
-<to be read again> 
-                   �
-l.159     // 如果只有一个人
-                                  
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:159: Missing = inserted for \ifnum.
-<to be read again> 
-                   �
-l.159     // 如果只有一个人
-                                  
-I was expecting to see `<', `=', or `>'. Didn't.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:159: Missing number, treated as zero.
-<to be read again> 
-                   �
-l.159     // 如果只有一个人
-                                  
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:159: Missing = inserted for \ifnum.
-<to be read again> 
-                   �
-l.159     // 如果只有一个人
-                                  
-I was expecting to see `<', `=', or `>'. Didn't.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:159: Missing number, treated as zero.
-<to be read again> 
-                   �
-l.159     // 如果只有一个人
-                                  
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:159: Missing = inserted for \ifnum.
-<to be read again> 
-                   �
-l.159     // 如果只有一个人
-                                  
-I was expecting to see `<', `=', or `>'. Didn't.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:159: Missing number, treated as zero.
-<to be read again> 
-                   �
-l.159     // 如果只有一个人
-                                  
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-Missing character: There is no � in font cmtt9!
-Missing character: There is no � in font cmtt9!
-Missing character: There is no � in font cmtt9!
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:159: Bad character code (-80).
-<argument> \@tempcnta 
-                      
-l.159     // 如果只有一个人
-                                  
-A character number must be between 0 and 255.
-I changed this one to zero.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:159: Improper alphabetic constant.
-<to be read again> 
-                   \lst@EC� 
-l.159     // 如果只有一个人
-                                  
-A one-character control sequence belongs after a ` mark.
-So I'm essentially inserting \0 here.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:159: Improper alphabetic constant.
-<to be read again> 
-                   \lst@EC� 
-l.159     // 如果只有一个人
-                                  
-A one-character control sequence belongs after a ` mark.
-So I'm essentially inserting \0 here.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:159: Missing = inserted for \ifnum.
-<to be read again> 
-                   �
-l.159     // 如果只有一个人
-                                  
-I was expecting to see `<', `=', or `>'. Didn't.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:159: Missing number, treated as zero.
-<to be read again> 
-                   �
-l.159     // 如果只有一个人
-                                  
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:159: Missing = inserted for \ifnum.
-<to be read again> 
-                   �
-l.159     // 如果只有一个人
-                                  
-I was expecting to see `<', `=', or `>'. Didn't.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:159: Missing number, treated as zero.
-<to be read again> 
-                   �
-l.159     // 如果只有一个人
-                                  
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:159: Missing = inserted for \ifnum.
-<to be read again> 
-                   �
-l.159     // 如果只有一个人
-                                  
-I was expecting to see `<', `=', or `>'. Didn't.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:159: Missing number, treated as zero.
-<to be read again> 
-                   �
-l.159     // 如果只有一个人
-                                  
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:159: Missing = inserted for \ifnum.
-<to be read again> 
-                   �
-l.159     // 如果只有一个人
-                                  
-I was expecting to see `<', `=', or `>'. Didn't.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:159: Missing number, treated as zero.
-<to be read again> 
-                   �
-l.159     // 如果只有一个人
-                                  
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-Missing character: There is no � in font cmtt9!
-Missing character: There is no � in font cmtt9!
-Missing character: There is no � in font cmtt9!
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:159: Bad character code (-80).
-<argument> \@tempcnta 
-                      
-l.159     // 如果只有一个人
-                                  
-A character number must be between 0 and 255.
-I changed this one to zero.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:159: Improper alphabetic constant.
-<to be read again> 
-                   \lst@EC� 
-l.159     // 如果只有一个人
-                                  
-A one-character control sequence belongs after a ` mark.
-So I'm essentially inserting \0 here.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:159: Improper alphabetic constant.
-<to be read again> 
-                   \lst@EC� 
-l.159     // 如果只有一个人
-                                  
-A one-character control sequence belongs after a ` mark.
-So I'm essentially inserting \0 here.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:159: Missing = inserted for \ifnum.
-<to be read again> 
-                   �
-l.159     // 如果只有一个人
-                                  
-I was expecting to see `<', `=', or `>'. Didn't.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:159: Missing number, treated as zero.
-<to be read again> 
-                   �
-l.159     // 如果只有一个人
-                                  
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:159: Missing = inserted for \ifnum.
-<to be read again> 
-                   �
-l.159     // 如果只有一个人
-                                  
-I was expecting to see `<', `=', or `>'. Didn't.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:159: Missing number, treated as zero.
-<to be read again> 
-                   �
-l.159     // 如果只有一个人
-                                  
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:159: Missing = inserted for \ifnum.
-<to be read again> 
-                   �
-l.159     // 如果只有一个人
-                                  
-I was expecting to see `<', `=', or `>'. Didn't.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:159: Missing number, treated as zero.
-<to be read again> 
-                   �
-l.159     // 如果只有一个人
-                                  
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:159: Missing = inserted for \ifnum.
-<to be read again> 
-                   �
-l.159     // 如果只有一个人
-                                  
-I was expecting to see `<', `=', or `>'. Didn't.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:159: Missing number, treated as zero.
-<to be read again> 
-                   �
-l.159     // 如果只有一个人
-                                  
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-Missing character: There is no � in font cmtt9!
-Missing character: There is no � in font cmtt9!
-Missing character: There is no � in font cmtt9!
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:159: Bad character code (-80).
-<argument> \@tempcnta 
-                      
-l.159     // 如果只有一个人
-                                  
-A character number must be between 0 and 255.
-I changed this one to zero.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:197: Extra }, or forgotten \endgroup.
-l.197 }
-       
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-Package CJKpunct Info: use punctuation spaces for family 'zhfs' with punctstyle (quanjiao) on input line 201.
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:210: Missing $ inserted.
-<inserted text> 
-                $
-l.210     int ret = josephus_
-                             circle();
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:215: Extra }, or forgotten $.
-l.215 }
-       
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:216: Missing $ inserted.
-<inserted text> 
-                $
-l.216 \end{lstlisting}
-                      
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-Missing character: There is no � in font cmr9!
-Missing character: There is no � in font cmr9!
-Missing character: There is no � in font cmr9!
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:216: Infinite glue shrinkage found in a paragraph.
-<recently read> \tex_par:D 
-                           
-l.216 \end{lstlisting}
-                      
-The paragraph just ended includes some glue that has
-infinite shrinkability, e.g., `\hskip 0pt minus 1fil'.
-Such glue doesn't belong there---it allows a paragraph
-of any length to fit on one line. But it's safe to proceed,
-since the offensive shrinkability has been made finite.
-
-
-Overfull \hbox (28.73593pt too wide) in paragraph at lines 159--216
-\OT1/cmtt/m/n/9.03374 index = 0;while (num != 1)// \C70/zhfs/m/n/9.03374/5d � \C70/zhfs/m/n/9.03374/51 � \C70/zhfs/m/n/9.03374/57 ^^H \C70/zhfs/m/n/9.03374/52 ^^Y \C70/zhfs/m/n/9.03374/8d � \C70/zhfs/m/n/9.03374/8f �\OT1/cmtt/m/n/9.03374 if (st[index] == 1)index = (index + 1) continue;cnt++;// \C70/zhfs/m/n/9.03374/65 p \C70/zhfs/m/n/9.03374/52 0 \C70/zhfs/m/n/9.03374/7b ,\OT1/cmtt/m/n/9.03374 m\C70/zhfs/m/n/9.03374/4e *\OT1/cmtt/m/n/9.03374 if
+ [2]
+
+Package fontspec Info: 
+(fontspec)             Could not resolve font "FangSong/BI" (it probably
+(fontspec)             doesn't exist).
+
+
+Package fontspec Info: 
+(fontspec)             Could not resolve font "FangSong/B" (it probably
+(fontspec)             doesn't exist).
+
+
+Package fontspec Info: 
+(fontspec)             Could not resolve font "FangSong/I" (it probably
+(fontspec)             doesn't exist).
+
+
+Package fontspec Info: 
+(fontspec)             Font family 'FangSong(0)' created for font 'FangSong'
+(fontspec)             with options [Script={CJK}].
+(fontspec)              
+(fontspec)              This font family consists of the following NFSS
+(fontspec)             series/shapes:
+(fontspec)              
+(fontspec)             - 'normal' (m/n) with NFSS spec.:
+(fontspec)             <->"FangSong/OT:script=hani;language=dflt;"
+
+ [1]
+File: JosephusProblem_list.png Graphic file (type bmp)
+<JosephusProblem_list.png>
+ [2]
+Overfull \vbox (14.37305pt too high) has occurred while \output is active []
+
+ [3] [4] [5] [6] [7]
+File: CardGame-2026-06-23-011504.png Graphic file (type bmp)
+<CardGame-2026-06-23-011504.png>
+ [8]
+Overfull \vbox (39.4359pt too high) has occurred while \output is active []
+
+ [9] [10] [11]
+File: Input Processing Condition-2026-06-23-123520.png Graphic file (type bmp)
+<Input Processing Condition-2026-06-23-123520.png>
+File: Input Processing Condition-2026-06-23-123520 - 副本2.png Graphic file (type bmp)
+<Input Processing Condition-2026-06-23-123520 - 副本2.png>
+ [12]
+Overfull \vbox (55.5182pt too high) has occurred while \output is active []
+
+ [13] [14] [15] [16] [17] [18] [19] [20] [21]
+Overfull \hbox (69.62006pt too wide) in paragraph at lines 921--921
+[]            \TU/lmtt/m/n/10.53937 if (nx >= 0 && nx < m && ny >= 0 && ny < n && maze[nx][ny] == 0 && visited[nx][ny] == 0)[] 
  []
 
-
-Overfull \hbox (6.37737pt too wide) in paragraph at lines 159--216
-\OT1/cmtt/m/n/9.03374 (cnt == m)st[index] = 1;cnt = 0;num--;index = (index + 1) // \C70/zhfs/m/n/9.03374/62 ~ \C70/zhfs/m/n/9.03374/67 ^^@ \C70/zhfs/m/n/9.03374/54 ^^N \C70/zhfs/m/n/9.03374/52 i \C70/zhfs/m/n/9.03374/4f Y \C70/zhfs/m/n/9.03374/76 � \C70/zhfs/m/n/9.03374/4e �\OT1/cmtt/m/n/9.03374 for (int i = 0; i < n; i++)if
+[22] [23]
+File: Input Processing Condition-2026-06-24-030629.png Graphic file (type bmp)
+<Input Processing Condition-2026-06-24-030629.png>
+ [24] [25] [26] [27] [28]
+Overfull \hbox (147.08443pt too wide) in paragraph at lines 1252--1252
+[]        \TU/lmtt/m/n/10.53937 printf("school %d : total=%d, male=%d, female=%d\n", sch[i].id, sch[i].total, sch[i].male, sch[i].female);[] 
  []
 
-
-Overfull \hbox (1.6344pt too wide) in paragraph at lines 159--216
-\OT1/cmtt/m/n/9.03374 (st[i] == 0)return a[i];return -1;int main()printf("\C70/zhfs/m/n/9.03374/8b � \C70/zhfs/m/n/9.03374/8f � \C70/zhfs/m/n/9.03374/51 e\OT1/cmtt/m/n/9.03374 n\C70/zhfs/m/n/9.03374/54 �\OT1/cmtt/m/n/9.03374 m|\C70/zhfs/m/n/9.03374/ff ^^Z| \OT1/cmtt/m/n/9.03374 ");scanf("memset(st, 0, sizeof(st));for
- []
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:216: Missing } inserted.
-<inserted text> 
-                }
-l.216 \end{lstlisting}
-                      
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Improper alphabetic constant.
-<to be read again> 
-                   \lst@FillFixed@ 
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-A one-character control sequence belongs after a ` mark.
-So I'm essentially inserting \0 here.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Argument of \lst@FillFixed@ has an extra }.
-<inserted text> 
-                \par 
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-I've run across a `}' that doesn't seem to match anything.
-For example, `\def\a#1{...}' and `\a}' would produce
-this error. If you simply proceed now, the `\par' that
-I've just inserted will cause me to report a runaway
-argument that might be the root of the problem. But if
-your `}' was spurious, just type `2' and it will go away.
-
-Runaway argument?
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Paragraph ended before \lst@FillFixed@ was complete.
-<to be read again> 
-                   \par 
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Improper alphabetic constant.
-<to be read again> 
-                   \lst@EC� 
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-A one-character control sequence belongs after a ` mark.
-So I'm essentially inserting \0 here.
-
-Runaway argument?
-{48
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Paragraph ended before \CJK@229 was complete.
-<to be read again> 
-                   \par 
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-I suspect you've forgotten a `}', causing me to apply this
-control sequence to too much text. How can we recover?
-My plan is to forget the whole thing and hope for the best.
-
-Missing character: There is no � in font cmtt9!
-Missing character: There is no � in font cmtt9!
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Improper alphabetic constant.
-<to be read again> 
-                   \lst@EC� 
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-A one-character control sequence belongs after a ` mark.
-So I'm essentially inserting \0 here.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Improper alphabetic constant.
-<to be read again> 
-                   \lst@EC� 
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-A one-character control sequence belongs after a ` mark.
-So I'm essentially inserting \0 here.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Missing = inserted for \ifnum.
-<to be read again> 
-                   �
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-I was expecting to see `<', `=', or `>'. Didn't.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Missing number, treated as zero.
-<to be read again> 
-                   �
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Missing = inserted for \ifnum.
-<to be read again> 
-                   �
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-I was expecting to see `<', `=', or `>'. Didn't.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Missing number, treated as zero.
-<to be read again> 
-                   �
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Missing = inserted for \ifnum.
-<to be read again> 
-                   �
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-I was expecting to see `<', `=', or `>'. Didn't.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Missing number, treated as zero.
-<to be read again> 
-                   �
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Missing = inserted for \ifnum.
-<to be read again> 
-                   �
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-I was expecting to see `<', `=', or `>'. Didn't.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Missing number, treated as zero.
-<to be read again> 
-                   �
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-Missing character: There is no � in font cmtt9!
-Missing character: There is no � in font cmtt9!
-Missing character: There is no � in font cmtt9!
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Bad character code (-80).
-<argument> \@tempcnta 
-                      
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-A character number must be between 0 and 255.
-I changed this one to zero.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Improper alphabetic constant.
-<to be read again> 
-                   \lst@EC� 
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-A one-character control sequence belongs after a ` mark.
-So I'm essentially inserting \0 here.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Improper alphabetic constant.
-<to be read again> 
-                   \lst@EC� 
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-A one-character control sequence belongs after a ` mark.
-So I'm essentially inserting \0 here.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Missing = inserted for \ifnum.
-<to be read again> 
-                   �
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-I was expecting to see `<', `=', or `>'. Didn't.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Missing number, treated as zero.
-<to be read again> 
-                   �
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Missing = inserted for \ifnum.
-<to be read again> 
-                   �
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-I was expecting to see `<', `=', or `>'. Didn't.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Missing number, treated as zero.
-<to be read again> 
-                   �
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Missing = inserted for \ifnum.
-<to be read again> 
-                   �
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-I was expecting to see `<', `=', or `>'. Didn't.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Missing number, treated as zero.
-<to be read again> 
-                   �
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Missing = inserted for \ifnum.
-<to be read again> 
-                   �
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-I was expecting to see `<', `=', or `>'. Didn't.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Missing number, treated as zero.
-<to be read again> 
-                   �
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-Missing character: There is no � in font cmtt9!
-Missing character: There is no � in font cmtt9!
-Missing character: There is no � in font cmtt9!
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Bad character code (-80).
-<argument> \@tempcnta 
-                      
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-A character number must be between 0 and 255.
-I changed this one to zero.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Improper alphabetic constant.
-<to be read again> 
-                   \lst@EC� 
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-A one-character control sequence belongs after a ` mark.
-So I'm essentially inserting \0 here.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Improper alphabetic constant.
-<to be read again> 
-                   \lst@EC� 
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-A one-character control sequence belongs after a ` mark.
-So I'm essentially inserting \0 here.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Missing = inserted for \ifnum.
-<to be read again> 
-                   �
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-I was expecting to see `<', `=', or `>'. Didn't.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Missing number, treated as zero.
-<to be read again> 
-                   �
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Missing = inserted for \ifnum.
-<to be read again> 
-                   �
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-I was expecting to see `<', `=', or `>'. Didn't.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Missing number, treated as zero.
-<to be read again> 
-                   �
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Missing = inserted for \ifnum.
-<to be read again> 
-                   �
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-I was expecting to see `<', `=', or `>'. Didn't.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Missing number, treated as zero.
-<to be read again> 
-                   �
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Missing = inserted for \ifnum.
-<to be read again> 
-                   �
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-I was expecting to see `<', `=', or `>'. Didn't.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Missing number, treated as zero.
-<to be read again> 
-                   �
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-Missing character: There is no � in font cmtt9!
-Missing character: There is no � in font cmtt9!
-Missing character: There is no � in font cmtt9!
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Bad character code (-80).
-<argument> \@tempcnta 
-                      
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-A character number must be between 0 and 255.
-I changed this one to zero.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Improper alphabetic constant.
-<to be read again> 
-                   \lst@EC� 
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-A one-character control sequence belongs after a ` mark.
-So I'm essentially inserting \0 here.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Improper alphabetic constant.
-<to be read again> 
-                   \lst@EC� 
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-A one-character control sequence belongs after a ` mark.
-So I'm essentially inserting \0 here.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Missing = inserted for \ifnum.
-<to be read again> 
-                   �
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-I was expecting to see `<', `=', or `>'. Didn't.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Missing number, treated as zero.
-<to be read again> 
-                   �
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Missing = inserted for \ifnum.
-<to be read again> 
-                   �
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-I was expecting to see `<', `=', or `>'. Didn't.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Missing number, treated as zero.
-<to be read again> 
-                   �
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Missing = inserted for \ifnum.
-<to be read again> 
-                   �
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-I was expecting to see `<', `=', or `>'. Didn't.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Missing number, treated as zero.
-<to be read again> 
-                   �
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Missing = inserted for \ifnum.
-<to be read again> 
-                   �
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-I was expecting to see `<', `=', or `>'. Didn't.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Missing number, treated as zero.
-<to be read again> 
-                   �
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-Missing character: There is no � in font cmtt9!
-Missing character: There is no � in font cmtt9!
-Missing character: There is no � in font cmtt9!
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Bad character code (-80).
-<argument> \@tempcnta 
-                      
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-A character number must be between 0 and 255.
-I changed this one to zero.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Improper alphabetic constant.
-<to be read again> 
-                   \lst@EC� 
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-A one-character control sequence belongs after a ` mark.
-So I'm essentially inserting \0 here.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Improper alphabetic constant.
-<to be read again> 
-                   \lst@EC� 
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-A one-character control sequence belongs after a ` mark.
-So I'm essentially inserting \0 here.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Missing = inserted for \ifnum.
-<to be read again> 
-                   �
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-I was expecting to see `<', `=', or `>'. Didn't.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Missing number, treated as zero.
-<to be read again> 
-                   �
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Missing = inserted for \ifnum.
-<to be read again> 
-                   �
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-I was expecting to see `<', `=', or `>'. Didn't.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Missing number, treated as zero.
-<to be read again> 
-                   �
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Missing = inserted for \ifnum.
-<to be read again> 
-                   �
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-I was expecting to see `<', `=', or `>'. Didn't.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Missing number, treated as zero.
-<to be read again> 
-                   �
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Missing = inserted for \ifnum.
-<to be read again> 
-                   �
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-I was expecting to see `<', `=', or `>'. Didn't.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Missing number, treated as zero.
-<to be read again> 
-                   �
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-Missing character: There is no � in font cmtt9!
-Missing character: There is no � in font cmtt9!
-Missing character: There is no � in font cmtt9!
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Bad character code (-80).
-<argument> \@tempcnta 
-                      
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-A character number must be between 0 and 255.
-I changed this one to zero.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Improper alphabetic constant.
-<to be read again> 
-                   \lst@EC� 
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-A one-character control sequence belongs after a ` mark.
-So I'm essentially inserting \0 here.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Improper alphabetic constant.
-<to be read again> 
-                   \lst@EC� 
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-A one-character control sequence belongs after a ` mark.
-So I'm essentially inserting \0 here.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Missing = inserted for \ifnum.
-<to be read again> 
-                   �
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-I was expecting to see `<', `=', or `>'. Didn't.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Missing number, treated as zero.
-<to be read again> 
-                   �
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Missing = inserted for \ifnum.
-<to be read again> 
-                   �
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-I was expecting to see `<', `=', or `>'. Didn't.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Missing number, treated as zero.
-<to be read again> 
-                   �
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Missing = inserted for \ifnum.
-<to be read again> 
-                   �
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-I was expecting to see `<', `=', or `>'. Didn't.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Missing number, treated as zero.
-<to be read again> 
-                   �
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Missing = inserted for \ifnum.
-<to be read again> 
-                   �
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-I was expecting to see `<', `=', or `>'. Didn't.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Missing number, treated as zero.
-<to be read again> 
-                   �
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-Missing character: There is no � in font cmtt9!
-Missing character: There is no � in font cmtt9!
-Missing character: There is no � in font cmtt9!
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Bad character code (-80).
-<argument> \@tempcnta 
-                      
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-A character number must be between 0 and 255.
-I changed this one to zero.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Improper alphabetic constant.
-<to be read again> 
-                   \lst@EC� 
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-A one-character control sequence belongs after a ` mark.
-So I'm essentially inserting \0 here.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Improper alphabetic constant.
-<to be read again> 
-                   \lst@EC� 
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-A one-character control sequence belongs after a ` mark.
-So I'm essentially inserting \0 here.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Missing = inserted for \ifnum.
-<to be read again> 
-                   �
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-I was expecting to see `<', `=', or `>'. Didn't.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Missing number, treated as zero.
-<to be read again> 
-                   �
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Missing = inserted for \ifnum.
-<to be read again> 
-                   �
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-I was expecting to see `<', `=', or `>'. Didn't.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Missing number, treated as zero.
-<to be read again> 
-                   �
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Missing = inserted for \ifnum.
-<to be read again> 
-                   �
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-I was expecting to see `<', `=', or `>'. Didn't.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Missing number, treated as zero.
-<to be read again> 
-                   �
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Missing = inserted for \ifnum.
-<to be read again> 
-                   �
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-I was expecting to see `<', `=', or `>'. Didn't.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Missing number, treated as zero.
-<to be read again> 
-                   �
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-Missing character: There is no � in font cmtt9!
-Missing character: There is no � in font cmtt9!
-Missing character: There is no � in font cmtt9!
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Bad character code (-80).
-<argument> \@tempcnta 
-                      
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-A character number must be between 0 and 255.
-I changed this one to zero.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Improper alphabetic constant.
-<to be read again> 
-                   \lst@EC� 
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-A one-character control sequence belongs after a ` mark.
-So I'm essentially inserting \0 here.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Improper alphabetic constant.
-<to be read again> 
-                   \lst@EC� 
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-A one-character control sequence belongs after a ` mark.
-So I'm essentially inserting \0 here.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Missing = inserted for \ifnum.
-<to be read again> 
-                   �
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-I was expecting to see `<', `=', or `>'. Didn't.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Missing number, treated as zero.
-<to be read again> 
-                   �
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Missing = inserted for \ifnum.
-<to be read again> 
-                   �
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-I was expecting to see `<', `=', or `>'. Didn't.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Missing number, treated as zero.
-<to be read again> 
-                   �
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Missing = inserted for \ifnum.
-<to be read again> 
-                   �
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-I was expecting to see `<', `=', or `>'. Didn't.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Missing number, treated as zero.
-<to be read again> 
-                   �
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Missing = inserted for \ifnum.
-<to be read again> 
-                   �
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-I was expecting to see `<', `=', or `>'. Didn't.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Missing number, treated as zero.
-<to be read again> 
-                   �
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-Missing character: There is no � in font cmtt9!
-Missing character: There is no � in font cmtt9!
-Missing character: There is no � in font cmtt9!
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Bad character code (-80).
-<argument> \@tempcnta 
-                      
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-A character number must be between 0 and 255.
-I changed this one to zero.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Improper alphabetic constant.
-<to be read again> 
-                   \lst@EC� 
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-A one-character control sequence belongs after a ` mark.
-So I'm essentially inserting \0 here.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Improper alphabetic constant.
-<to be read again> 
-                   \lst@EC� 
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-A one-character control sequence belongs after a ` mark.
-So I'm essentially inserting \0 here.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Missing = inserted for \ifnum.
-<to be read again> 
-                   �
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-I was expecting to see `<', `=', or `>'. Didn't.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Missing number, treated as zero.
-<to be read again> 
-                   �
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Missing = inserted for \ifnum.
-<to be read again> 
-                   �
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-I was expecting to see `<', `=', or `>'. Didn't.
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Missing number, treated as zero.
-<to be read again> 
-                   �
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230: Missing = inserted for \ifnum.
-<to be read again> 
-                   �
-l.230 ...�面有n个节点，节点的data是1到n
-                                                  
-(That makes 100 errors; please try again.) 
+[29] [30] [31] [32]
+File: FindSet-2026-06-24-083504.png Graphic file (type bmp)
+<FindSet-2026-06-24-083504.png>
+ [33] [34] [35] [36] [37] [38] [39] [40] [41] [42] [43] [44] [45] [46] 
+enddocument/afterlastpage (AED): lastpage setting LastPage.
+(./DataStructureStyle.aux)
+ ***********
+LaTeX2e <2026-06-01>
+L3 programming layer <2022/08/05>
+ ***********
+ ) 
 Here is how much of TeX's memory you used:
- 11086 strings out of 467168
- 198049 string characters out of 5413705
- 599334 words of memory out of 5000000
- 39902 multiletter control sequences out of 15000+600000
- 679263 words of font info for 230 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 78i,11n,92p,1281b,1345s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 11351 strings out of 467814
+ 287273 string characters out of 5427169
+ 715043 words of memory out of 5000000
+ 40254 multiletter control sequences out of 15000+600000
+ 632506 words of font info for 92 fonts, out of 8000000 for 9000
+ 1348 hyphenation exceptions out of 8191
+ 93i,12n,111p,1277b,1089s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-d:/develop/Sources/DataStruction/data-struction/DataCode/DataStructureHomeWork/DataStructureStyle/DataStructureStyle.tex:230:  ==> Fatal error occurred, no output PDF file produced!
+Output written on DataStructureStyle.pdf (49 pages).
