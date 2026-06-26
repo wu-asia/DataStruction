@@ -8,6 +8,7 @@
 \usepackage{subcaption}
 \usepackage{amsmath,amssymb}
 \usepackage{geometry}
+\usepackage{captaion}
 \geometry{a4paper,margin=2cm}
 \usepackage{fancyhdr}
 
@@ -494,15 +495,15 @@ int main()
         \includegraphics[width=\linewidth]
         {Input Processing Condition-2026-06-23-123520.png}
         \caption{一元多项式计算流程图}
-        \label{fig:polynomial}
+        \label{fig:polynomial_flowchart1}
     \end{minipage}
     \hfill
     \begin{minipage}{0.48\textwidth}
         \centering
         \includegraphics[width=\linewidth]
         {Input Processing Condition-2026-06-23-123520 - 副本2.png}
-        \caption{一元多项式计算流程图}
-        \label{fig:cardgame-test}
+        \caption{一元多项式运算详细流程图}
+        \label{fig:polynomial_flowchart2}
     \end{minipage}
 
 \end{figure}
@@ -3118,5 +3119,1105 @@ int main()
 
 \subsubsection{5. 小结}
 本实验实现有向图拓扑排序与关键路径算法，能够判断有向图是否存在环，熟练掌握 ve、vl 求解方法，理解 AOE 网关键活动决定工程最短工期的原理。
+
+\subsection {3.交通咨询系统}
+\subsubsection {任务}
+设计一个简易交通咨询系统，能让旅客咨询从一个城市到另一个城市之间的最短路径。 功能要求： （1）用图结构表示城市之间的交通联系，图中的顶点为城市，边上的权值为两城市之间 的距离。建立交通网络图的存储结构，并输出；
+（2）求一个城市到其他城市的最短路径（Dijkstra算法），输出路径顶点序列和总距离； （3）求任一对城市之间的最短路径（Floyd算法），输出路径顶点序列和总距离。
+\subsubsection{1. 需求分析}
+\paragraph{分析总结逻辑结构}
+采用邻接矩阵存储城市交通无向图，顶点为城市、边权代表路程。
+\paragraph{分析总结运算集合}
+运算包含交通图构建打印、Dijkstra 单源最短路径求解、Floyd 算法求解全部顶点对最短路径并输出路径长度。（2）概要设计
+\subsubsection{2. 概要设计}
+\paragraph{存储结构设计}
+存储使用邻接矩阵保存路网，一维数组存城市名。Dijkstra 借助 dist、visited、path 数组松弛更新；Floyd 用 distF、pathF 二维数组，三层循环枚举中转点更新最短路径。
+\paragraph{算法设计思路}
+\subsubsection{3. 详细设计}
+\paragraph{源代码（带注释）}
+代码：
+\begin{verbatim}
+#include <stdio.h>
+#include <string.h>
+
+#define MAXV 100
+#define INF 1000000
+
+int G[MAXV][MAXV];
+char city[MAXV][20];
+int n, m;
+
+//输出邻接矩阵
+void printGraph()
+{
+    printf("\n交通网络邻接矩阵：\n\n");
+
+    printf("%8s", "");
+    for (int i = 0; i < n; i++)
+        printf("%8s", city[i]);
+
+    printf("\n");
+
+    for (int i = 0; i < n; i++)
+    {
+        printf("%8s", city[i]);
+
+        for (int j = 0; j < n; j++)
+        {
+            if (G[i][j] == INF)
+                printf("%8s", "INF");
+            else
+                printf("%8d", G[i][j]);
+        }
+
+        printf("\n");
+    }
+}
+
+//Dijkstra
+
+void printDijkstraPath(int path[], int v)
+{
+    if (path[v] == -1)
+    {
+        printf("%s", city[v]);
+        return;
+    }
+
+    printDijkstraPath(path, path[v]);
+    printf(" -> %s", city[v]);
+}
+
+void Dijkstra(int src)
+{
+    int dist[MAXV];
+    int visited[MAXV];
+    int path[MAXV];
+
+    for (int i = 0; i < n; i++)
+    {
+        dist[i] = G[src][i];
+        visited[i] = 0;
+
+        if (i != src && G[src][i] < INF)
+            path[i] = src;
+        else
+            path[i] = -1;
+    }
+
+    dist[src] = 0;
+    visited[src] = 1;
+
+    for (int i = 1; i < n; i++)
+    {
+        int min = INF;
+        int u = -1;
+
+        for (int j = 0; j < n; j++)
+        {
+            if (!visited[j] && dist[j] < min)
+            {
+                min = dist[j];
+                u = j;
+            }
+        }
+
+        if (u == -1)
+            break;
+
+        visited[u] = 1;
+
+        for (int v = 0; v < n; v++)
+        {
+            if (!visited[v] &&
+                G[u][v] < INF &&
+                dist[u] + G[u][v] < dist[v])
+            {
+                dist[v] = dist[u] + G[u][v];
+                path[v] = u;
+            }
+        }
+    }
+
+    printf("Dijkstra最短路径（起点：%s）\n", city[src]);
+
+    for (int i = 0; i < n; i++)
+    {
+        if (i == src)
+            continue;
+
+        printf("\n%s -> %s\n", city[src], city[i]);
+
+        if (dist[i] == INF)
+        {
+            printf("无路径\n");
+            continue;
+        }
+
+        printf("路径：");
+        printDijkstraPath(path, i);
+
+        printf("\n距离：%d\n", dist[i]);
+    }
+}
+
+//Floyd
+
+int distF[MAXV][MAXV];
+int pathF[MAXV][MAXV];
+
+void Floyd()
+{
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            distF[i][j] = G[i][j];
+
+            if (i != j && G[i][j] < INF)
+                pathF[i][j] = i;
+            else
+                pathF[i][j] = -1;
+        }
+    }
+
+    for (int k = 0; k < n; k++)
+    {
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < n; j++)
+            {
+                if (distF[i][k] < INF &&
+                    distF[k][j] < INF &&
+                    distF[i][k] + distF[k][j] < distF[i][j])
+                {
+                    distF[i][j] = distF[i][k] + distF[k][j];
+                    pathF[i][j] = pathF[k][j];
+                }
+            }
+        }
+    }
+}
+
+void printFloydPath(int start, int end)
+{
+    int stack[MAXV];
+    int top = -1;
+
+    int cur = end;
+
+    while (cur != start)
+    {
+        stack[++top] = cur;
+        cur = pathF[start][cur];
+    }
+
+    printf("%s", city[start]);
+
+    while (top >= 0)
+    {
+        printf(" -> %s", city[stack[top--]]);
+    }
+}
+
+void showFloyd()
+{
+    printf("Floyd任意两点最短路径\n");
+
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = i + 1; j < n; j++)
+        {
+            printf("\n%s -> %s\n", city[i], city[j]);
+
+            if (distF[i][j] == INF)
+            {
+                printf("无路径\n");
+                continue;
+            }
+
+            printf("路径：");
+            printFloydPath(i, j);
+
+            printf("\n距离：%d\n", distF[i][j]);
+        }
+    }
+}
+
+int main()
+{
+    printf("请输入城市数：");
+    scanf("%d", &n);
+
+    printf("请输入城市名称：\n");
+
+    for (int i = 0; i < n; i++)
+        scanf("%s", city[i]);
+
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            if (i == j)
+                G[i][j] = 0;
+            else
+                G[i][j] = INF;
+        }
+    }
+
+    printf("请输入道路数：");
+    scanf("%d", &m);
+
+    printf("请输入道路信息(城市1 城市2 距离)：\n");
+
+    for (int i = 0; i < m; i++)
+    {
+        char a[20], b[20];
+        int d;
+
+        scanf("%s %s %d", a, b, &d);
+
+        int u = -1, v = -1;
+
+        for (int j = 0; j < n; j++)
+        {
+            if (strcmp(city[j], a) == 0)
+                u = j;
+
+            if (strcmp(city[j], b) == 0)
+                v = j;
+        }
+
+        if (u == -1 || v == -1)
+        {
+            printf("城市不存在，忽略该边！\n");
+            continue;
+        }
+
+        G[u][v] = d;
+        G[v][u] = d;
+    }
+
+    printGraph();
+
+    int src;
+
+    printf("\n请输入Dijkstra起点编号(0~%d)：", n - 1);
+    scanf("%d", &src);
+
+    if (src < 0 || src >= n)
+    {
+        printf("起点编号错误！\n");
+        return 0;
+    }
+
+    Dijkstra(src);
+
+    Floyd();
+
+    showFloyd();
+
+    return 0;
+}
+\end{verbatim}
+\subsubsection{4. 调试分析}
+\paragraph{测试输入与完整运行输出}
+\begin{verbatim}
+请输入城市数：4
+请输入城市名称：
+A
+B
+C
+D
+请输入道路数：5
+请输入道路信息(城市1 城市2 距离)：
+A B 2
+A C 5
+B C 1
+B D 4
+C D 3
+交通网络邻接矩阵：
+               A       B       C       D
+       A       0       2       5     INF
+       B       2       0       1       4
+       C       5       1       0       3
+       D     INF       4       3       0
+请输入Dijkstra起点编号(0~3)：0
+Dijkstra最短路径（起点：A）
+A -> B
+路径：A -> B
+距离：2
+A -> C
+路径：A -> B -> C
+距离：3
+A -> D
+路径：A -> B -> D
+距离：6
+Floyd任意两点最短路径
+A -> B
+路径：A -> B
+距离：2
+A -> C
+路径：A -> B -> C
+距离：3
+A -> D
+路径：A -> B -> D
+距离：6
+B -> C
+路径：B -> C
+距离：1
+B -> D
+路径：B -> D
+距离：4
+C -> D
+路径：C -> D
+距离：3
+\end{verbatim}
+
+\subsubsection{5. 小结}
+本交通咨询系统实现两种经典最短路径算法，Dijkstra 适合单源查询，Floyd 可一次性算出所有城市间路径，掌握多源最松弛更新原理，仅 Floyd 路径记录逻辑存在缺陷。
+
+
+\section{模块四}
+\subsection {1.基于线性表的查找（学生信息管理）}
+\subsubsection {任务}
+建立学生信息表，实现顺序查找、折半查找。 要求： （1）输入的学生数据包含学号、姓名、总成绩等多个数据项。 （2）输出：查找成功输出找到的数据的所有数据项，查找失败也要给出相应提示信息。 （3）分析总结算法各自的特点以及ASL。
+\subsubsection{1.需求分析}
+\paragraph{分析总结逻辑结构}
+以结构体线性表存储学生学号、姓名与成绩，提供顺序、折半两种学号查找功能，成功输出完整信息，失败给出提示。
+\paragraph{分析总结运算集合}
+\subsubsection{2.概要设计}
+采用结构体数组作为有序线性表存储学生数据。顺序查找逐一遍历匹配学号；折半查找仅适用于有序表，通过不断缩小区间快速定位目标。
+\paragraph{存储结构设计}
+\paragraph{算法设计思路}
+\subsubsection{3.详细设计}
+\paragraph{源代码（带注释）}
+代码：
+\begin{verbatim}
+#include <stdio.h>
+
+#define MAXSIZE 100
+
+// 学生结构体
+typedef struct
+{
+    int id;         // 学号
+    char name[20];  // 姓名
+    float score;    // 总成绩
+} Student;
+
+// 顺序查找
+int SequentialSearch(Student stu[], int n, int key)
+{
+    for (int i = 0; i < n; i++)
+    {
+        if (stu[i].id == key)
+            return i;
+    }
+    return -1;
+}
+
+// 折半查找
+int BinarySearch(Student stu[], int n, int key)
+{
+    int low = 0;
+    int high = n - 1;
+
+    while (low <= high)
+    {
+        int mid = (low + high) / 2;
+
+        if (stu[mid].id == key)
+            return mid;
+        else if (stu[mid].id < key)
+            low = mid + 1;
+        else
+            high = mid - 1;
+    }
+
+    return -1;
+}
+
+// 输出学生信息
+void PrintStudent(Student s)
+{
+    printf("学号：%d\n", s.id);
+    printf("姓名：%s\n", s.name);
+    printf("总成绩：%.2f\n", s.score);
+}
+
+int main()
+{
+    Student stu[MAXSIZE];
+    int n;
+
+    printf("请输入学生人数：");
+    scanf("%d", &n);
+
+    printf("请按学号从小到大输入学生信息：\n");
+
+    for (int i = 0; i < n; i++)
+    {
+        printf("第%d个学生：\n", i + 1);
+
+        printf("学号：");
+        scanf("%d", &stu[i].id);
+
+        printf("姓名：");
+        scanf("%s", stu[i].name);
+
+        printf("总成绩：");
+        scanf("%f", &stu[i].score);
+    }
+
+    int key;
+
+    printf("\n请输入要查找的学号：");
+    scanf("%d", &key);
+
+    // 顺序查找
+    printf("\n顺序查找\n");
+
+    int pos = SequentialSearch(stu, n, key);
+
+    if (pos != -1)
+    {
+        printf("查找成功！\n");
+        PrintStudent(stu[pos]);
+    }
+    else
+    {
+        printf("查找失败，未找到该学生！\n");
+    }
+
+    // 折半查找
+    printf("\n折半查找\n");
+
+    pos = BinarySearch(stu, n, key);
+
+    if (pos != -1)
+    {
+        printf("查找成功！\n");
+        PrintStudent(stu[pos]);
+    }
+    else
+    {
+        printf("查找失败，未找到该学生！\n");
+    }
+
+    return 0;
+}
+\end{verbatim}
+\subsubsection{4. 调试分析}
+\paragraph{测试输入与完整运行输出}
+\begin{verbatim}
+RESULT
+\end{verbatim}
+
+\subsubsection{5. 小结}
+本实验采用结构体建立学生信息表，以学号作为关键字，实现了顺序查找和折半查找两种查找方法，并统计了查找过程中的比较次数。通过实验发现，顺序查找的实现简单，不需要对数据进行排序，适用于无序表和各种存储结构，但随着数据规模的增加，其查找效率会明显下降。折半查找通过不断缩小查找区间来定位目标元素，平均查找长度远小于顺序查找，因此具有更高的查找效率，但必须保证查找表有序。
+
+
+
+顺序查找成功时的平均查找长度（Average Search Length，ASL）为：
+顺序查找平均查找长度：
+$$
+ASL = \frac{n+1}{2}
+$$
+其时间复杂度为：
+$$
+O(n)
+$$
+
+折半查找要求查找表按关键字有序排列，其平均查找长度约为：
+$$
+ASL \approx \log_2(n+1)-1
+$$
+时间复杂度为：
+$$
+O(\log_2 n)
+$$
+通过本次实验，加深了对查找表、关键字、平均查找长度（ASL）等概念的理解，掌握了顺序查找和折半查找的实现方法及适用条件，并认识到算法效率与数据组织方式之间的密切关系。在实际应用中，应根据数据是否有序以及查找效率要求选择合适的查找算法。对于无序表或数据经常发生变化的情况，顺序查找具有较好的适应性；而对于静态有序表，折半查找能够显著提高查找效率。
+\subsection {2.基于树表的查找(文本词汇统计）}
+\subsubsection {任务}
+读取一个文本文件，统计文件中每个单词的出现次数，并按字典序输出。
+要求：
+（1）使用二叉搜索树存储单词及其出现次数。
+（2）提供二叉搜索树上的插入、查找和中序遍历。
+（3）分析并总结二叉搜索树的特点以及ASL。
+\subsubsection{1. 需求分析}
+\paragraph{分析总结逻辑结构}
+顺序储存
+\paragraph{分析总结运算集合}
+交换、移位
+\subsubsection{2. 概要设计}
+\paragraph{存储结构设计}
+\paragraph{算法设计思路}
+\subsubsection{3. 详细设计}
+\paragraph{源代码（带注释）}
+代码：
+\begin{verbatim}
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+
+#define MAXWORD 100
+
+//二叉搜索树结点
+typedef struct BSTNode
+{
+    char word[MAXWORD];
+    int count;
+    struct BSTNode *left;
+    struct BSTNode *right;
+} BSTNode;
+
+typedef BSTNode* BSTree;
+
+// 创建新结点
+BSTNode* CreateNode(char *word)
+{
+    BSTNode *node = (BSTNode*)malloc(sizeof(BSTNode));
+
+    strcpy(node->word, word);
+    node->count = 1;
+    node->left = NULL;
+    node->right = NULL;
+
+    return node;
+}
+ 
+// 查找
+BSTNode* Search(BSTree root, char *word)
+{
+    if(root == NULL)
+        return NULL;
+
+    int cmp = strcmp(word, root->word);
+
+    if(cmp == 0)
+        return root;
+    else if(cmp < 0)
+        return Search(root->left, word);
+    else
+        return Search(root->right, word);
+}
+
+// 插入
+BSTree Insert(BSTree root, char *word)
+{
+    if(root == NULL)
+        return CreateNode(word);
+
+    int cmp = strcmp(word, root->word);
+
+    if(cmp == 0)
+    {
+        root->count++;
+    }
+    else if(cmp < 0)
+    {
+        root->left = Insert(root->left, word);
+    }
+    else
+    {
+        root->right = Insert(root->right, word);
+    }
+
+    return root;
+}
+
+// 中序遍历
+void InOrder(BSTree root)
+{
+    if(root == NULL)
+        return;
+
+    InOrder(root->left);
+
+    printf("%-15s %d\n", root->word, root->count);
+
+    InOrder(root->right);
+}
+
+// 将单词转换为小写
+void ToLower(char *word)
+{
+    for(int i=0;word[i];i++)
+        word[i]=tolower(word[i]);
+}
+
+// 从文件读取
+void ReadFile(BSTree *root, char *filename)
+{
+    FILE *fp=fopen(filename,"r");
+
+    if(fp==NULL)
+    {
+        printf("文件打开失败！\n");
+        return;
+    }
+
+    char word[MAXWORD];
+    int index=0;
+    int ch;
+
+    while((ch=fgetc(fp))!=EOF)
+    {
+        if(isalpha(ch))
+        {
+            word[index++]=tolower(ch);
+        }
+        else
+        {
+            if(index>0)
+            {
+                word[index]='\0';
+
+                *root=Insert(*root,word);
+
+                index=0;
+            }
+        }
+    }
+
+    // 文件最后一个单词
+    if(index>0)
+    {
+        word[index]='\0';
+        *root=Insert(*root,word);
+    }
+
+    fclose(fp);
+}
+
+// 释放树
+void Destroy(BSTree root)
+{
+    if(root==NULL)
+        return;
+
+    Destroy(root->left);
+    Destroy(root->right);
+
+    free(root);
+}
+
+int main()
+{
+    BSTree root=NULL;
+
+    ReadFile(&root,"text.txt");
+
+    printf("单词统计结果：\n\n");
+    printf("%-15s%s\n","Word","Count");
+    InOrder(root);
+
+    Destroy(root);
+
+    return 0;
+}
+\end{verbatim}
+
+\subsubsection{4. 调试分析}
+\paragraph{测试输入与完整运行输出}
+\begin{verbatim}
+10
+12 4 19 7 3 25 10 1 16 8 
+1 3 4 7 8 10 12 16 19 25 
+\end{verbatim}
+\subsubsection{5. 小结}
+
+\subsection {3.基于哈希查找实现员工信息管理}
+\subsubsection {任务}
+建立员工信息管理表，实现哈希查找。 要求： （1）确定哈希函数以及解决冲突的方法。 （2）员工信息包含工号、姓名、部门等数据项，实现员工的添加、查找、删除和遍历。 （3）分析总结哈希查找的特点。
+\subsubsection{1. 需求分析}
+\paragraph{分析总结逻辑结构}
+\paragraph{分析总结运算集合}
+\subsubsection{2. 概要设计}
+\paragraph{存储结构设计}
+\paragraph{算法设计思路}
+\subsubsection{3. 详细设计}
+\paragraph{源代码（带注释）}
+代码：
+\begin{verbatim}
+#include <stdio.h>
+#include <string.h>
+
+#define HASHSIZE 101
+
+// 员工信息结构体
+typedef struct
+{
+    int id;             // 工号
+    char name[30];      // 姓名
+    char dept[30];      // 部门
+    int state;          // 0-空 1-已使用 2-已删除
+} Employee;
+
+// 哈希表
+Employee HashTable[HASHSIZE];
+
+// 初始化哈希表
+void InitHashTable()
+{
+    int i;
+    for(i = 0; i < HASHSIZE; i++)
+    {
+        HashTable[i].state = 0;
+    }
+}
+
+// 哈希函数（除留余数法）
+int Hash(int key)
+{
+    return key % HASHSIZE;
+}
+
+// 查找员工
+int Search(int id)
+{
+    int addr = Hash(id);
+    int start = addr;
+
+    while(HashTable[addr].state != 0)
+    {
+        if(HashTable[addr].state == 1 &&
+           HashTable[addr].id == id)
+        {
+            return addr;
+        }
+
+        addr = (addr + 1) % HASHSIZE;
+
+        if(addr == start)
+            break;
+    }
+
+    return -1;
+}
+
+// 添加员工
+void Insert()
+{
+    Employee e;
+
+    printf("请输入工号：");
+    scanf("%d", &e.id);
+
+    if(Search(e.id) != -1)
+    {
+        printf("工号已存在！\n");
+        return;
+    }
+
+    printf("请输入姓名：");
+    scanf("%s", e.name);
+
+    printf("请输入部门：");
+    scanf("%s", e.dept);
+
+    int addr = Hash(e.id);
+    int start = addr;
+
+    while(HashTable[addr].state == 1)
+    {
+        addr = (addr + 1) % HASHSIZE;
+
+        if(addr == start)
+        {
+            printf("哈希表已满！\n");
+            return;
+        }
+    }
+
+    HashTable[addr] = e;
+    HashTable[addr].state = 1;
+
+    printf("添加成功！\n");
+}
+
+// 查找员工信息
+void Find()
+{
+    int id;
+
+    printf("请输入要查找的工号：");
+    scanf("%d", &id);
+
+    int pos = Search(id);
+
+    if(pos == -1)
+    {
+        printf("未找到该员工！\n");
+    }
+    else
+    {
+        printf("\n找到员工信息：\n");
+        printf("工号：%d\n", HashTable[pos].id);
+        printf("姓名：%s\n", HashTable[pos].name);
+        printf("部门：%s\n", HashTable[pos].dept);
+    }
+}
+
+// 删除员工
+void Delete()
+{
+    int id;
+
+    printf("请输入要删除的工号：");
+    scanf("%d", &id);
+
+    int pos = Search(id);
+
+    if(pos == -1)
+    {
+        printf("员工不存在！\n");
+        return;
+    }
+
+    HashTable[pos].state = 2;
+
+    printf("删除成功！\n");
+}
+
+// 遍历哈希表
+void Traverse()
+{
+    int i;
+    printf("哈希地址\t工号\t姓名\t部门\n");
+    for(i = 0; i < HASHSIZE; i++)
+    {
+        if(HashTable[i].state == 1)
+        {
+            printf("%3d\t\t%d\t%s\t%s\n",
+                   i,
+                   HashTable[i].id,
+                   HashTable[i].name,
+                   HashTable[i].dept);
+        }
+    }
+}
+
+// 菜单
+void Menu()
+{
+    printf("\n");
+    printf("员工信息管理系统\n");
+    printf("1. 添加员工\n");
+    printf("2. 查找员工\n");
+    printf("3. 删除员工\n");
+    printf("4. 遍历员工\n");
+    printf("0. 退出系统\n");
+    printf("请选择：");
+}
+
+int main()
+{
+    int choice;
+
+    InitHashTable();
+
+    while(1)
+    {
+        Menu();
+        scanf("%d", &choice);
+        switch(choice)
+        {
+            case 1:
+                Insert();
+                break;
+
+            case 2:
+                Find();
+                break;
+
+            case 3:
+                Delete();
+                break;
+
+            case 4:
+                Traverse();
+                break;
+
+            case 0:
+                printf("程序结束！\n");
+                return 0;
+
+            default:
+                printf("输入错误，请重新选择！\n");
+        }
+    }
+
+    return 0;
+}
+\end{verbatim}
+\subsubsection{4. 调试分析}
+\paragraph{测试输入与完整运行输出}
+\begin{verbatim}
+
+\end{verbatim}
+\subsubsection{5. 小结}
+
+
+\section{模块五}
+
+
+\subsection {1.各种排序实现对比}
+\subsubsection {任务}
+利用相关排序算法，将随机生成的一组整数（20<=个数<=100）按递增的顺序排好。 要求： （1）实现直接插入排序、希尔排序，冒泡排序、快速排序，简单选择排序、堆排序等算法。 （2）输出的形式：数字大小逐个递增的数列。 （3）比较不同排序算法的时间复杂度、空间复杂度，优缺点，以及适用场合。
+\subsubsection{1. 需求分析}
+\paragraph{分析总结逻辑结构}
+顺序储存
+\paragraph{分析总结运算集合}
+交换、移位
+\subsubsection{2. 概要设计}
+\paragraph{存储结构设计}
+\paragraph{算法设计思路}
+\subsubsection{3. 详细设计}
+\paragraph{源代码（带注释）}
+代码：
+\begin{verbatim}
+//直接插入排序
+void insert_sort()
+{
+	for(int i = 2; i <= n; i++)
+	{
+		int key = a[i];
+		int j = i - 1;
+		while(j >= 1 && a[j] > key)
+		{
+			a[j + 1] = a[j];
+			j--;
+		}
+		a[j + 1] = key;
+	}
+}
+//希尔排序
+void shell_sort()
+{
+    for(int gap = n / 2; gap > 0; gap /= 2)
+    {
+        for(int i = gap + 1; i <= n; i++)
+        {
+            int tmp = a[i];
+            int j = i - gap;
+
+            while(j > 0 && a[j] > tmp)
+            {
+                a[j + gap] = a[j];
+                j -= gap;
+            }
+
+            a[j + gap] = tmp;
+        }
+    }
+}
+//冒泡排序
+void swap(int* a, int * b)
+{
+    int tmp = *a;
+    *a = *b;
+    *b = tmp;
+}
+
+void bubble_sort()
+{
+	for(int i = 1; i < n; i++)
+	{
+		int flag = 0;
+		for(int j = 1; j <= n - i; j++)
+		{
+			if(a[j] > a[j + 1])
+			{
+				swap(&a[j], &a[j + 1]);
+				flag = 1;
+			}
+		}
+		if(!flag) break;
+	}
+}
+//快速排序
+void swap(int* a, int * b)
+{
+    int tmp = *a;
+    *a = *b;
+    *b = tmp;
+}
+
+int get_radom_index(int left, int right)
+{
+	return (rand() % (right - left + 1)) + left;
+}
+
+void quick_sort(int left, int right)
+{
+	if(left >= right) return;
+	int ele = a[get_radom_index(left, right)];
+	int l = left - 1, i = left, r = right + 1;
+	while(i < r)
+	{
+		if(ele > a[i]) swap(&a[++l], &a[i++]);
+		else if(ele == a[i]) i++;
+		else swap(&a[--r], &a[i]);
+	}
+	quick_sort(left, l);
+	quick_sort(r, right);
+}
+//堆排序
+void swap(int* a, int * b)
+{
+    int tmp = *a;
+    *a = *b;
+    *b = tmp;
+}
+
+
+void down(int parent, int len)
+{
+	int child = parent * 2;
+	while(child <= len)
+	{
+		if(child + 1 <= len && a[child + 1] > a[child])
+			child++;
+		if(a[parent] > a[child])
+			break;
+		swap(&a[parent], &a[child]);
+		parent = child;
+		child = parent * 2;
+	}
+}
+
+void heap_sort()
+{
+	//建堆
+	for(int i = n / 2; i >= 1; i--)
+	{
+		down(i, n);
+	}
+	//排序
+	for(int i = n; i >= 1; i--)
+	{
+		swap(&a[1], &a[i]);
+		down(1, i - 1);
+	}
+}
+\end{verbatim}
+\subsubsection{4. 调试分析}
+\paragraph{测试输入与完整运行输出}
+\begin{verbatim}
+10
+12 4 19 7 3 25 10 1 16 8 
+1 3 4 7 8 10 12 16 19 25 
+\end{verbatim}
+\subsubsection{5. 小结}
+\begin{itemize}
+    \item 直接插入排序 $O(n^2)$ 
+    \item 希尔排序 最优$O(n)$ 最差$O(n^2)$
+    \item 冒泡排序 $O(n^2)$
+    \item 快速排序 $O(nlogn)$ 最差$O(n^2)$
+    \item 堆排序 $O(nlogn)$
+\end{itemize}
 
 \end{document}
