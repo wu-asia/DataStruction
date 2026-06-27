@@ -1,0 +1,228 @@
+\contentsline {section}{\numberline {1}模块一}{1}{}%
+\contentsline {subsection}{\numberline {1.1}1. 约瑟夫问题}{1}{}%
+\contentsline {subsubsection}{\numberline {1.1.1}任务}{1}{}%
+\contentsline {subsubsection}{\numberline {1.1.2}1.需求分析}{1}{}%
+\contentsline {paragraph}{分析总结逻辑结构}{1}{}%
+\contentsline {paragraph}{逻辑结果}{1}{}%
+\contentsline {paragraph}{分析总结运算集合}{1}{}%
+\contentsline {subsubsection}{\numberline {1.1.3}2.概要设计}{1}{}%
+\contentsline {paragraph}{存储结构设计}{1}{}%
+\contentsline {subparagraph}{1.顺序结构设计}{1}{}%
+\contentsline {subparagraph}{2.链式结构设计}{2}{}%
+\contentsline {subsubsection}{\numberline {1.1.4}3.算法设计（流程图）}{2}{}%
+\contentsline {subsubsection}{\numberline {1.1.5}4.详细设计}{4}{}%
+\contentsline {paragraph}{源代码（带注释）}{4}{}%
+\contentsline {subsubsection}{\numberline {1.1.6}顺序存储结构实现}{4}{}%
+\contentsline {subsubsection}{\numberline {1.1.7}使用链式储存解决问题}{5}{}%
+\contentsline {subsubsection}{\numberline {1.1.8}5.调试分析}{7}{}%
+\contentsline {paragraph}{测试用例1：输入 $n=10,\ m=4$}{7}{}%
+\contentsline {paragraph}{测试用例2：输入 $n=6,\ m=6$}{7}{}%
+\contentsline {paragraph}{调试过程遇到的问题与解决}{7}{}%
+\contentsline {subsubsection}{\numberline {1.1.9}（6）小结}{8}{}%
+\contentsline {subsection}{\numberline {1.2}2. 纸牌游戏}{8}{}%
+\contentsline {subsubsection}{\numberline {1.2.1}任务}{8}{}%
+\contentsline {subsubsection}{\numberline {1.2.2}1.需求分析}{8}{}%
+\contentsline {paragraph}{分析总结逻辑结构}{8}{}%
+\contentsline {paragraph}{分析总结运算集合}{8}{}%
+\contentsline {subsubsection}{\numberline {1.2.3}2.概要设计}{8}{}%
+\contentsline {paragraph}{存储结构设计}{8}{}%
+\contentsline {paragraph}{算法设计思路}{8}{}%
+\contentsline {subsubsection}{\numberline {1.2.4}3.详细设计}{9}{}%
+\contentsline {paragraph}{源代码（带注释）}{10}{}%
+\contentsline {subsubsection}{\numberline {1.2.5}方法一：暴力模拟实现}{10}{}%
+\contentsline {subsubsection}{\numberline {1.2.6}方法二：数学规律优化实现}{10}{}%
+\contentsline {subsubsection}{\numberline {1.2.7}4.调试分析}{11}{}%
+\contentsline {paragraph}{标准测试结果}{11}{}%
+\contentsline {paragraph}{调试过程遇到的问题与解决}{11}{}%
+\contentsline {subsubsection}{\numberline {1.2.8}5.小结}{11}{}%
+\contentsline {subsection}{\numberline {1.3}3. 一元多项式计算}{11}{}%
+\contentsline {subsubsection}{\numberline {1.3.1}任务}{11}{}%
+\contentsline {subsubsection}{\numberline {1.3.2}1.需求分析}{11}{}%
+\contentsline {paragraph}{分析总结逻辑结构}{11}{}%
+\contentsline {paragraph}{分析总结运算集合}{12}{}%
+\contentsline {subsubsection}{\numberline {1.3.3}2.概要设计}{12}{}%
+\contentsline {paragraph}{存储结构设计}{12}{}%
+\contentsline {paragraph}{算法设计思路}{12}{}%
+\contentsline {subsubsection}{\numberline {1.3.4}3.详细设计}{13}{}%
+\contentsline {paragraph}{源代码（带注释）}{14}{}%
+\contentsline {subsubsection}{\numberline {1.3.5}4.调试分析}{19}{}%
+\contentsline {paragraph}{测试用例输入与运行结果}{19}{}%
+\contentsline {paragraph}{调试中出现的问题与解决方案}{19}{}%
+\contentsline {subsubsection}{\numberline {1.3.6}5.小结}{20}{}%
+\contentsline {subsection}{\numberline {1.4}4. 迷宫求解}{20}{}%
+\contentsline {subsubsection}{\numberline {1.4.1}任务}{20}{}%
+\contentsline {subsubsection}{\numberline {1.4.2}1.需求分析}{20}{}%
+\contentsline {paragraph}{分析总结逻辑结构}{20}{}%
+\contentsline {subsubsection}{\numberline {1.4.3}2.概要设计}{20}{}%
+\contentsline {paragraph}{存储结构设计}{20}{}%
+\contentsline {paragraph}{算法设计思路}{20}{}%
+\contentsline {subsubsection}{\numberline {1.4.4}3.详细设计}{20}{}%
+\contentsline {paragraph}{源代码（带注释）}{20}{}%
+\contentsline {subsubsection}{\numberline {1.4.5}4.调试分析}{23}{}%
+\contentsline {paragraph}{测试用例 1（存在通路）}{23}{}%
+\contentsline {paragraph}{测试用例 2（无通路）}{23}{}%
+\contentsline {paragraph}{调试过程遇到的问题与解决}{23}{}%
+\contentsline {subsubsection}{\numberline {1.4.6}5.小结}{24}{}%
+\contentsline {subsection}{\numberline {1.5}5. 八皇后问题}{24}{}%
+\contentsline {subsubsection}{\numberline {1.5.1}任务}{24}{}%
+\contentsline {subsubsection}{\numberline {1.5.2}1.需求分析}{24}{}%
+\contentsline {paragraph}{分析总结逻辑结构}{24}{}%
+\contentsline {paragraph}{分析总结运算集合}{24}{}%
+\contentsline {subsubsection}{\numberline {1.5.3}2.概要设计}{24}{}%
+\contentsline {paragraph}{存储结构设计}{24}{}%
+\contentsline {paragraph}{算法设计思路}{24}{}%
+\contentsline {subsubsection}{\numberline {1.5.4}3.详细设计}{25}{}%
+\contentsline {paragraph}{源代码（带注释）}{25}{}%
+\contentsline {subsubsection}{\numberline {1.5.5}4.调试分析}{26}{}%
+\contentsline {paragraph}{全部92组解输出结果}{26}{}%
+\contentsline {subsubsection}{\numberline {1.5.6}5.小结}{26}{}%
+\contentsline {subsection}{\numberline {1.6}6. 运动会分数统计}{27}{}%
+\contentsline {subsubsection}{\numberline {1.6.1}任务}{27}{}%
+\contentsline {subsubsection}{\numberline {1.6.2}1.需求分析}{27}{}%
+\contentsline {paragraph}{分析总结逻辑结构}{27}{}%
+\contentsline {paragraph}{分析总结运算集合}{27}{}%
+\contentsline {subsubsection}{\numberline {1.6.3}2.概要设计}{27}{}%
+\contentsline {paragraph}{存储结构设计}{27}{}%
+\contentsline {paragraph}{算法设计思路}{27}{}%
+\contentsline {subsubsection}{\numberline {1.6.4}3.详细设计}{27}{}%
+\contentsline {paragraph}{源代码（带注释）}{27}{}%
+\contentsline {subsubsection}{\numberline {1.6.5}4.调试分析}{31}{}%
+\contentsline {paragraph}{测试输入与运行输出}{31}{}%
+\contentsline {paragraph}{调试过程遇到的问题与解决}{32}{}%
+\contentsline {subsubsection}{\numberline {1.6.6}5.小结}{32}{}%
+\contentsline {section}{\numberline {2}模块二}{33}{}%
+\contentsline {subsection}{\numberline {2.1}1.二叉树}{33}{}%
+\contentsline {subsubsection}{\numberline {2.1.1}任务}{33}{}%
+\contentsline {subsubsection}{\numberline {2.1.2}1.需求分析}{33}{}%
+\contentsline {paragraph}{分析总结逻辑结构}{33}{}%
+\contentsline {paragraph}{分析总结运算集合}{33}{}%
+\contentsline {subsubsection}{\numberline {2.1.3}2.概要设计}{33}{}%
+\contentsline {paragraph}{存储结构设计}{33}{}%
+\contentsline {paragraph}{算法设计思路}{33}{}%
+\contentsline {subsubsection}{\numberline {2.1.4}3.详细设计}{34}{}%
+\contentsline {paragraph}{源代码（带注释）}{34}{}%
+\contentsline {subsubsection}{\numberline {2.1.5}4.调试分析}{43}{}%
+\contentsline {paragraph}{测试输入与完整运行输出}{43}{}%
+\contentsline {paragraph}{调试过程遇到的问题与解决}{45}{}%
+\contentsline {subsubsection}{\numberline {2.1.6}5.小结}{45}{}%
+\contentsline {subsection}{\numberline {2.2}2.哈夫曼编码}{46}{}%
+\contentsline {subsubsection}{\numberline {2.2.1}任务}{46}{}%
+\contentsline {subsubsection}{\numberline {2.2.2}1. 需求分析}{46}{}%
+\contentsline {paragraph}{分析总结逻辑结构}{46}{}%
+\contentsline {paragraph}{分析总结运算集合}{46}{}%
+\contentsline {subsubsection}{\numberline {2.2.3}2. 概要设计}{46}{}%
+\contentsline {paragraph}{存储结构设计}{46}{}%
+\contentsline {paragraph}{算法设计思路}{46}{}%
+\contentsline {subsubsection}{\numberline {2.2.4}3. 详细设计}{47}{}%
+\contentsline {paragraph}{源代码（带注释）}{47}{}%
+\contentsline {subsubsection}{\numberline {2.2.5}4. 调试分析}{54}{}%
+\contentsline {paragraph}{测试输入与完整运行输出}{54}{}%
+\contentsline {paragraph}{调试过程遇到的问题与解决}{56}{}%
+\contentsline {subsubsection}{\numberline {2.2.6}5. 小结}{56}{}%
+\contentsline {subsection}{\numberline {2.3}3.并查集}{57}{}%
+\contentsline {subsubsection}{\numberline {2.3.1}任务}{57}{}%
+\contentsline {subsubsection}{\numberline {2.3.2}1. 需求分析}{57}{}%
+\contentsline {paragraph}{分析总结逻辑结构}{57}{}%
+\contentsline {paragraph}{分析总结运算集合}{57}{}%
+\contentsline {subsubsection}{\numberline {2.3.3}2. 概要设计}{57}{}%
+\contentsline {paragraph}{存储结构设计}{57}{}%
+\contentsline {paragraph}{算法设计思路}{57}{}%
+\contentsline {subsubsection}{\numberline {2.3.4}3. 详细设计}{58}{}%
+\contentsline {paragraph}{源代码（带注释）}{58}{}%
+\contentsline {subsubsection}{\numberline {2.3.5}4. 调试分析}{60}{}%
+\contentsline {paragraph}{测试输入与完整运行输出}{60}{}%
+\contentsline {subsubsection}{\numberline {2.3.6}5. 小结}{61}{}%
+\contentsline {section}{\numberline {3}模块三}{61}{}%
+\contentsline {subsection}{\numberline {3.1}1.最小代价生成树}{61}{}%
+\contentsline {subsubsection}{\numberline {3.1.1}任务}{61}{}%
+\contentsline {subsubsection}{\numberline {3.1.2}1. 需求分析}{61}{}%
+\contentsline {paragraph}{分析总结逻辑结构}{61}{}%
+\contentsline {paragraph}{分析总结运算集合}{62}{}%
+\contentsline {subsubsection}{\numberline {3.1.3}2. 概要设计}{62}{}%
+\contentsline {paragraph}{存储结构设计}{62}{}%
+\contentsline {paragraph}{算法设计思路}{62}{}%
+\contentsline {subsubsection}{\numberline {3.1.4}3. 详细设计}{63}{}%
+\contentsline {paragraph}{源代码（带注释）}{64}{}%
+\contentsline {subsubsection}{\numberline {3.1.5}4. 调试分析}{70}{}%
+\contentsline {paragraph}{测试输入与完整运行输出}{70}{}%
+\contentsline {subsubsection}{\numberline {3.1.6}5. 小结}{71}{}%
+\contentsline {subsection}{\numberline {3.2}2.拓扑排序及关键路径}{71}{}%
+\contentsline {subsubsection}{\numberline {3.2.1}任务}{71}{}%
+\contentsline {subsubsection}{\numberline {3.2.2}1. 需求分析}{71}{}%
+\contentsline {paragraph}{分析总结逻辑结构}{71}{}%
+\contentsline {paragraph}{分析总结运算集合}{71}{}%
+\contentsline {subsubsection}{\numberline {3.2.3}2. 概要设计}{71}{}%
+\contentsline {paragraph}{存储结构设计}{71}{}%
+\contentsline {paragraph}{算法设计思路}{71}{}%
+\contentsline {subsubsection}{\numberline {3.2.4}3. 详细设计}{71}{}%
+\contentsline {paragraph}{源代码（带注释）}{71}{}%
+\contentsline {subsubsection}{\numberline {3.2.5}4. 调试分析}{76}{}%
+\contentsline {paragraph}{测试输入与完整运行输出}{76}{}%
+\contentsline {subsubsection}{\numberline {3.2.6}5. 小结}{77}{}%
+\contentsline {subsection}{\numberline {3.3}3.交通咨询系统}{77}{}%
+\contentsline {subsubsection}{\numberline {3.3.1}任务}{77}{}%
+\contentsline {subsubsection}{\numberline {3.3.2}1. 需求分析}{77}{}%
+\contentsline {paragraph}{分析总结逻辑结构}{77}{}%
+\contentsline {paragraph}{分析总结运算集合}{77}{}%
+\contentsline {subsubsection}{\numberline {3.3.3}2. 概要设计}{78}{}%
+\contentsline {paragraph}{存储结构设计}{78}{}%
+\contentsline {paragraph}{算法设计思路}{78}{}%
+\contentsline {subsubsection}{\numberline {3.3.4}3. 详细设计}{78}{}%
+\contentsline {paragraph}{源代码（带注释）}{78}{}%
+\contentsline {subsubsection}{\numberline {3.3.5}4. 调试分析}{84}{}%
+\contentsline {paragraph}{测试输入与完整运行输出}{84}{}%
+\contentsline {subsubsection}{\numberline {3.3.6}5. 小结}{85}{}%
+\contentsline {section}{\numberline {4}模块四}{86}{}%
+\contentsline {subsection}{\numberline {4.1}1.基于线性表的查找（学生信息管理）}{86}{}%
+\contentsline {subsubsection}{\numberline {4.1.1}任务}{86}{}%
+\contentsline {subsubsection}{\numberline {4.1.2}1.需求分析}{86}{}%
+\contentsline {paragraph}{分析总结逻辑结构}{86}{}%
+\contentsline {paragraph}{分析总结运算集合}{86}{}%
+\contentsline {subsubsection}{\numberline {4.1.3}2.概要设计}{86}{}%
+\contentsline {paragraph}{存储结构设计}{86}{}%
+\contentsline {paragraph}{算法设计思路}{86}{}%
+\contentsline {subsubsection}{\numberline {4.1.4}3.详细设计}{86}{}%
+\contentsline {paragraph}{源代码（带注释）}{86}{}%
+\contentsline {subsubsection}{\numberline {4.1.5}4. 调试分析}{89}{}%
+\contentsline {paragraph}{测试输入与完整运行输出}{89}{}%
+\contentsline {subsubsection}{\numberline {4.1.6}5. 小结}{89}{}%
+\contentsline {subsection}{\numberline {4.2}2.基于树表的查找(文本词汇统计）}{89}{}%
+\contentsline {subsubsection}{\numberline {4.2.1}任务}{89}{}%
+\contentsline {subsubsection}{\numberline {4.2.2}1. 需求分析}{89}{}%
+\contentsline {paragraph}{分析总结逻辑结构}{89}{}%
+\contentsline {paragraph}{分析总结运算集合}{90}{}%
+\contentsline {subsubsection}{\numberline {4.2.3}2. 概要设计}{90}{}%
+\contentsline {paragraph}{存储结构设计}{90}{}%
+\contentsline {paragraph}{算法设计思路}{90}{}%
+\contentsline {subsubsection}{\numberline {4.2.4}3. 详细设计}{90}{}%
+\contentsline {paragraph}{源代码（带注释）}{90}{}%
+\contentsline {subsubsection}{\numberline {4.2.5}4. 调试分析}{93}{}%
+\contentsline {paragraph}{测试输入与完整运行输出}{93}{}%
+\contentsline {subsubsection}{\numberline {4.2.6}5. 小结}{94}{}%
+\contentsline {subsection}{\numberline {4.3}3.基于哈希查找实现员工信息管理}{94}{}%
+\contentsline {subsubsection}{\numberline {4.3.1}任务}{94}{}%
+\contentsline {subsubsection}{\numberline {4.3.2}1. 需求分析}{94}{}%
+\contentsline {paragraph}{分析总结逻辑结构}{94}{}%
+\contentsline {paragraph}{分析总结运算集合}{94}{}%
+\contentsline {subsubsection}{\numberline {4.3.3}2. 概要设计}{94}{}%
+\contentsline {paragraph}{存储结构设计}{94}{}%
+\contentsline {paragraph}{算法设计思路}{94}{}%
+\contentsline {subsubsection}{\numberline {4.3.4}3. 详细设计}{95}{}%
+\contentsline {paragraph}{源代码（带注释）}{95}{}%
+\contentsline {subsubsection}{\numberline {4.3.5}4. 调试分析}{99}{}%
+\contentsline {paragraph}{测试输入与完整运行输出}{99}{}%
+\contentsline {subsubsection}{\numberline {4.3.6}5. 小结}{102}{}%
+\contentsline {section}{\numberline {5}模块五}{102}{}%
+\contentsline {subsection}{\numberline {5.1}1.各种排序实现对比}{102}{}%
+\contentsline {subsubsection}{\numberline {5.1.1}任务}{102}{}%
+\contentsline {subsubsection}{\numberline {5.1.2}1. 需求分析}{102}{}%
+\contentsline {paragraph}{分析总结逻辑结构}{102}{}%
+\contentsline {paragraph}{分析总结运算集合}{102}{}%
+\contentsline {subsubsection}{\numberline {5.1.3}2. 概要设计}{102}{}%
+\contentsline {paragraph}{存储结构设计}{102}{}%
+\contentsline {paragraph}{算法设计思路}{102}{}%
+\contentsline {subsubsection}{\numberline {5.1.4}3. 详细设计}{102}{}%
+\contentsline {paragraph}{源代码（带注释）}{102}{}%
+\contentsline {subsubsection}{\numberline {5.1.5}4. 调试分析}{105}{}%
+\contentsline {paragraph}{测试输入与完整运行输出}{105}{}%
+\contentsline {subsubsection}{\numberline {5.1.6}5. 小结}{105}{}%
