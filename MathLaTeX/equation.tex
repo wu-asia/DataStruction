@@ -1,0 +1,110 @@
+\documentclass{ctexart}
+\usepackage{amsmath}
+\usepackage{tikz}
+
+\begin{document}
+
+\[
+\vec{a} \times \vec{b} = |a| \cdot |b| \cdot \sin\langle\vec{a}, \vec{b}\rangle
+\]
+
+\[
+\mathrm{e}^{\mathrm{i}\pi} + 1 = 0
+\]
+
+\[
+\mathrm{e}^{\mathrm{i}\theta} = \cos\theta + \mathrm{i}\sin\theta
+\]
+
+\[
+a^2 + b^2 = c^2
+\]
+
+$$\alpha \beta \gamma \delta
+  \epsilon \zeta \eta \theta
+  \iota \kappa \lambda \mu 
+  \nu \xi o \pi 
+  \rho \sigma \tau \upsilon 
+  \phi \psi \chi \omega $$
+
+$$ \varphi \varepsilon \vartheta $$
+
+\[
+\frac{\mathrm{d}x}{\mathrm{d}y}
+\]
+
+\[
+f'(x), \quad f^{n}(x)
+\]
+
+\[
+\frac{\partial f}{\partial x}
+\]
+
+\[
+\int\,f(x)\,\mathrm{d}x
+\]
+
+\[
+\int_a^b\,f(x)\,\mathrm{d}x = F(b) - F(a)
+\]
+
+\[
+\iint_D\,f(x, y)\,\mathrm{d}x\,\mathrm{d}y
+\]
+
+\[
+\iint_D\,f(x, y)\,\mathrm{d}\sigma
+\]
+
+\[
+\oint_L\,P\,\mathrm{d}x + Q\,\mathrm{d}y = \iint_D\,\left(\frac{\partial{P}}{\partial{x}} - \frac{\partial{Q}}{\partial{y}}\right)\,\mathrm{d}\sigma
+\]
+
+\newpage
+\[
+\frac{\partial^2 f}{\partial x^2}
++ \frac{\partial^2 f}{\partial y^2}
++ \frac{\partial^2 f}{\partial z^2}
+\] 
+
+\[
+\nabla \cdot \vec{E} = \frac{\rho}{\varepsilon_0}
+\]
+
+\[
+\nabla \cdot \vec{B} = 0
+\]
+\[
+\nabla \times \vec{E} = -\frac{\partial \vec{B}}{\partial t}
+\]
+\[
+\nabla \times \vec{B} = \mu_0 \vec{J} + \mu_0 \varepsilon_0 \frac{\partial \vec{E}}{\partial t}
+\]
+\[
+\nabla f,\quad
+\nabla \cdot \vec{F},\quad
+\nabla \times \vec{F}
+\]
+\[
+\vec{F}(x,y,z)\quad
+\nabla^2 f
+\]
+
+\newpage
+\begin{tikzpicture}[>=stealth]
+    % 坐标轴
+    \draw[->] (-0.5,0) -- (4,0) node[right] {$x$};
+    \draw[->] (0,-0.5) -- (0,3) node[above] {$y$};
+
+    % 点
+    \fill (2,1) circle (2pt);
+    \node[right] at (2,1) {$P(2,1)$};
+
+    % 向量
+    \draw[->, thick] (0,0) -- (2,1);
+\end{tikzpicture}
+\[
+\sqrt{x^2+y^2}
+\]
+\end{document}
